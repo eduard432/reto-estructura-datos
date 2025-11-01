@@ -7,20 +7,21 @@ template <typename T>
 class LinkedList {
 	private:
         LinkedListNode<T>* head;
+        LinkedListNode<T>* tail;
         unsigned int n;
     public:
         LinkedList();
         ~LinkedList();
 
         unsigned int size() const;
-        bool empty() const;
+        bool isEmpty() const;
 
         void clear();
-        bool remove(T& value);
+        bool remove(const T& val);
 
-        void pushFront(const T& value);
-        void pushBack(const T& value);
-        bool insert(unsigned int index, const T& value);
+        void pushFront(const T& val);
+        void pushBack(const T& val);
+        bool insert(unsigned int index, const T& val);
 
         T* elementAt(unsigned int index);
 
