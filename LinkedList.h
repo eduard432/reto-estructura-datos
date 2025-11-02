@@ -13,6 +13,9 @@ class LinkedList {
         LinkedList();
         ~LinkedList();
 
+        LinkedListNode<T>* getHead() const;
+        LinkedListNode<T>* getTail() const;
+
         unsigned int size() const;
         bool isEmpty() const;
 
@@ -27,7 +30,6 @@ class LinkedList {
 
         void print() const;
 
-        T operator[](int index) const;
         T& operator[](int index);
 };
 

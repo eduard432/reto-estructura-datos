@@ -180,3 +180,13 @@ T& LinkedList<T>::operator[](int index) {
 
     return current->getDataRef();
 }
+
+template <typename T>
+LinkedListNode<T>* LinkedList<T>::getHead() const {
+    return head;
+}
+
+template <typename T>
+LinkedListNode<T>* LinkedList<T>::getTail() const {
+    return tail;
+}
