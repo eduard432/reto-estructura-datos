@@ -160,7 +160,7 @@ T LinkedList<T>::elementAt(unsigned int index) const {
     }
 
     LinkedListNode<T>* current = head;
-    for (unsigned int i = 0; i < index; i++) {
+    for (int i = 0; i < index; i++) {
         current = current->getNext();
     }
 
@@ -174,7 +174,7 @@ T& LinkedList<T>::operator[](int index) {
     }
 
     LinkedListNode<T>* current = head;
-    for (unsigned int i = 0; i < index; i++) {
+    for (int i = 0; i < index; i++) {
         current = current->getNext();
     }
 
