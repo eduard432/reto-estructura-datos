@@ -12,12 +12,15 @@ class LinkedListNode {
         LinkedListNode(const T& val): data(val), prev(nullptr), next(nullptr) {};
 
         T getData() const;
+        T& getDataRef();
         LinkedListNode<T>* getPrev() const;
         LinkedListNode<T>* getNext() const;
 
         void setData(const T& val);
-        void setPrev(const LinkedListNode<T>* node);
-        void setNext(const LinkedListNode<T>* node);
+        void setPrev(LinkedListNode<T>* node);
+        void setNext(LinkedListNode<T>* node);
 };
+
+#include "LinkedListNode.tpp"
 
 #endif

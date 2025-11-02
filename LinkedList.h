@@ -23,10 +23,15 @@ class LinkedList {
         void pushBack(const T& val);
         bool insert(unsigned int index, const T& val);
 
-        T* elementAt(unsigned int index);
+        T elementAt(unsigned int index) const;
 
         void print() const;
+
+        T operator[](int index) const;
+        T& operator[](int index);
 };
+
+#include "LinkedList.tpp"
 
 
 #endif

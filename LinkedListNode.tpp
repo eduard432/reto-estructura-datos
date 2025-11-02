@@ -1,8 +1,13 @@
+#pragma once
 #include "LinkedListNode.h"
-
 
 template <typename T>
 T LinkedListNode<T>::getData() const {
+    return data;
+}
+
+template <typename T>
+T& LinkedListNode<T>::getDataRef() {
     return data;
 }
 
@@ -13,9 +18,8 @@ LinkedListNode<T>* LinkedListNode<T>::getPrev() const {
 
 template <typename T>
 LinkedListNode<T>* LinkedListNode<T>::getNext() const {
-    return prev;
+    return next;
 }
-
 
 template <typename T>
 void LinkedListNode<T>::setData(const T& val) {
@@ -23,11 +27,11 @@ void LinkedListNode<T>::setData(const T& val) {
 }
 
 template <typename T>
-void LinkedListNode<T>::setPrev(const LinkedListNode<T>* node) {
+void LinkedListNode<T>::setPrev(LinkedListNode<T>* node) {
     prev = node;
 }
 
 template <typename T>
-void LinkedListNode<T>::setNext(const LinkedListNode<T>* node) {
+void LinkedListNode<T>::setNext(LinkedListNode<T>* node) {
     next = node;
 }
