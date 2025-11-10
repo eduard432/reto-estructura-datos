@@ -1,23 +1,20 @@
 #include <iostream>
 #include "Vector.h"
+#include "Graph.h"
 
 using namespace std;
 
 int main () {
-	Vector<int> lista;
-	lista.pushBack(1);
-	lista.pushBack(2);
-	lista.pushBack(3);
+	Graph<int> grafo;
 
-	lista.print();
-
-	lista[0] = 12;
-
-	cout << lista[0] << endl;
+	grafo.addVertex(5);
+	grafo.addVertex(3);
+	grafo.addVertex(4);
+	
+	grafo.addEdge(5, 3);
 
 
-	lista.print();
-
+	grafo.printMatrix();
 
 	return 0;
 }
