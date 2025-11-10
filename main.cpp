@@ -1,10 +1,10 @@
 #include <iostream>
-#include "LinkedList.h"
+#include "Vector.h"
 
 using namespace std;
 
 int main () {
-	LinkedList<int> lista;
+	Vector<int> lista;
 	lista.pushBack(1);
 	lista.pushBack(2);
 	lista.pushBack(3);
