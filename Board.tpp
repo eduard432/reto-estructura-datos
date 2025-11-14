@@ -1,6 +1,7 @@
 #pragma once
 #include "Board.h"
 #include "Utils.h"
+#include "Monster.h"
 #include <iostream>
 
 using namespace std;
@@ -8,6 +9,11 @@ using namespace std;
 void Board::addSquare(const string& name, const float& probability, const bool& visited) {
     Square s = Square(graph.size() + 1, name, probability, visited);
     graph.addVertex(s);
+}
+
+void Board::addMonster(const string& name, const float& health, const float& attack, const float& defense ) {
+    Monster m = Monster(name, health, attack, defense);
+    monsters.pushBack(m);
 }
 
 bool Board::loadSquareFromCSV(const string& fileName) {

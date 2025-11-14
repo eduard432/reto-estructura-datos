@@ -1,19 +1,23 @@
-#ifndef HERO_H
-#define HERO_H
+#ifndef MONSTER_H
+#define MONSTER_H
 
 #include <string>
 
 using namespace std;
 
-class Hero {
+class Monster {
     private:
         float HP;
         float ATK;
         float DEF;
         string name;
     public:
-        Hero() : name(""), HP(0), ATK(0), DEF(0) {}
-        Hero(const string& n) : name(n), HP(100), ATK(8), DEF(12) {}
+        Monster(const string& n, const float& health = 100, const float& attack = 8, const float& defense = 5 ) {
+            name = n;
+            HP = health;
+            ATK = attack;
+            DEF = defense;
+        }
         float getHP() const;
         float getATK() const;
         float getDEF() const;
