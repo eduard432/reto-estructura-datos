@@ -1,0 +1,39 @@
+#pragma once
+#include "Vertex.h"
+#include "LinkedList.h"
+
+template <typename T>
+void Vertex<T>::addEdge(Vertex<T>* u) {
+    edges.pushBack(u);
+}
+
+template <typename T>
+T Vertex<T>::getData() const {
+    return data;
+}
+
+template <typename T>
+LinkedList<Vertex<T>*>& Vertex<T>::getEdges() {
+    return edges;
+}
+
+template <typename T>
+bool Vertex<T>::getVisited() const {
+    return visited;
+}
+
+template <typename T>
+void Vertex<T>::setVisited(const bool& v) {
+    visited = v;
+} 
+
+
+template <typename T>
+void Vertex<T>::setIndex(const unsigned int& i) {
+    index = i;
+}
+
+template <typename T>
+unsigned int Vertex<T>::getIndex() const {
+    return index;
+}

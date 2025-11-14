@@ -1,20 +1,20 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
-#include "LinkedListNode.h"
+#include "Node.h"
 
 template <typename T>
 class LinkedList {
 	private:
-        LinkedListNode<T>* head;
-        LinkedListNode<T>* tail;
+        Node<T>* head;
+        Node<T>* tail;
         unsigned int n;
     public:
         LinkedList();
         ~LinkedList();
 
-        LinkedListNode<T>* getHead() const;
-        LinkedListNode<T>* getTail() const;
+        Node<T>* getHead() const;
+        Node<T>* getTail() const;
 
         unsigned int size() const;
         bool isEmpty() const;
@@ -30,7 +30,7 @@ class LinkedList {
 
         void print() const;
 
-        T& operator[](int index);
+        T& operator[](unsigned int index);
 };
 
 #include "LinkedList.tpp"

@@ -14,7 +14,7 @@ int main () {
 	grafo.addEdge(5, 3);
 
 
-	grafo.printMatrix();
+	grafo.print();
 
 	return 0;
 }

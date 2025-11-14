@@ -1,7 +1,7 @@
 #pragma once
 
 #include "LinkedList.h"
-#include "LinkedListNode.h"
+#include "Node.h"
 #include <iostream>
 
 using namespace std;
@@ -32,9 +32,9 @@ template <typename T>
 void LinkedList<T>::clear() {
     if (isEmpty()) return;
 
-    LinkedListNode<T>* current = head;
+    Node<T>* current = head;
     while (current) {
-        LinkedListNode<T>* aux = current->getNext();
+        Node<T>* aux = current->getNext();
         delete current;
         current = aux;
     }
@@ -48,7 +48,7 @@ template <typename T>
 bool LinkedList<T>::remove(const T& val) {
     if (isEmpty()) return false;
 
-    LinkedListNode<T>* temp = nullptr;
+    Node<T>* temp = nullptr;
 
     if (head->getData() == val) {
         temp = head;
@@ -60,7 +60,7 @@ bool LinkedList<T>::remove(const T& val) {
         return true;
     }
 
-    LinkedListNode<T>* current = head;
+    Node<T>* current = head;
     while (current->getNext()) {
         if (current->getNext()->getData() == val) {
             temp = current->getNext();
@@ -79,7 +79,7 @@ bool LinkedList<T>::remove(const T& val) {
 
 template <typename T>
 void LinkedList<T>::pushFront(const T& val) {
-    LinkedListNode<T>* newNode = new LinkedListNode<T>(val);
+    Node<T>* newNode = new Node<T>(val);
 
     if (isEmpty()) {
         head = newNode;
@@ -95,7 +95,7 @@ void LinkedList<T>::pushFront(const T& val) {
 
 template <typename T>
 void LinkedList<T>::pushBack(const T& val) {
-    LinkedListNode<T>* newNode = new LinkedListNode<T>(val);
+    Node<T>* newNode = new Node<T>(val);
 
     if (isEmpty()) {
         head = newNode;
@@ -121,12 +121,12 @@ bool LinkedList<T>::insert(unsigned int index, const T& val) {
         return true;
     }
 
-    LinkedListNode<T>* current = head;
+    Node<T>* current = head;
     for (unsigned int i = 0; i < index - 1; i++) {
         current = current->getNext();
     }
 
-    LinkedListNode<T>* newNode = new LinkedListNode<T>(val);
+    Node<T>* newNode = new Node<T>(val);
     newNode->setNext(current->getNext());
     newNode->setPrev(current);
     current->getNext()->setPrev(newNode);
@@ -143,7 +143,7 @@ void LinkedList<T>::print() const {
         return;
     }
 
-    LinkedListNode<T>* current = head;
+    Node<T>* current = head;
     while (current) {
         cout << current->getData();
         if (current->getNext()) cout << " -> ";
@@ -159,7 +159,7 @@ T LinkedList<T>::elementAt(unsigned int index) const {
         return T();
     }
 
-    LinkedListNode<T>* current = head;
+    Node<T>* current = head;
     for (int i = 0; i < index; i++) {
         current = current->getNext();
     }
@@ -168,13 +168,13 @@ T LinkedList<T>::elementAt(unsigned int index) const {
 }
 
 template <typename T>
-T& LinkedList<T>::operator[](int index) {
+T& LinkedList<T>::operator[](unsigned int index) {
     if (isEmpty() || index >= n) {
         throw "Índice fuera del rango";
     }
 
-    LinkedListNode<T>* current = head;
-    for (int i = 0; i < index; i++) {
+    Node<T>* current = head;
+    for (unsigned int i = 0; i < index; i++) {
         current = current->getNext();
     }
 
@@ -182,11 +182,11 @@ T& LinkedList<T>::operator[](int index) {
 }
 
 template <typename T>
-LinkedListNode<T>* LinkedList<T>::getHead() const {
+Node<T>* LinkedList<T>::getHead() const {
     return head;
 }
 
 template <typename T>
-LinkedListNode<T>* LinkedList<T>::getTail() const {
+Node<T>* LinkedList<T>::getTail() const {
     return tail;
 }

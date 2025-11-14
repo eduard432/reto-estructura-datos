@@ -1,26 +1,41 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-#include "Vector.h"
+#include <iostream>
+
+#include "Vertex.h"
+#include "LinkedList.h"
+#include "Queue.h"
+#include "Stack.h"
+
 
 template <typename T>
 class Graph {
     private:
-        int n;
-        int count;
-        Vector<Vector<int>> matrix;
-        Vector<T> vertices;
-        int indexOf(const T& v) const;
-        
+        LinkedList<Vertex<T>*> vertices;
+        void resetVisited();
     public:
-        Graph() {
-            Vector<int> vector;
-        };
-        bool addVertex(const T& val);
-        bool addEdge(const T& v, const T& u, int weight = 1, bool directed = false);
+        Graph() {}
 
-        void printMatrix() const;
-        
+        int indexOf(const T& data);
+
+        bool addVertex(const T& data);
+
+        bool addEdge(const T& v, const T& u);
+
+        LinkedList<Vertex<T>*>& getVertices();
+
+        void BFS(const T& start);
+
+        void DFS(const T& start);
+
+        void print();
+ 
+        ~Graph() {
+            for (unsigned int i = 0; i < vertices.size(); i++) {
+                delete vertices[i];
+            }
+        }
 };
 
 #include "Graph.tpp"
