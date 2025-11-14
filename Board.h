@@ -4,6 +4,7 @@
 #include "Graph.h"
 #include "Square.h"
 #include "LinkedList.h"
+#include "Hero.h"
 #include <string>
 
 class Board {
@@ -12,6 +13,7 @@ class Board {
         // LinkedList<> monsters;
         unsigned int actualSquareIndex;
         bool isMonsterAttack(const float& probality);
+        Hero hero;
         
     public:
         Board() {
