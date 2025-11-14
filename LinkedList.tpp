@@ -160,7 +160,7 @@ T LinkedList<T>::elementAt(unsigned int index) const {
     }
 
     Node<T>* current = head;
-    for (int i = 0; i < index; i++) {
+    for (unsigned int i = 0; i < index; i++) {
         current = current->getNext();
     }
 

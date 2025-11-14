@@ -1,20 +1,12 @@
 #include <iostream>
-#include "Vector.h"
-#include "Graph.h"
+#include "Board.h"
 
 using namespace std;
 
 int main () {
-	Graph<int> grafo;
-
-	grafo.addVertex(5);
-	grafo.addVertex(3);
-	grafo.addVertex(4);
-	
-	grafo.addEdge(5, 3);
-
-
-	grafo.print();
+	Board board;
+	board.addSquare("Mazmorra 1", 0.8, false);
+	board.play();
 
 	return 0;
 }

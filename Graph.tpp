@@ -26,6 +26,11 @@ int Graph<T>::indexOf(const T& data) {
 }
 
 template <typename T>
+Vertex<T>* Graph<T>::vertexAt(const unsigned int i) const {
+    return vertices.elementAt(i);
+}
+
+template <typename T>
 bool Graph<T>::addVertex(const T& data) {
     // Ya existe
     if(indexOf(data) != -1) {
@@ -122,4 +127,9 @@ void Graph<T>::print() {
         std::cout << "]" << endl;
         
     }   
+}
+
+template <typename T>
+unsigned int Graph<T>::size() const {
+    return vertices.size();
 }

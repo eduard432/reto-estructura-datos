@@ -18,6 +18,7 @@ class Graph {
         Graph() {}
 
         int indexOf(const T& data);
+        Vertex<T>* vertexAt(const unsigned int i) const;
 
         bool addVertex(const T& data);
 
@@ -30,6 +31,8 @@ class Graph {
         void DFS(const T& start);
 
         void print();
+
+        unsigned int size() const;
  
         ~Graph() {
             for (unsigned int i = 0; i < vertices.size(); i++) {
