@@ -1,0 +1,1 @@
+- Crear una clase Character y que Hero y Monster lo hereden

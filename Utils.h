@@ -6,10 +6,10 @@ using namespace std;
 
 class Utils {
     public:
-        static double randomDoubleNumber() {
+        static double randomDoubleNumber(const int& a = 0.0, const int& b = 1.0) {
             random_device rd;
             mt19937 gen(rd());
-            uniform_real_distribution<> dist(0.0, 1.0);
+            uniform_real_distribution<> dist(a, b);
 
             double num = dist(gen);
             return num;
@@ -21,6 +21,10 @@ class Utils {
 
             int num = dist(gen);
             return num;
+        }
+        static float max(const int& a, const int& b) {
+            if(a >= b) return a;
+            else return b;
         }
 
 };

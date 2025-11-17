@@ -27,7 +27,11 @@ bool Board::isMonsterAttack(const float& probability) {
     return randomProb <= probability;
 }
 
-void Board::play() {
+bool Board::getIsInBattle() const {
+    return actualMonsterIndex >= 0;
+}
+
+bool Board::play() {
     Square square = graph.vertexAt(actualSquareIndex)->getData();
     bool isBattle = isMonsterAttack(square.getProbability());
 
@@ -36,7 +40,22 @@ void Board::play() {
         int selectedMonsterI = Utils().randomIntNumber(0, monsters.size());
         Monster& selectedMonster = monsters[selectedMonsterI];
         cout << "Pelearas contra: " << selectedMonster.getName() << endl;
+        actualMonsterIndex = selectedMonsterI;
     } else {
         cout << "Se evito la batalla" << endl;
+    }
+
+    return isBattle;
+}
+
+void Board::combat() {
+    // Aleatorio quien da el primer golpe:
+    double prob = Utils().randomDoubleNumber();
+    bool startMonster = prob >= .5;
+
+    if(startMonster) {
+        cout << "El monstruo inicia dando el primer golpe" << endl;
+    } else {
+        cout << "El jugador da el primer golpe" << endl;
     }
 }
