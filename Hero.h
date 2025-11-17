@@ -7,10 +7,10 @@ using namespace std;
 
 class Hero {
     private:
+    string name;
         float HP;
         float ATK;
         float DEF;
-        string name;
     public:
         Hero() : name(""), HP(0), ATK(0), DEF(0) {}
         Hero(const string& n) : name(n), HP(100), ATK(8), DEF(12) {}

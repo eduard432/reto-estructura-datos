@@ -17,11 +17,13 @@ void Board::addMonster(const string& name, const float& health, const float& att
 }
 
 bool Board::loadSquareFromCSV(const string& fileName) {
+
+    return fileName != "";
     // TODO;
 }
 
 bool Board::isMonsterAttack(const float& probability) {
-    double randomProb = Utils().randomNumber();
+    double randomProb = Utils().randomDoubleNumber();
     return randomProb <= probability;
 }
 
@@ -31,6 +33,9 @@ void Board::play() {
 
     if(isBattle) {
         cout << "Estás en batalla" << endl;
+        int selectedMonsterI = Utils().randomIntNumber(0, monsters.size());
+        Monster& selectedMonster = monsters[selectedMonsterI];
+        cout << "Pelearas contra: " << selectedMonster.getName() << endl;
     } else {
         cout << "Se evito la batalla" << endl;
     }
