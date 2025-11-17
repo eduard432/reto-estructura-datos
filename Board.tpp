@@ -13,6 +13,7 @@ void Board::addSquare(const string& name, const float& probability, const bool& 
 
 void Board::addMonster(const string& name, const float& health, const float& attack, const float& defense ) {
     Monster m = Monster(name, health, attack, defense);
+    m.addAttack();
     monsters.pushBack(m);
 }
 
@@ -51,11 +52,81 @@ bool Board::play() {
 void Board::combat() {
     // Aleatorio quien da el primer golpe:
     double prob = Utils().randomDoubleNumber();
-    bool startMonster = prob >= .5;
+    bool startHero = prob >= .5;
+    return combat(startHero);
+}
 
-    if(startMonster) {
+void Board::combat(const bool& heroNextAttack) {
+    status = "combat";
+    
+    if(!heroNextAttack) {
         cout << "El monstruo inicia dando el primer golpe" << endl;
+        // Seleccionar un golpe aleatorio del monstruo
+        defend();
+
     } else {
         cout << "El jugador da el primer golpe" << endl;
+        attack();
     }
+}
+
+void Board::lost() {
+    status = "lost";
+    cout << "El jugador perdió la pertida" << endl;
+}
+
+string Board::getStatus() const {
+    return status;
+}
+
+void Board::defend() {
+    Vector<Attack>& attacks = monsters[actualMonsterIndex].getAttacks();
+    int randomAttackIndex = Utils().randomIntNumber(0, attacks.length());
+
+    cout << "El monstruo va atacar con:" << endl;
+    cout << "Nombre del ataque: " << attacks[randomAttackIndex].getName() << endl;
+    float monsterDamage = attacks[randomAttackIndex].getDamage();
+    cout << "Daño: " << monsterDamage << endl;
+    
+    float givenDamage = Utils().max(1, monsterDamage - hero.getDEF());
+    cout << "Daño recibido: " << givenDamage << endl;
+
+    if(hero.getHP() - givenDamage <= 0) {
+        // Se murio el jugador
+        lost();
+    } else {
+        // Guardamos la nueva salud del heroe
+        hero.setHP(hero.getHP() - givenDamage);
+        attack();
+    }
+}
+
+void Board::attack() {
+    if(status != "combat") {
+        cout << "No estas en combate" << endl;
+        return;
+    }
+
+    Vector<Attack>& attacks = hero.getAttacks();
+    int randomAttackIndex = Utils().randomIntNumber(0, attacks.length());
+
+    cout << "El jugador va atacar con:" << endl;
+    cout << "Nombre del ataque: " << attacks[randomAttackIndex].getName() << endl;
+    float heroDamage = attacks[randomAttackIndex].getDamage();
+    cout << "Daño: " << heroDamage << endl;
+    
+    float damageMade = Utils().max(1, heroDamage - monsters[actualMonsterIndex].getDEF());
+    cout << "Daño inflingido: " << damageMade << endl;
+
+    if(monsters[actualMonsterIndex].getDEF() - damageMade <= 0) {
+        // Se murio el monstruo
+        cout << "El jugador gano la batalla" << endl;
+        status = "peace";
+    } else {
+        // Guardamos la nueva salud del monstruo
+       monsters[actualMonsterIndex].setHP(monsters[actualMonsterIndex].getDEF() - damageMade);
+
+       combat(false);
+    }
+
 }

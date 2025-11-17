@@ -2,6 +2,8 @@
 #define MONSTER_H
 
 #include <string>
+#include "Attack.h"
+#include "Vector.h"
 
 using namespace std;
 
@@ -11,6 +13,7 @@ class Monster {
         float ATK;
         float DEF;
         string name;
+        Vector<Attack> attacks;
     public:
         Monster(const string& n, const float& health = 100, const float& attack = 8, const float& defense = 5 ) {
             name = n;
@@ -26,6 +29,8 @@ class Monster {
         void setATK(const float& attack);
         void setDEF(const float& defense);
         void setName(const string& n);
+        Vector<Attack>& getAttacks();
+        void addAttack();
 
 };
 

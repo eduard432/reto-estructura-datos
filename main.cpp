@@ -11,5 +11,7 @@ int main () {
 	board.addMonster("Monstruo 3");
 	board.play();
 
+	board.combat();
+
 	return 0;
 }

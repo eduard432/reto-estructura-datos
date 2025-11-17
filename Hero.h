@@ -26,6 +26,8 @@ class Hero {
         void setATK(const float& attack);
         void setDEF(const float& defense);
         void setName(const string& n);
+        Vector<Attack>& getAttacks();
+        void addAttack();
 
 };
 

@@ -31,3 +31,12 @@ void Monster::setDEF(const float& defense) {
 void Monster::setName(const string& n) {
     name = n;
 }
+
+Vector<Attack>& Monster::getAttacks() {
+    return attacks;
+}
+
+void Monster::addAttack() {
+    Attack newAttack = Attack("Ataque 1", 4.0);
+    attacks.pushBack(newAttack);
+}

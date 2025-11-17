@@ -32,3 +32,12 @@ void Hero::setDEF(const float& defense) {
 void Hero::setName(const string& n) {
     name = n;
 }
+
+Vector<Attack>& Hero::getAttacks() {
+    return attacks;
+}
+
+void Hero::addAttack() {
+    Attack newAttack = Attack("Ataque 1", 4.0);
+    attacks.pushBack(newAttack);
+}
