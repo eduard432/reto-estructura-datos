@@ -1,4 +1,3 @@
-#pragma once
 #include "Square.h"
 
 unsigned int Square::getId() const {
@@ -18,8 +17,8 @@ bool Square::getVisited() const {
 }
 
 bool Square::operator==(const Square& other) const {
-    return id == other.id &&
-           name == other.name &&
-           probabilty == other.probabilty &&
-           visited == other.visited;
+    return id == other.id;
+            name == other.name &&
+            probabilty == other.probabilty &&
+            visited == other.visited;
 }

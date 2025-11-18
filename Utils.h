@@ -1,6 +1,8 @@
 #ifndef UTILS_H
 #define UTILS_H
 #include <random>
+#include "Vector.h"
+#include <string>
 
 using namespace std;
 
@@ -26,7 +28,6 @@ class Utils {
             if(a >= b) return a;
             else return b;
         }
-
 };
 
 

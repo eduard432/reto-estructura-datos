@@ -1,4 +1,3 @@
-#pragma once
 #include "Board.h"
 #include "Utils.h"
 #include "Monster.h"
@@ -70,14 +69,6 @@ void Board::combat(const bool& heroNextAttack) {
     }
 }
 
-void Board::lost() {
-    status = "lost";
-    cout << "El jugador perdió la pertida" << endl;
-}
-
-string Board::getStatus() const {
-    return status;
-}
 
 void Board::defend() {
     Vector<Attack>& attacks = monsters[actualMonsterIndex].getAttacks();
@@ -129,4 +120,57 @@ void Board::attack() {
        combat(false);
     }
 
+}
+
+void Board::lost() {
+    status = "lost";
+    cout << "El jugador perdió la pertida" << endl;
+}
+
+string Board::getStatus() const {
+    return status;
+}
+
+void Board::showSquares() const {
+    cout << "[ ";
+    for (unsigned int i = 0; i < graph.vertexAt(actualSquareIndex)->getEdges().size(); i++) {
+        cout << graph.vertexAt(actualSquareIndex)->getEdges()[i]->getData().getName() << ", ";
+    }
+    cout << "]";
+}
+
+void Board::connectSquares(const unsigned int& sq1, const unsigned int& sq2) {
+    
+    graph.addEdge(graph.vertexAt(sq1)->getData(), graph.vertexAt(sq2)->getData());
+}
+
+void Board::showAllSquares() const {
+    cout << "[ ";
+    for (unsigned int i = 0; i < graph.size(); i++) {
+        cout << graph.vertexAt(i)->getData().getName() << ", ";
+    }
+    cout << "]";
+}
+
+int Board::searchSquare(const string& name) const {
+    for (unsigned int i = 0; i < graph.size(); i++){
+        if(graph.vertexAt(i)->getData().getName() == name) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+void Board::showActualSquare() const {
+    Square sq = graph.vertexAt(actualSquareIndex)->getData();
+    cout << "Id: " << sq.getId() << endl;
+    cout << "Nombre: " << sq.getName() << endl;
+}
+
+void Board::showActualMonster() const {
+    if (actualMonsterIndex <= 0) {
+        cout << "No hay pelea con algún monstruo" << endl;
+        return;
+    }
 }

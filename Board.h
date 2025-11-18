@@ -28,6 +28,7 @@ class Board {
             status = "peace";
         }
         void addSquare(const string& n, const float& p, const bool& v);
+        void connectSquares(const unsigned int& sq1, const unsigned int& sq2);
         void addMonster(const string& name, const float& health = 100, const float& attack = 8, const float& defense = 5 );
         bool loadSquareFromCSV(const string& fileName);
         bool loadMonstersFromCsv(const string& fileName);
@@ -40,9 +41,12 @@ class Board {
 
         void attack();
         void defend();
-
+        void showSquares() const;
+        void showAllSquares() const;
+        int searchSquare(const string& name) const;
+        void showActualSquare() const;
+        void showActualMonster() const;
 };
 
-#include "Board.tpp"
 
 #endif

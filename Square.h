@@ -22,6 +22,5 @@ class Square {
         bool operator==(const Square& other) const;
 };
 
-#include "Square.tpp"
 
 #endif
