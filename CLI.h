@@ -10,9 +10,9 @@ class CLI {
     CLI() {
         board.addSquare("Maz_1", 0.8, false);
         board.addSquare("Maz_2", 0.8, false);
-        board.addMonster("Monstruo 1");
-        board.addMonster("Monstruo 2");
-        board.addMonster("Monstruo 3");
+        board.addMonster("Monstruo 1", 10, 8, 5);
+        board.addMonster("Monstruo 2", 10, 8, 5);
+        board.addMonster("Monstruo 3", 10, 8, 5);
     };
     void start();
     bool commands();

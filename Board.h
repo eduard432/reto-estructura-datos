@@ -18,6 +18,7 @@ class Board {
         int actualMonsterIndex;
         string status;
         void combat(const bool& heroNextAttack);
+        bool isHeroTurn;
         
     public:
         Board() {
@@ -26,6 +27,7 @@ class Board {
             hero.addAttack();
             actualMonsterIndex = -1;
             status = "peace";
+            isHeroTurn = false;
         }
         void addSquare(const string& n, const float& p, const bool& v);
         void connectSquares(const unsigned int& sq1, const unsigned int& sq2);
@@ -43,9 +45,12 @@ class Board {
         void defend();
         void showSquares() const;
         void showAllSquares() const;
+        void showAllMonsters() const;
         int searchSquare(const string& name) const;
         void showActualSquare() const;
         void showActualMonster() const;
+        void showHero() const;
+
 };
 
 

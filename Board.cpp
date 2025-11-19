@@ -52,25 +52,28 @@ bool Board::play() {
 }
 
 void Board::combat() {
-    if(status != "inAttack") {
+    if(status != "inAttack" && status != "combat") {
         cout << "Actualmente no estás siendo atacado por un monstruo" << endl;
         return;
     }
+    if(status == "inAttack") {
+        double prob = Utils().randomDoubleNumber();
+        bool startHero = prob >= .5;
+        isHeroTurn = startHero;
+    }
     // Aleatorio quien da el primer golpe:
-    double prob = Utils().randomDoubleNumber();
-    bool startHero = prob >= .5;
-    return combat(startHero);
+    return combat(isHeroTurn);
 }
 
 void Board::combat(const bool& heroNextAttack) {
     status = "combat";
     
     if(!heroNextAttack) {
-        cout << "El monstruo inicia dando el primer golpe" << endl;
+        cout << "El monstruo ataca" << endl;
         defend();
 
     } else {
-        cout << "El jugador da el primer golpe" << endl;
+        cout << "El jugador da un golpe" << endl;
         attack();
     }
 }
@@ -95,7 +98,7 @@ void Board::defend() {
     } else {
         // Guardamos la nueva salud del heroe
         hero.setHP(hero.getHP() - givenDamage);
-        attack();
+        isHeroTurn = true;
     }
 }
 
@@ -116,17 +119,18 @@ void Board::attack() {
     float damageMade = Utils().max(1, heroDamage - monsters[actualMonsterIndex].getDEF());
     cout << "Daño inflingido: " << damageMade << endl;
 
-    if(monsters[actualMonsterIndex].getDEF() - damageMade <= 0) {
+    if((monsters[actualMonsterIndex].getHP() - damageMade) <= 0) {
         // Se murio el monstruo
         cout << "El jugador gano la batalla" << endl;
         status = "peace";
         // Actualizamos la casilla actual como visitada
         graph.vertexAt(actualSquareIndex)->getData().setVisited(true);
+        // No hay monstruo actual
+        actualMonsterIndex = -1;
     } else {
         // Guardamos la nueva salud del monstruo
-       monsters[actualMonsterIndex].setHP(monsters[actualMonsterIndex].getDEF() - damageMade);
-
-       combat(false);
+        monsters[actualMonsterIndex].setHP(monsters[actualMonsterIndex].getHP() - damageMade);
+        isHeroTurn = false;
     }
 
 }
@@ -161,6 +165,14 @@ void Board::showAllSquares() const {
     cout << "]";
 }
 
+void Board::showAllMonsters() const {
+    cout << "[ ";
+    for (unsigned int i = 0; i < monsters.size(); i++) {
+        cout << monsters.elementAt(i).getName() << ", ";
+    }
+    cout << "]";
+}
+
 int Board::searchSquare(const string& name) const {
     for (unsigned int i = 0; i < graph.size(); i++){
         if(graph.vertexAt(i)->getData().getName() == name) {
@@ -175,11 +187,24 @@ void Board::showActualSquare() const {
     Square sq = graph.vertexAt(actualSquareIndex)->getData();
     cout << "Id: " << sq.getId() << endl;
     cout << "Nombre: " << sq.getName() << endl;
+    cout << "¿Casilla superada? " << (sq.getVisited() ? "Sí" : "No") << endl;
 }
 
 void Board::showActualMonster() const {
-    if (actualMonsterIndex <= 0) {
+    if (actualMonsterIndex < 0) {
         cout << "No hay pelea con algún monstruo" << endl;
-        return;
+    } else {
+        Monster monster = monsters.elementAt(actualMonsterIndex);
+        cout << "Nombre: " << monster.getName() << endl;
+        cout << "ATK: " << monster.getATK() << endl;
+        cout << "HP: " << monster.getHP() << endl;
+        cout << "DEF: " << monster.getDEF() << endl;
     }
+}
+
+void Board::showHero() const {
+    cout << "Nombre: " << hero.getName() << endl;
+    cout << "ATK: " << hero.getATK() << endl;
+    cout << "HP: " << hero.getHP() << endl;
+    cout << "DEF: " << hero.getDEF() << endl;
 }

@@ -9,7 +9,7 @@ void CLI::clear() {
 }
 
 void CLI::start() {
-    clear();
+    // clear();
     bool isExit = false;
     while(!isExit) {
         isExit = commands();
@@ -31,6 +31,15 @@ bool CLI::commands() {
         // /help
         cout << "/help - ";
         cout << "Muestra este menú" << endl;
+        // /play
+        cout << "/play - ";
+        cout << "Inicia el juego en la casilla actual" << endl;
+        // /combat
+        cout << "/combat - ";
+        cout << "Pelea contra el monstruo de la casilla" << endl;
+        // /me
+        cout << "/me - ";
+        cout << "Muestra informacion del heroe" << endl;
         // /ls o /list
         cout << "/list - ";
         cout << "Muestra las casillas adyacentes" << endl;
@@ -43,13 +52,28 @@ bool CLI::commands() {
         // status
         cout << "/status - ";
         cout << "Dice el status actual del tablero" << endl;
+        // clear
+        cout << "/clear - ";
+        cout << "Limpia la terminal" << endl; 
         // exit
         cout << "/exit - ";
         cout << "Salir del juego" << endl;
+    } else if(command == "play") {
+        cout << "Iniciando juego en casilla actual" << endl;
+        board.play();
     
+    } else if (command == "combat") {
+        cout << "Continua el combate" << endl;
+        board.combat();
+    } else if(command == "me") {
+        board.showHero();
+    } else if(command == "monster") {
+        board.showActualMonster();
     } else if(command == "ls" || command == "list") {
         clear();
         board.showSquares();
+    } else if (command == "ls_monsters") {
+        board.showAllMonsters();
     } else if(command == "ls_all" || command == "list_all") {
         clear();
         board.showAllSquares();
@@ -103,13 +127,21 @@ bool CLI::commands() {
         cout << "-----------------" << endl;
         board.showActualSquare();
         cout << "==================" << endl;
-        if(board.getStatus() == "peace") {
+
+        string status = board.getStatus();
+
+        if(status == "peace") {
             cout << "Todo tranquilo por aquí" << endl;
-        } else if(board.getStatus() == "combat") {
+        } else if(status == "inAttack") {
+            cout << "Te espera una batalla" << endl;
+            cout << "Tip: usa \"/combat\" para iniciar el combate " << endl; 
+        } else if(status == "combat") {
             cout << "Estas en combate con un monstruo" << endl;
             board.showActualMonster();
             
         }
+    } else if (command == "clear" || command == "cls") {
+        clear();
     } else if(command == "exit") {
         clear();
         cout << "Adios :)" << endl;
@@ -117,7 +149,7 @@ bool CLI::commands() {
     } else {
         clear();
         cout << endl;
-        cout << "No se reconcoe el comando" << endl;
+        cout << "No se reconoce el comando" << endl;
         cout << "Usa /help para ver los comandos disponibles" << endl;
     }
 
