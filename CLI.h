@@ -16,6 +16,7 @@ class CLI {
     };
     void start();
     bool commands();
+    void clear();
 };
 
 #endif

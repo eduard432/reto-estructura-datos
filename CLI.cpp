@@ -4,11 +4,13 @@
 #include "Square.h"
 using namespace std;
 
-
+void CLI::clear() {
+    cout << "\033[2J\033[1;1H";
+}
 
 void CLI::start() {
+    clear();
     bool isExit = false;
-
     while(!isExit) {
         isExit = commands();
     }
@@ -21,6 +23,7 @@ bool CLI::commands() {
     cin >> command;
 
     if (command == "help") {
+        clear();
         cout << "====================" << endl;
         cout << "Todos los comandos:" << endl;
         cout << "====================" << endl;
@@ -36,10 +39,13 @@ bool CLI::commands() {
         cout << "Agrega una casilla o un monstruo" << endl;
     
     } else if(command == "ls" || command == "list") {
+        clear();
         board.showSquares();
     } else if(command == "ls_all" || command == "list_all") {
+        clear();
         board.showAllSquares();
     } else if(command == "add_square") {
+        clear();
         string name;
         cout << "Nombre de la casilla:";
         cin >> name;
@@ -54,6 +60,7 @@ bool CLI::commands() {
         cout << name << " - " << probability << " Agregada!" << endl;
 
     } else if (command == "connect") {
+        clear();
         string name;
         cout << "Inserta el nombre de la primera casilla a conectar:";
         cin >> name;
@@ -81,6 +88,7 @@ bool CLI::commands() {
 
         board.connectSquares(firstSquareI, secondSquareI);
     } else if (command == "status") {
+        clear();
         cout << "=================" << endl;
         cout << "Casilla Actual:" << endl;
         cout << "-----------------" << endl;
@@ -94,9 +102,11 @@ bool CLI::commands() {
             
         }
     } else if(command == "exit") {
+        clear();
         cout << "Adios :)" << endl;
         return true;
     } else {
+        clear();
         cout << endl;
         cout << "No se reconcoe el comando" << endl;
         cout << "Usa /help para ver los comandos disponibles" << endl;
