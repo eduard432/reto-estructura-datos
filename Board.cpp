@@ -41,14 +41,21 @@ bool Board::play() {
         Monster& selectedMonster = monsters[selectedMonsterI];
         cout << "Pelearas contra: " << selectedMonster.getName() << endl;
         actualMonsterIndex = selectedMonsterI;
+        status = "inAttack";
     } else {
         cout << "Se evito la batalla" << endl;
+        // Marcamos como visitada la casilla
+        graph.vertexAt(actualSquareIndex)->getData().setVisited(true);
     }
 
     return isBattle;
 }
 
 void Board::combat() {
+    if(status != "inAttack") {
+        cout << "Actualmente no estás siendo atacado por un monstruo" << endl;
+        return;
+    }
     // Aleatorio quien da el primer golpe:
     double prob = Utils().randomDoubleNumber();
     bool startHero = prob >= .5;
@@ -60,7 +67,6 @@ void Board::combat(const bool& heroNextAttack) {
     
     if(!heroNextAttack) {
         cout << "El monstruo inicia dando el primer golpe" << endl;
-        // Seleccionar un golpe aleatorio del monstruo
         defend();
 
     } else {
@@ -71,6 +77,7 @@ void Board::combat(const bool& heroNextAttack) {
 
 
 void Board::defend() {
+    // Seleccionar un golpe aleatorio del monstruo
     Vector<Attack>& attacks = monsters[actualMonsterIndex].getAttacks();
     int randomAttackIndex = Utils().randomIntNumber(0, attacks.length());
 
@@ -113,6 +120,8 @@ void Board::attack() {
         // Se murio el monstruo
         cout << "El jugador gano la batalla" << endl;
         status = "peace";
+        // Actualizamos la casilla actual como visitada
+        graph.vertexAt(actualSquareIndex)->getData().setVisited(true);
     } else {
         // Guardamos la nueva salud del monstruo
        monsters[actualMonsterIndex].setHP(monsters[actualMonsterIndex].getDEF() - damageMade);

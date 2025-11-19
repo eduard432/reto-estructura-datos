@@ -22,3 +22,7 @@ bool Square::operator==(const Square& other) const {
             probabilty == other.probabilty &&
             visited == other.visited;
 }
+
+void Square::setVisited(bool v) {
+    visited = v;
+}

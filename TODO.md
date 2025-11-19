@@ -1,1 +1,2 @@
-- Crear una clase Character y que Hero y Monster lo hereden
+- Actualizar clase graph: sincronizarlo con versión del profesor
+- Usar vector para lista de adyacencias en lugar de LinkedList

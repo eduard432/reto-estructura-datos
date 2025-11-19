@@ -37,6 +37,15 @@ bool CLI::commands() {
         // add
         cout << "/add - ";
         cout << "Agrega una casilla o un monstruo" << endl;
+        // connect
+        cout << "/connect - ";
+        cout << "Conecta dos casillas" << endl;
+        // status
+        cout << "/status - ";
+        cout << "Dice el status actual del tablero" << endl;
+        // exit
+        cout << "/exit - ";
+        cout << "Salir del juego" << endl;
     
     } else if(command == "ls" || command == "list") {
         clear();

@@ -20,6 +20,8 @@ class Square {
         float getProbability() const;
         bool getVisited() const;
         bool operator==(const Square& other) const;
+
+        void setVisited(bool v);
 };
 
 
