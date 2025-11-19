@@ -16,7 +16,7 @@ class Character  {
         Vector<Attack> attacks;
     public:
         Character() : name(""), HP(0), ATK(0), DEF(0) {}
-        Character(const string& n) : name(n), HP(100), ATK(8), DEF(12) {}
+        Character(const string& n, const float& health = 100, const float& attack = 8, const float& defense = 5) : name(n), HP(health), ATK(attack), DEF(defense) {}
         float getHP() const;
         float getATK() const;
         float getDEF() const;
@@ -25,6 +25,9 @@ class Character  {
         void setATK(const float& attack);
         void setDEF(const float& defense);
         void setName(const string& n);
+
+        Vector<Attack>& getAttacks();
+        void addAttack();
 };
 
 #endif

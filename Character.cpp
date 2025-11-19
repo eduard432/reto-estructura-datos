@@ -1,4 +1,5 @@
 #include "Character.h"
+#include "Attack.h"
 
 float Character::getHP() const {
     return HP;
@@ -31,4 +32,13 @@ void Character::setDEF(const float& defense) {
 
 void Character::setName(const string& n) {
     name = n;
+}
+
+Vector<Attack>& Character::getAttacks() {
+    return attacks;
+}
+
+void Character::addAttack() {
+    Attack newAttack = Attack("Ataque 1", 4.0);
+    attacks.pushBack(newAttack);
 }
