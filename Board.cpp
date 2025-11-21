@@ -208,3 +208,7 @@ void Board::showHero() const {
     cout << "HP: " << hero.getHP() << endl;
     cout << "DEF: " << hero.getDEF() << endl;
 }
+
+bool Board::changeActualSquare(const unsigned int& square) {
+
+}
