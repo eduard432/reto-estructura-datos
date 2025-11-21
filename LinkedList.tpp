@@ -190,3 +190,15 @@ template <typename T>
 Node<T>* LinkedList<T>::getTail() const {
     return tail;
 }
+
+template<typename T>
+Node<T>* LinkedList<T>::search(const T& value) const {
+    Node<T>* current = head;
+    while (current) {
+        if (current->getData() == value) {
+            return current;
+        }
+        current = current->getNext();
+    }
+    return nullptr;
+}

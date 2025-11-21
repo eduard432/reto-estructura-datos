@@ -209,6 +209,21 @@ void Board::showHero() const {
     cout << "DEF: " << hero.getDEF() << endl;
 }
 
-bool Board::changeActualSquare(const unsigned int& square) {
+bool Board::changeActualSquare(const string& squareName) {
 
+
+    int sIndex = searchSquare(squareName);
+
+    if(sIndex == -1) {
+        cout << "No existe esa casilla" << endl;
+        return false;
+    }
+
+    actualSquareIndex = sIndex;
+
+    return true;
+}
+
+Square Board::getActualSquare() const {
+    return graph.vertexAt(actualSquareIndex)->getData();
 }

@@ -16,6 +16,8 @@ class LinkedList {
         Node<T>* getHead() const;
         Node<T>* getTail() const;
 
+        Node<T>* search(const T& value) const;
+
         unsigned int size() const;
         bool isEmpty() const;
 

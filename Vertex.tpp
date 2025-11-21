@@ -8,7 +8,7 @@ void Vertex<T>::addEdge(Vertex<T>* u) {
 }
 
 template <typename T>
-T Vertex<T>::getData() const {
+T& Vertex<T>::getData() {
     return data;
 }
 
@@ -36,4 +36,9 @@ void Vertex<T>::setIndex(const unsigned int& i) {
 template <typename T>
 unsigned int Vertex<T>::getIndex() const {
     return index;
+}
+
+template <typename T>
+bool Vertex<T>::operator==(const Vertex& other) const {
+    return data == other.getData();
 }

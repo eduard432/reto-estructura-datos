@@ -50,7 +50,9 @@ class Board {
         void showActualSquare() const;
         void showActualMonster() const;
         void showHero() const;
-        bool changeActualSquare(const unsigned int& square);
+        bool changeActualSquare(const string& squareName);
+
+        Square getActualSquare() const;
 
 };
 

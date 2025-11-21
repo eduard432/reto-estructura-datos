@@ -23,7 +23,6 @@ bool CLI::commands() {
     cin >> command;
 
     if (command == "help") {
-        clear();
         cout << "====================" << endl;
         cout << "Todos los comandos:" << endl;
         cout << "====================" << endl;
@@ -43,6 +42,9 @@ bool CLI::commands() {
         // /ls o /list
         cout << "/list - ";
         cout << "Muestra las casillas adyacentes" << endl;
+        // move ó cs
+        cout << "/move - ";
+        cout << "Cambia la casilla actual" << endl;
         // add
         cout << "/add - ";
         cout << "Agrega una casilla o un monstruo" << endl;
@@ -70,15 +72,32 @@ bool CLI::commands() {
     } else if(command == "monster") {
         board.showActualMonster();
     } else if(command == "ls" || command == "list") {
-        clear();
         board.showSquares();
     } else if (command == "ls_monsters") {
         board.showAllMonsters();
     } else if(command == "ls_all" || command == "list_all") {
-        clear();
         board.showAllSquares();
+    } else if (command =="move" || command == "cs") {
+        Square sq = board.getActualSquare();
+
+        if(sq.getVisited() == false) {
+            cout << "Supera la casilla actual para poder moverte" << endl;
+            return false;
+        }
+
+        board.showSquares();
+        cout << endl;
+        cout << "¿A que casilla quieres moverte?: ";
+        string squareName;
+        cin >> squareName;
+        bool isChange = board.changeActualSquare(squareName);
+        if(isChange) {
+            cout << "Te moviste con exito a la casilla: " << endl;
+            board.showActualSquare();
+        } else {
+            cout << "Sigues en la misma casilla" << endl;
+        }
     } else if(command == "add_square") {
-        clear();
         string name;
         cout << "Nombre de la casilla:";
         cin >> name;
@@ -93,7 +112,6 @@ bool CLI::commands() {
         cout << name << " - " << probability << " Agregada!" << endl;
 
     } else if (command == "connect") {
-        clear();
         string name;
         cout << "Inserta el nombre de la primera casilla a conectar:";
         cin >> name;
@@ -121,7 +139,6 @@ bool CLI::commands() {
 
         board.connectSquares(firstSquareI, secondSquareI);
     } else if (command == "status") {
-        clear();
         cout << "=================" << endl;
         cout << "Casilla Actual:" << endl;
         cout << "-----------------" << endl;
@@ -143,11 +160,9 @@ bool CLI::commands() {
     } else if (command == "clear" || command == "cls") {
         clear();
     } else if(command == "exit") {
-        clear();
         cout << "Adios :)" << endl;
         return true;
     } else {
-        clear();
         cout << endl;
         cout << "No se reconoce el comando" << endl;
         cout << "Usa /help para ver los comandos disponibles" << endl;

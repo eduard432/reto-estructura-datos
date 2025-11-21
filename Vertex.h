@@ -13,12 +13,13 @@ class Vertex {
     public:
         Vertex(const T& v): data(v) {};
         void addEdge(Vertex<T>* u);
-        T getData() const;
+        T& getData();
         bool getVisited() const;
         void setVisited(const bool& v);
 
         unsigned int getIndex() const;
         void setIndex(const unsigned int& i);
+        bool operator==(const Vertex& other) const;
 
         LinkedList<Vertex<T>*>& getEdges();
 
