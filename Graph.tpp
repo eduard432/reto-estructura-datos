@@ -21,7 +21,6 @@ int Graph<T>::indexOf(const T& data) {
             return i;
         }
     }
-
     return -1;
 }
 
@@ -46,9 +45,10 @@ bool Graph<T>::addVertex(const T& data) {
 
 template <typename T>
 bool Graph<T>::addEdge(const T& v, const T& u) {
+    
     int vIndex = indexOf(v);
     int uIndex = indexOf(u);
-
+    
     if(vIndex == -1 || uIndex == -1) {
         return false;
     }

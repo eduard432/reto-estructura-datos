@@ -151,7 +151,8 @@ void Board::showSquares() const {
 }
 
 bool Board::connectSquares(const unsigned int& sq1, const unsigned int& sq2) {
-    return graph.addEdge(graph.vertexAt(searchSquareById(sq1))->getData(), graph.vertexAt(searchSquareById(sq2))->getData());
+    graph.addEdge(graph.vertexAt(searchSquareById(sq1))->getData(), graph.vertexAt(searchSquareById(sq2))->getData());
+    return true;
 }
 
 void Board::showAllSquares() const {
@@ -279,7 +280,7 @@ bool Board::loadMonstersFromCsv(const string& fileName) {
     return true;
 }
 
-bool Board::loadSquareFromCSV(const string& fileName) {
+bool Board::loadSquareFromCsv(const string& fileName) {
     ifstream file(fileName);
 
     if(!file.is_open()) {
@@ -315,6 +316,48 @@ bool Board::loadSquareFromCSV(const string& fileName) {
         bool visited = (row.elementAt(2) == "true");
 
         addSquare(name, probability, visited);
+    }
+
+    file.close();
+    return true;
+}
+
+bool Board::loadConnectionsFromCsv(const string& fileName) {
+    ifstream file(fileName);
+
+    if(!file.is_open()) {
+        cerr << "Error al abrir el archivo: " << fileName << endl;
+        return false;
+    }
+
+    string line;
+
+    if(!getline(file, line)) {
+        cerr << "El archivo no tiene header" << endl;
+        file.close();
+        return false;
+    }
+
+    cout << "Cargando archivo: " << fileName << endl;
+
+    while(getline(file, line)) {
+        stringstream ss(line);
+        string cell;
+        LinkedList<string> row;
+        
+        while(getline(ss, cell, ',')) {
+            if(cell.length() == 0) return false;
+            row.pushBack(cell);
+        }
+
+        // Verificamos que sea del tamaño correcto
+        if(row.size() != 2) return false;
+
+
+        unsigned int id1 = static_cast<unsigned int>(stoul(row.elementAt(0)));
+        unsigned int id2 = static_cast<unsigned int>(stoul(row.elementAt(1)));
+
+        connectSquares(id1, id2);
     }
 
     file.close();

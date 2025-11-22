@@ -5,7 +5,6 @@ using namespace std;
 
 int main () {
 
-	cout << "Hola" << endl;
 	CLI cli;
 	cli.start();
 

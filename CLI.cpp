@@ -125,44 +125,48 @@ bool CLI::commands() {
         } else {
             cout << "Los monstruos se cargaron con éxito" << endl;
         }
-    }  else if(command == "load_square") {
+    }  else if (command == "load_square") {
         string fileName;
         cout << "Escribe el nombre del archivo a leer: ";
         cin >> fileName;
-        bool areLoaded = board.loadSquareFromCSV(fileName);
+        bool areLoaded = board.loadSquareFromCsv(fileName);
         if(!areLoaded) {
             cout << "No se pudieron cargar las casillas" << endl;
             return false;
         } else {
             cout << "Las casillas se cargaron con éxito" << endl;
         }
-    } else if (command == "connect") {
-        unsigned int id;
-        cout << "Inserta el id de la primera casilla a conectar:";
-        cin >> id;
-        cout << endl;
-        
-        int firstSquareI = board.searchSquareById(id);
-
-        if(firstSquareI == -1) {
-            cout << "Primera casilla no encontrada" << endl;
+    } else if (command == "load_connections") {
+        string fileName;
+        cout << "Escribe el nombre del archivo a leer: ";
+        cin >> fileName;
+        bool areLoaded = board.loadConnectionsFromCsv(fileName);
+        if(!areLoaded) {
+            cout << "No se pudieron cargar las conexiones" << endl;
             return false;
+        } else {
+            cout << "Las conexiones se cargaron con éxito" << endl;
         }
+    } else if (command == "connect") {
+        unsigned int firstSquareIndex;
+        cout << "Inserta el id de la primera casilla a conectar:";
+        cin >> firstSquareIndex;
+        cout << endl;
+
+        unsigned int secondSquareIndex;
 
         cout << "Inserta el id de la segunda casilla a conectar:";
-        cin >> id;
+        cin >> secondSquareIndex;
         cout << endl;
 
-        int secondSquareI = board.searchSquareById(id);
-
-        if(secondSquareI == -1) {
-            cout << "Segunda casilla no encontrada" << endl;
-            return false;
+        
+        bool areConnected = board.connectSquares(firstSquareIndex, secondSquareIndex);
+        if(areConnected) {
+            cout << "Casillas conectadas correctamente!" << endl;
+        } else {
+            cout << "Las casillas no se pudieron conectar" << endl;
         }
 
-        cout << "Casillas conectadas correctamente!" << endl;
-
-        board.connectSquares(firstSquareI, secondSquareI);
     } else if (command == "status") {
         cout << "=================" << endl;
         cout << "Casilla Actual:" << endl;
@@ -192,7 +196,6 @@ bool CLI::commands() {
         cout << "No se reconoce el comando" << endl;
         cout << "Usa /help para ver los comandos disponibles" << endl;
     }
-
     cout << endl;
     return false;
 }
