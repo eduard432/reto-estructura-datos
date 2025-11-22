@@ -1,7 +1,11 @@
 #include "Board.h"
 #include "Utils.h"
 #include "Monster.h"
+
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -14,12 +18,6 @@ void Board::addMonster(const string& name, const float& health, const float& att
     Monster m = Monster(name, health, attack, defense);
     m.addAttack();
     monsters.pushBack(m);
-}
-
-bool Board::loadSquareFromCSV(const string& fileName) {
-
-    return fileName != "";
-    // TODO;
 }
 
 bool Board::isMonsterAttack(const float& probability) {
@@ -152,9 +150,8 @@ void Board::showSquares() const {
     cout << "]";
 }
 
-void Board::connectSquares(const unsigned int& sq1, const unsigned int& sq2) {
-    
-    graph.addEdge(graph.vertexAt(sq1)->getData(), graph.vertexAt(sq2)->getData());
+bool Board::connectSquares(const unsigned int& sq1, const unsigned int& sq2) {
+    return graph.addEdge(graph.vertexAt(searchSquareById(sq1))->getData(), graph.vertexAt(searchSquareById(sq2))->getData());
 }
 
 void Board::showAllSquares() const {
@@ -173,9 +170,19 @@ void Board::showAllMonsters() const {
     cout << "]";
 }
 
-int Board::searchSquare(const string& name) const {
+int Board::searchSquareByName(const string& name) const {
     for (unsigned int i = 0; i < graph.size(); i++){
         if(graph.vertexAt(i)->getData().getName() == name) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+int Board::searchSquareById(const unsigned int& id) const {
+    for (unsigned int i = 0; i < graph.size(); i++){
+        if(graph.vertexAt(i)->getData().getId() == id) {
             return i;
         }
     }
@@ -212,7 +219,8 @@ void Board::showHero() const {
 bool Board::changeActualSquare(const string& squareName) {
 
 
-    int sIndex = searchSquare(squareName);
+    // TODO change to searchSquareById;
+    int sIndex = searchSquareByName(squareName);
 
     if(sIndex == -1) {
         cout << "No existe esa casilla" << endl;
@@ -226,4 +234,89 @@ bool Board::changeActualSquare(const string& squareName) {
 
 Square Board::getActualSquare() const {
     return graph.vertexAt(actualSquareIndex)->getData();
+}
+
+bool Board::loadMonstersFromCsv(const string& fileName) {
+    ifstream file(fileName);
+
+    if(!file.is_open()) {
+        cerr << "Error al abrir el archivo: " << fileName << endl;
+        return false;
+    }
+
+    string line;
+
+    if(!getline(file, line)) {
+        cerr << "El archivo no tiene header" << endl;
+        file.close();
+        return false;
+    }
+
+    cout << "Cargando archivo: " << fileName << endl;
+
+    while(getline(file, line)) {
+        stringstream ss(line);
+        string cell;
+        LinkedList<string> row;
+        
+        while(getline(ss, cell, ',')) {
+            if(cell.length() == 0) return false;
+            row.pushBack(cell);
+        }
+
+        // Verificamos que sea del tamaño correcto
+        if(row.size() != 4) return false;
+
+        string name = row.elementAt(0);
+        float health = stof(row.elementAt(1));
+        float attack = stof(row.elementAt(2));
+        float defense = stof(row.elementAt(3));
+
+        addMonster(name, health, attack, defense);
+    }
+
+    file.close();
+    return true;
+}
+
+bool Board::loadSquareFromCSV(const string& fileName) {
+    ifstream file(fileName);
+
+    if(!file.is_open()) {
+        cerr << "Error al abrir el archivo: " << fileName << endl;
+        return false;
+    }
+
+    string line;
+
+    if(!getline(file, line)) {
+        cerr << "El archivo no tiene header" << endl;
+        file.close();
+        return false;
+    }
+
+    cout << "Cargando archivo: " << fileName << endl;
+
+    while(getline(file, line)) {
+        stringstream ss(line);
+        string cell;
+        LinkedList<string> row;
+        
+        while(getline(ss, cell, ',')) {
+            if(cell.length() == 0) return false;
+            row.pushBack(cell);
+        }
+
+        // Verificamos que sea del tamaño correcto
+        if(row.size() != 3) return false;
+
+        string name = row.elementAt(0);
+        float probability = stof(row.elementAt(1));
+        bool visited = (row.elementAt(2) == "true");
+
+        addSquare(name, probability, visited);
+    }
+
+    file.close();
+    return true;
 }

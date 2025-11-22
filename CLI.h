@@ -7,14 +7,7 @@ class CLI {
     private:
         Board board;
     public:
-    CLI() {
-        board.addSquare("Maz_1", 0.8, false);
-        board.addSquare("Maz_2", 0.8, false);
-        board.connectSquares(0, 1);
-        board.addMonster("Monstruo 1", 10, 8, 5);
-        board.addMonster("Monstruo 2", 10, 8, 5);
-        board.addMonster("Monstruo 3", 10, 8, 5);
-    };
+    CLI() {};
     void start();
     bool commands();
     void clear();

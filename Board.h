@@ -22,6 +22,13 @@ class Board {
         
     public:
         Board() {
+            addSquare("Maz_1", 0.8, false);
+            addSquare("Maz_2", 0.8, false);
+            connectSquares(0, 1);
+            // addMonster("Monstruo 1", 10, 8, 5);
+            // addMonster("Monstruo 2", 10, 8, 5);
+            // addMonster("Monstruo 3", 10, 8, 5);
+
             actualSquareIndex = 0;
             hero = Hero("Fulano");
             hero.addAttack();
@@ -30,7 +37,7 @@ class Board {
             isHeroTurn = false;
         }
         void addSquare(const string& n, const float& p, const bool& v);
-        void connectSquares(const unsigned int& sq1, const unsigned int& sq2);
+        bool connectSquares(const unsigned int& sq1, const unsigned int& sq2);
         void addMonster(const string& name, const float& health = 100, const float& attack = 8, const float& defense = 5 );
         bool loadSquareFromCSV(const string& fileName);
         bool loadMonstersFromCsv(const string& fileName);
@@ -46,7 +53,8 @@ class Board {
         void showSquares() const;
         void showAllSquares() const;
         void showAllMonsters() const;
-        int searchSquare(const string& name) const;
+        int searchSquareByName(const string& name) const;
+        int searchSquareById(const unsigned int& name) const;
         void showActualSquare() const;
         void showActualMonster() const;
         void showHero() const;

@@ -48,6 +48,9 @@ bool CLI::commands() {
         // add
         cout << "/add - ";
         cout << "Agrega una casilla o un monstruo" << endl;
+        // load
+        cout << "/load - ";
+        cout << "Carga monstruos o casillas desde un archivo" << endl;
         // connect
         cout << "/connect - ";
         cout << "Conecta dos casillas" << endl;
@@ -111,24 +114,46 @@ bool CLI::commands() {
         board.addSquare(name, probability, false);
         cout << name << " - " << probability << " Agregada!" << endl;
 
+    } else if (command == "load_mntr") {
+        string fileName;
+        cout << "Escribe el nombre del archivo a leer: ";
+        cin >> fileName;
+        bool areLoaded = board.loadMonstersFromCsv(fileName);
+        if(!areLoaded) {
+            cout << "No se pudieron cargar los monstruos" << endl;
+            return false;
+        } else {
+            cout << "Los monstruos se cargaron con éxito" << endl;
+        }
+    }  else if(command == "load_square") {
+        string fileName;
+        cout << "Escribe el nombre del archivo a leer: ";
+        cin >> fileName;
+        bool areLoaded = board.loadSquareFromCSV(fileName);
+        if(!areLoaded) {
+            cout << "No se pudieron cargar las casillas" << endl;
+            return false;
+        } else {
+            cout << "Las casillas se cargaron con éxito" << endl;
+        }
     } else if (command == "connect") {
-        string name;
-        cout << "Inserta el nombre de la primera casilla a conectar:";
-        cin >> name;
+        unsigned int id;
+        cout << "Inserta el id de la primera casilla a conectar:";
+        cin >> id;
         cout << endl;
         
-        int firstSquareI = board.searchSquare(name);
+        int firstSquareI = board.searchSquareById(id);
 
         if(firstSquareI == -1) {
             cout << "Primera casilla no encontrada" << endl;
             return false;
         }
 
-        cout << "Inserta el nombre de la segunda casilla a conectar:";
-        cin >> name;
+        cout << "Inserta el id de la segunda casilla a conectar:";
+        cin >> id;
         cout << endl;
 
-        int secondSquareI = board.searchSquare(name);
+        int secondSquareI = board.searchSquareById(id);
 
         if(secondSquareI == -1) {
             cout << "Segunda casilla no encontrada" << endl;
