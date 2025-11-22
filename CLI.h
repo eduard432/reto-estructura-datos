@@ -11,6 +11,7 @@ class CLI {
     void start();
     bool commands();
     void clear();
+    void readInput(string& value);
 };
 
 #endif

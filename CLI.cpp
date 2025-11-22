@@ -1,7 +1,10 @@
-#include "CLI.h"
 #include <iostream>
 #include <string>
+#include <limits>
 #include "Square.h"
+#include "CLI.h"
+#include "LinkedList.h"
+#include "Utils.h"
 using namespace std;
 
 void CLI::clear() {
@@ -16,11 +19,18 @@ void CLI::start() {
     }
 }
 
-bool CLI::commands() {
-    string command;
+void CLI::readInput(string& value) {
+    getline(cin, value);
+}
 
+bool CLI::commands() {
+    string input;
     cout << ">>";
-    cin >> command;
+    readInput(input);
+
+    LinkedList<string> tokens = Utils().split(input);
+
+    string command = tokens.elementAt(0);
 
     if (command == "help") {
         cout << "====================" << endl;
@@ -45,15 +55,6 @@ bool CLI::commands() {
         // move ó cs
         cout << "/move - ";
         cout << "Cambia la casilla actual" << endl;
-        // add
-        cout << "/add - ";
-        cout << "Agrega una casilla o un monstruo" << endl;
-        // load
-        cout << "/load - ";
-        cout << "Carga monstruos o casillas desde un archivo" << endl;
-        // connect
-        cout << "/connect - ";
-        cout << "Conecta dos casillas" << endl;
         // status
         cout << "/status - ";
         cout << "Dice el status actual del tablero" << endl;
@@ -63,6 +64,16 @@ bool CLI::commands() {
         // exit
         cout << "/exit - ";
         cout << "Salir del juego" << endl;
+        // Comandos que necesitan de administrador:
+        // add
+        cout << "/add - ";
+        cout << "Agrega una casilla o un monstruo" << endl;
+        // load
+        cout << "/load - ";
+        cout << "Carga monstruos o casillas desde un archivo" << endl;
+        // connect
+        cout << "/connect - ";
+        cout << "Conecta dos casillas" << endl;
     } else if(command == "play") {
         cout << "Iniciando juego en casilla actual" << endl;
         board.play();
@@ -76,10 +87,6 @@ bool CLI::commands() {
         board.showActualMonster();
     } else if(command == "ls" || command == "list") {
         board.showSquares();
-    } else if (command == "ls_monsters") {
-        board.showAllMonsters();
-    } else if(command == "ls_all" || command == "list_all") {
-        board.showAllSquares();
     } else if (command =="move" || command == "cs") {
         Square sq = board.getActualSquare();
 
@@ -100,74 +107,7 @@ bool CLI::commands() {
         } else {
             cout << "Sigues en la misma casilla" << endl;
         }
-    } else if(command == "add_square") {
-        string name;
-        cout << "Nombre de la casilla:";
-        cin >> name;
-        cout << endl;
-
-        float probability;
-        cout << "Probabilidad de spawn:";
-        cin >> probability;
-        cout << endl;
-
-        board.addSquare(name, probability, false);
-        cout << name << " - " << probability << " Agregada!" << endl;
-
-    } else if (command == "load_mntr") {
-        string fileName;
-        cout << "Escribe el nombre del archivo a leer: ";
-        cin >> fileName;
-        bool areLoaded = board.loadMonstersFromCsv(fileName);
-        if(!areLoaded) {
-            cout << "No se pudieron cargar los monstruos" << endl;
-            return false;
-        } else {
-            cout << "Los monstruos se cargaron con éxito" << endl;
-        }
-    }  else if (command == "load_square") {
-        string fileName;
-        cout << "Escribe el nombre del archivo a leer: ";
-        cin >> fileName;
-        bool areLoaded = board.loadSquareFromCsv(fileName);
-        if(!areLoaded) {
-            cout << "No se pudieron cargar las casillas" << endl;
-            return false;
-        } else {
-            cout << "Las casillas se cargaron con éxito" << endl;
-        }
-    } else if (command == "load_connections") {
-        string fileName;
-        cout << "Escribe el nombre del archivo a leer: ";
-        cin >> fileName;
-        bool areLoaded = board.loadConnectionsFromCsv(fileName);
-        if(!areLoaded) {
-            cout << "No se pudieron cargar las conexiones" << endl;
-            return false;
-        } else {
-            cout << "Las conexiones se cargaron con éxito" << endl;
-        }
-    } else if (command == "connect") {
-        unsigned int firstSquareIndex;
-        cout << "Inserta el id de la primera casilla a conectar:";
-        cin >> firstSquareIndex;
-        cout << endl;
-
-        unsigned int secondSquareIndex;
-
-        cout << "Inserta el id de la segunda casilla a conectar:";
-        cin >> secondSquareIndex;
-        cout << endl;
-
-        
-        bool areConnected = board.connectSquares(firstSquareIndex, secondSquareIndex);
-        if(areConnected) {
-            cout << "Casillas conectadas correctamente!" << endl;
-        } else {
-            cout << "Las casillas no se pudieron conectar" << endl;
-        }
-
-    } else if (command == "status") {
+    }  else if (command == "status") {
         cout << "=================" << endl;
         cout << "Casilla Actual:" << endl;
         cout << "-----------------" << endl;
@@ -184,13 +124,97 @@ bool CLI::commands() {
         } else if(status == "combat") {
             cout << "Estas en combate con un monstruo" << endl;
             board.showActualMonster();
-            
         }
     } else if (command == "clear" || command == "cls") {
         clear();
     } else if(command == "exit") {
         cout << "Adios :)" << endl;
         return true;
+    } else if(command == "sudo") {
+        command = tokens.elementAt(1);
+        if(command == "add") {
+            string type = tokens.elementAt(2);
+            if(type == "square") {
+                string name;
+                cout << "Nombre de la casilla:";
+                readInput(name);
+                cout << endl;
+
+                float probability;
+                cout << "Probabilidad de spawn:";
+                cin >> probability;
+                cout << endl;
+
+                board.addSquare(name, probability, false);
+                cout << name << " - " << probability << " Agregada!" << endl;
+            } else if(type == "monster"){
+                // TODO: implement sudo add monster
+            }
+
+        } else if (command == "load") {
+            string type = tokens.elementAt(2);
+            string fileName;
+            if (type == "monsters") {
+                cout << "Escribe el nombre del archivo a leer: ";
+                cin >> fileName;
+                bool areLoaded = board.loadMonstersFromCsv(fileName);
+                if(!areLoaded) {
+                    cout << "No se pudieron cargar los monstruos" << endl;
+                    return false;
+                } else {
+                    cout << "Los monstruos se cargaron con éxito" << endl;
+                }
+            } else if (type == "squares") {
+                cout << "Escribe el nombre del archivo a leer: ";
+                cin >> fileName;
+                bool areLoaded = board.loadSquareFromCsv(fileName);
+                if(!areLoaded) {
+                    cout << "No se pudieron cargar las casillas" << endl;
+                    return false;
+                } else {
+                    cout << "Las casillas se cargaron con éxito" << endl;
+                }
+            } else if(type == "connections") {
+                cout << "Escribe el nombre del archivo a leer: ";
+                cin >> fileName;
+                bool areLoaded = board.loadConnectionsFromCsv(fileName);
+                if(!areLoaded) {
+                    cout << "No se pudieron cargar las conexiones" << endl;
+                    return false;
+                } else {
+                    cout << "Las conexiones se cargaron con éxito" << endl;
+                }
+            }
+
+        } else if(command == "list" || command == "ls") {
+            string type = tokens.elementAt(2);
+            int flagIndex = tokens.indexOf("-a");
+            if(type == "squares" && flagIndex != -1) {
+                board.showAllSquares();
+            } else if(type == "monsters" && flagIndex != -1) {
+                board.showAllMonsters();
+            }
+        } else if (command == "connect") {
+            unsigned int firstSquareIndex;
+            cout << "Inserta el id de la primera casilla a conectar:";
+            cin >> firstSquareIndex;
+            cout << endl;
+
+            unsigned int secondSquareIndex;
+
+            cout << "Inserta el id de la segunda casilla a conectar:";
+            cin >> secondSquareIndex;
+            cout << endl;
+
+            
+            bool areConnected = board.connectSquares(firstSquareIndex, secondSquareIndex);
+            if (areConnected) {
+                cout << "Casillas conectadas correctamente!" << endl;
+            } else {
+                cout << "Las casillas no se pudieron conectar" << endl;
+            }
+
+        }
     } else {
         cout << endl;
         cout << "No se reconoce el comando" << endl;
