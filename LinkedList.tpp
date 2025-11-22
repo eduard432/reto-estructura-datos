@@ -202,3 +202,19 @@ Node<T>* LinkedList<T>::search(const T& value) const {
     }
     return nullptr;
 }
+
+
+template <typename T>
+int LinkedList<T>::indexOf(const T& value) {
+    Node<T>* current = head;
+    int count = 0;
+    while(current) {
+        if(current->getData() == value) {
+            return count;
+        }
+        current = current->getNext();
+        count++;
+    }
+
+    return -1;
+}

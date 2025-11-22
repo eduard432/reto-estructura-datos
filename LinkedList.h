@@ -27,6 +27,7 @@ class LinkedList {
         void pushFront(const T& val);
         void pushBack(const T& val);
         bool insert(unsigned int index, const T& val);
+        int indexOf(const T& val);
 
         T elementAt(unsigned int index) const;
 
