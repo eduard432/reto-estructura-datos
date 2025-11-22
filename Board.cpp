@@ -341,14 +341,7 @@ bool Board::loadConnectionsFromCsv(const string& fileName) {
     cout << "Cargando archivo: " << fileName << endl;
 
     while(getline(file, line)) {
-        stringstream ss(line);
-        string cell;
-        LinkedList<string> row;
-        
-        while(getline(ss, cell, ',')) {
-            if(cell.length() == 0) return false;
-            row.pushBack(cell);
-        }
+        LinkedList<string> row = Utils().split(line, ',');
 
         // Verificamos que sea del tamaño correcto
         if(row.size() != 2) return false;

@@ -1,8 +1,9 @@
 #ifndef UTILS_H
 #define UTILS_H
 #include <random>
-#include "Vector.h"
 #include <string>
+#include <sstream>
+#include "LinkedList.h"
 
 using namespace std;
 
@@ -27,6 +28,17 @@ class Utils {
         static float max(const int& a, const int& b) {
             if(a >= b) return a;
             else return b;
+        }
+        static LinkedList<string> split(const string& s, char delimiter = ' ') {
+            LinkedList<string> tokens;
+            string token;
+            stringstream ss(s);
+
+            while(getline(ss, token, delimiter)) {
+                tokens.pushBack(token);
+            }
+
+            return tokens;
         }
 };
 
