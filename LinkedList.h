@@ -13,6 +13,9 @@ class LinkedList {
         LinkedList();
         ~LinkedList();
 
+        LinkedList(const LinkedList<T>& other);           // Constructor de copia
+        LinkedList<T>& operator=(const LinkedList<T>& other);  // Operador de asignación
+
         Node<T>* getHead() const;
         Node<T>* getTail() const;
 

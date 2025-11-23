@@ -22,8 +22,9 @@ class Board {
         
     public:
         Board() {
-            addSquare("Maz_1", 0.8, false);
-            addSquare("Maz_2", 0.8, false);
+            loadMonstersFromCsv("./data/monsters.csv");
+            loadSquareFromCsv("./data/squares.csv");
+            loadConnectionsFromCsv("./data/connections.csv");
 
             actualSquareIndex = 0;
             hero = Hero("Fulano");

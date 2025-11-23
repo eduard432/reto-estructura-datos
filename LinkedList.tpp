@@ -228,3 +228,34 @@ void LinkedList<T>::forEach(Func f) {
         current = current->getNext();
     }
 }
+
+// Constructor de copia (deep copy)
+template <typename T>
+LinkedList<T>::LinkedList(const LinkedList<T>& other) {
+    head = nullptr;
+    tail = nullptr;
+    n = 0;
+    
+    // Copiar todos los nodos
+    Node<T>* current = other.head;
+    while (current) {
+        pushBack(current->getData());
+        current = current->getNext();
+    }
+}
+
+// Operador de asignación
+template <typename T>
+LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T>& other) {
+    if (this != &other) {  // Evitar auto-asignación
+        clear();  // Limpiar datos actuales
+        
+        // Copiar todos los nodos
+        Node<T>* current = other.head;
+        while (current) {
+            pushBack(current->getData());
+            current = current->getNext();
+        }
+    }
+    return *this;
+}

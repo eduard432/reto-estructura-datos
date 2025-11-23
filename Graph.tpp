@@ -9,7 +9,7 @@
 
 template <typename T>
 void Graph<T>::resetVisited() {
-    Node<Vertex<T>> current = vertices.getHead();
+    Node<Vertex<T>*>* current = vertices.getHead();
 
     while(current) {
         current->getData()->setVisited(false);
@@ -19,7 +19,7 @@ void Graph<T>::resetVisited() {
 
 template <typename T>
 int Graph<T>::indexOf(const T& data) {
-    Node<Vertex<T>> current = vertices.getHead();
+    Node<Vertex<T>*>* current = vertices.getHead();
     int count = 0;
 
     while(current) {

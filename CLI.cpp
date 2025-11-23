@@ -78,7 +78,7 @@ bool CLI::commands() {
         cout << "/connect - ";
         cout << "Conecta dos casillas" << endl;
     } else if(command == "register") {
-        board.selectCharacter();
+        // board.selectCharacter();
     } else if(command == "play") {
         cout << "Iniciando juego en casilla actual" << endl;
         board.play();

@@ -82,7 +82,7 @@ void Board::combat(const bool& heroNextAttack) {
 void Board::defend() {
     // Seleccionar un golpe aleatorio del monstruo
     LinkedList<Attack>& attacks = monsters[actualMonsterIndex].getAttacks();
-    int randomAttackIndex = Utils().randomIntNumber(0, attacks.size());
+    int randomAttackIndex = Utils().randomIntNumber(0, attacks.size() - 1);
 
     cout << "El monstruo va atacar con:" << endl;
     cout << "Nombre del ataque: " << attacks[randomAttackIndex].getName() << endl;
@@ -109,7 +109,7 @@ void Board::attack() {
     }
 
     LinkedList<Attack>& attacks = hero.getAttacks();
-    int randomAttackIndex = Utils().randomIntNumber(0, attacks.size());
+    int randomAttackIndex = Utils().randomIntNumber(0, attacks.size() - 1);
 
     cout << "El jugador va atacar con:" << endl;
     cout << "Nombre del ataque: " << attacks[randomAttackIndex].getName() << endl;
