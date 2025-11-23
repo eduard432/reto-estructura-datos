@@ -56,6 +56,7 @@ class Board {
         void showActualMonster() const;
         void showHero() const;
         bool changeActualSquare(const string& squareName);
+        void selectCharacter();
 
         Square getActualSquare() const;
 

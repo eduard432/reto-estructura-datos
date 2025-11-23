@@ -40,6 +40,9 @@ bool CLI::commands() {
         // /help
         cout << "/help - ";
         cout << "Muestra este menú" << endl;
+        // /register
+        cout << "/register - ";
+        cout << "Registra tu tipo de heroe" << endl;
         // /play
         cout << "/play - ";
         cout << "Inicia el juego en la casilla actual" << endl;
@@ -74,10 +77,11 @@ bool CLI::commands() {
         // connect
         cout << "/connect - ";
         cout << "Conecta dos casillas" << endl;
+    } else if(command == "register") {
+        board.selectCharacter();
     } else if(command == "play") {
         cout << "Iniciando juego en casilla actual" << endl;
         board.play();
-    
     } else if (command == "combat") {
         cout << "Continua el combate" << endl;
         board.combat();

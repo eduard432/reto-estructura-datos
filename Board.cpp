@@ -2,6 +2,8 @@
 #include "Utils.h"
 #include "Monster.h"
 
+#include "Knight.h"
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -356,3 +358,34 @@ bool Board::loadConnectionsFromCsv(const string& fileName) {
     file.close();
     return true;
 }
+
+// void Board::selectCharacter() {
+//     string name;
+//     int characterChosen;
+
+//     cout << "Escribe el nombre de tu heroe: ";
+//     cin >> name;
+
+//     cout << "Elige tu clase: " << endl;
+//     cout << "1. Caballero" << endl;
+//     cout << "2. Mago" << endl;
+//     cout << "3. Explorador" << endl;
+//     cout << "4. Bard" << endl;
+//     cout << "Ingresa tu opción (1-4): ";
+//     cin >> characterChosen;
+
+
+//     switch(characterChosen){
+//         case 1:
+//             hero = new Knight(name);
+//         case 2:
+//             return new Mage(name);
+//         case 3:
+//             return new Ranger(name);
+//         case 4:
+//             return new Bard(name);
+//         default:
+//             cout << "Opción inválida, defaulting to Knight.\n";
+//             return new Knight(name);
+//     }
+// }
