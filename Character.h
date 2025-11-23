@@ -3,7 +3,7 @@
 
 #include <string>
 #include "Attack.h"
-#include "Vector.h"
+#include "LinkedList.h"
 
 using namespace std;
 
@@ -13,7 +13,7 @@ class Character  {
         float HP;
         float ATK;
         float DEF;
-        Vector<Attack> attacks;
+        LinkedList<Attack> attacks;
     public:
         Character() : name(""), HP(0), ATK(0), DEF(0) {}
         Character(const string& n, const float& health = 100, const float& attack = 8, const float& defense = 5) : name(n), HP(health), ATK(attack), DEF(defense) {}
@@ -26,7 +26,7 @@ class Character  {
         void setDEF(const float& defense);
         void setName(const string& n);
 
-        Vector<Attack>& getAttacks();
+        LinkedList<Attack>& getAttacks();
         void addAttack();
 };
 

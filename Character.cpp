@@ -34,7 +34,7 @@ void Character::setName(const string& n) {
     name = n;
 }
 
-Vector<Attack>& Character::getAttacks() {
+LinkedList<Attack>& Character::getAttacks() {
     return attacks;
 }
 
