@@ -34,6 +34,9 @@ class LinkedList {
         void print() const;
 
         T& operator[](unsigned int index);
+        
+        template <typename Func>
+        void forEach(Func f);
 };
 
 #include "LinkedList.tpp"

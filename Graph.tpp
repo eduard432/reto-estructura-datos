@@ -9,17 +9,25 @@
 
 template <typename T>
 void Graph<T>::resetVisited() {
-    for(unsigned int i = 0; i < vertices.size(); i++) {
-        vertices[i]->setVisited(false);
+    Node<Vertex<T>> current = vertices.getHead();
+
+    while(current) {
+        current->getData()->setVisited(false);
+        current = current->getNext();
     }
 }
 
 template <typename T>
 int Graph<T>::indexOf(const T& data) {
-    for(unsigned int i = 0; i < vertices.size(); i++) {
-        if(vertices[i]->getData() == data) {
-            return i;
+    Node<Vertex<T>> current = vertices.getHead();
+    int count = 0;
+
+    while(current) {
+        if(current->getData()->getData() == data) {
+            return count;
         }
+        current = current->getNext();
+        count++;
     }
     return -1;
 }
@@ -65,68 +73,91 @@ LinkedList<Vertex<T>*>& Graph<T>::getVertices() { return vertices; }
 template <typename T>
 void Graph<T>::BFS(const T& start) {
     int startIndex = indexOf(start);
-    if(startIndex == -1) {
+    if (startIndex == -1) {
         std::cout << "Initial node not found" << std::endl;
         return;
     }
+
     resetVisited();
     Queue<int> queue;
+
     vertices[startIndex]->setVisited(true);
     queue.enqueue(startIndex);
-    while(!queue.isEmpty()) {
+
+    while (!queue.isEmpty()) {
         int index = queue.dequeue();
         std::cout << vertices[index]->getData() << "->";
-        for (unsigned int i = 0; i < vertices[index]->getEdges().size(); i++) {
-            if(!vertices[index]->getEdges()[i]->getVisited()) {
-                vertices[index]->getEdges()[i]->setVisited(true);
-                queue.enqueue(vertices[index]->getEdges()[i]->getIndex());
-            }
-        }
-        
 
+        Node<Vertex<T>*>* current = vertices[index]->getEdges().getHead();
+        while (current) {
+
+            Vertex<T>* neighbor = current->getData();
+
+            if (!neighbor->getVisited()) {
+                neighbor->setVisited(true);
+                queue.enqueue(neighbor->getIndex());
+            }
+
+            current = current->getNext();
+        }
     }
 
     std::cout << std::endl;
 }
+
 
 template <typename T>
 void Graph<T>::DFS(const T& start) {
     int startIndex = indexOf(start);
-    if(startIndex == -1) {
+    if (startIndex == -1) {
         std::cout << "Initial node not found" << std::endl;
         return;
     }
+
     resetVisited();
     Stack<int> stack;
+
     vertices[startIndex]->setVisited(true);
     stack.push(startIndex);
-    while(!stack.isEmpty()) {
+
+    while (!stack.isEmpty()) {
         int index = stack.pop();
         std::cout << vertices[index]->getData() << "->";
-        for (unsigned int i = 0; i < vertices[index]->getEdges().size(); i++) {
-            if(!vertices[index]->getEdges()[i]->getVisited()) {
-                vertices[index]->getEdges()[i]->setVisited(true);
-                stack.push(vertices[index]->getEdges()[i]->getIndex());
-            }
-        }
-        
 
+        Node<Vertex<T>*>* current = vertices[index]->getEdges().getHead();
+        while (current) {
+
+            Vertex<T>* neighbor = current->getData();
+
+            if (!neighbor->getVisited()) {
+                neighbor->setVisited(true);
+                stack.push(neighbor->getIndex());
+            }
+
+            current = current->getNext();
+        }
     }
 
     std::cout << std::endl;
 }
 
+
 template <typename T>
 void Graph<T>::print() {
     std::cout << "Vertices: " << std::endl;
-    for (unsigned int i = 0; i < vertices.size(); i++){
-        std::cout << vertices[i]->getData() << "==> [";
-        for (unsigned int j = 0; j < vertices[i]->getEdges().size(); j++){
-            std::cout << vertices[i]->getEdges()[j]->getData() << ", ";
+    Node<Vertex<T>*>* currentNode = vertices.getHead();
+    while (currentNode) {
+        std::cout << currentNode->getData()->getData() << "==> [";
+        Node<Vertex<T>*>* currentNodeEdge = currentNode->getData()->getEdges().getHead();
+        while(currentNodeEdge) {
+            cout << currentNodeEdge->getData()->getData() << ", ";
+            currentNodeEdge = currentNodeEdge->getNext();
         }
-        std::cout << "]" << endl;
+
+        std::cout << "]" << std::endl;
+        currentNode = currentNode->getNext();
+    }
         
-    }   
 }
 
 template <typename T>

@@ -218,3 +218,13 @@ int LinkedList<T>::indexOf(const T& value) {
 
     return -1;
 }
+
+template <typename T>
+template <typename Func>
+void LinkedList<T>::forEach(Func f) {
+    Node<T>* current = head;
+    while (current) {
+        f(current->getDataRef());
+        current = current->getNext();
+    }
+}
