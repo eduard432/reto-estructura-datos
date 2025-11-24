@@ -8,7 +8,7 @@ string Square::getName() const {
     return name;
 }
 
-float Square::getProbability() const {
+unsigned int Square::getProbability() const {
     return probabilty;
 }
 

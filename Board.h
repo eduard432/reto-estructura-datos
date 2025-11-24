@@ -15,7 +15,7 @@ class Board {
         unsigned int actualSquareIndex;
         unsigned int startSquareIndex;
         unsigned int treasureSquareIndex;
-        bool isMonsterAttack(const float& probality);
+        bool isMonsterAttack(const unsigned int& probality);
         Hero hero;
         int actualMonsterIndex;
         string status;

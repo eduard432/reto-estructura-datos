@@ -22,8 +22,8 @@ void Board::addMonster(const string& name, const float& health, const float& att
     monsters.pushBack(m);
 }
 
-bool Board::isMonsterAttack(const float& probability) {
-    double randomProb = Utils().randomDoubleNumber();
+bool Board::isMonsterAttack(const unsigned int& probability) {
+    unsigned int randomProb = Utils().randomIntNumber(0, 10);
     return randomProb <= probability;
 }
 
@@ -155,7 +155,12 @@ void Board::showSquares() const {
 }
 
 bool Board::connectSquares(const unsigned int& sq1, const unsigned int& sq2) {
-    graph.addEdge(graph.vertexAt(searchSquareById(sq1))->getData(), graph.vertexAt(searchSquareById(sq2))->getData());
+    Square& square1 = graph.vertexAt(searchSquareById(sq1))->getData();
+    Square& square2 = graph.vertexAt(searchSquareById(sq2))->getData();
+
+    unsigned int weight = (square1.getProbability() + square2.getProbability()) / 2;
+
+    graph.addEdge(square1, square2, weight);
     return true;
 }
 
@@ -316,7 +321,7 @@ bool Board::loadSquareFromCsv(const string& fileName) {
         if(row.size() != 3) return false;
 
         string name = row.elementAt(0);
-        float probability = stof(row.elementAt(1));
+        unsigned int probability = static_cast<unsigned int>(stoul(row.elementAt(1)));
         bool visited = (row.elementAt(2) == "true");
 
         addSquare(name, probability, visited);

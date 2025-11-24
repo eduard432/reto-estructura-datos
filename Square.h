@@ -9,15 +9,15 @@ class Square {
     private:
         unsigned int id;
         string name;
-        float probabilty;
+        unsigned int probabilty;
         bool visited;
 
     public:
-        Square(const unsigned int& i, const string& n, const float& p = 0.0, const bool& v = false): id(i), name(n), probabilty(p), visited(v) {};
+        Square(const unsigned int& i, const string& n, const unsigned int& p = 0, const bool& v = false): id(i), name(n), probabilty(p), visited(v) {};
 
         unsigned int getId() const;
         string getName() const;
-        float getProbability() const;
+        unsigned int getProbability() const;
         bool getVisited() const;
         bool operator==(const Square& other) const;
 
