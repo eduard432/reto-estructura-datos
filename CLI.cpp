@@ -191,6 +191,19 @@ bool CLI::commands() {
                 } else {
                     cout << "Las conexiones se cargaron con éxito" << endl;
                 }
+            } else if(type == "attacks") {
+                string subType = tokens.elementAt(3);
+                if(subType == "monsters") {
+                    cout << "Escribe el nombre del archivo a leer: ";
+                    cin >> fileName;
+                    bool areLoaded = board.loadMonsterAttacksFromCsv(fileName);
+                    if(!areLoaded) {
+                        cout << "No se pudieron cargar los ataques de los monstruos" << endl;
+                        return false;
+                    } else {
+                        cout << "Los ataques se cargaron con éxito" << endl;
+                    }
+                }
             }
 
         } else if(command == "list" || command == "ls") {

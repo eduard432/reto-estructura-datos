@@ -27,6 +27,7 @@ class Board {
             loadMonstersFromCsv("./data/monsters.csv");
             loadSquareFromCsv("./data/squares.csv");
             loadConnectionsFromCsv("./data/connections.csv");
+            // loadAttacksFromCsv("")
 
             startSquareIndex = 0;
             treasureSquareIndex = 7;
@@ -40,9 +41,12 @@ class Board {
         void addSquare(const string& n, const float& p, const bool& v);
         bool connectSquares(const unsigned int& sq1, const unsigned int& sq2);
         void addMonster(const string& name, const float& health = 100, const float& attack = 8, const float& defense = 5 );
+        bool addMonsterAttack(const string& monsterName, const MonsterAttack& attack);
+
         bool loadSquareFromCsv(const string& fileName);
         bool loadMonstersFromCsv(const string& fileName);
         bool loadConnectionsFromCsv(const string& fileName);
+        bool loadMonsterAttacksFromCsv(const string& fileName);
         bool play();
         bool getIsInBattle() const;
 

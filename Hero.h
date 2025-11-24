@@ -11,6 +11,7 @@ class Hero: public Character {
     private:
         void specialAttack();
         int stamina;
+        LinkedList<Attack> attacks;
     public:
         virtual ~Hero() {}
         Hero() : Character() {}
@@ -18,6 +19,9 @@ class Hero: public Character {
 
         int getStamina() const;
         void setStamina(const int& s);
+
+        LinkedList<Attack>& getAttacks();
+        void addAttack();
 };
 
 #endif

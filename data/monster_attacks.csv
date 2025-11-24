@@ -1,0 +1,4 @@
+MONSTER, NAME, DAMAGE, ANSWER1, ANSWER2, ANSWER3, CORRECT_ANSWER
+Monstruo x, Fireball, 15, Fireblast, Flame Strike, Fireball, 3
+Monstruo y, Fireball, 15, Fireblast, Flame Strike, Fireball, 3
+Monstruo z, Fireball, 15, Fireblast, Flame Strike, Fireball, 3

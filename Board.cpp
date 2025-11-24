@@ -1,6 +1,7 @@
 #include "Board.h"
 #include "Utils.h"
 #include "Monster.h"
+#include "MonsterAttack.h"
 
 #include "Knight.h"
 #include "Mage.h"
@@ -21,7 +22,6 @@ void Board::addSquare(const string& name, const float& probability, const bool& 
 
 void Board::addMonster(const string& name, const float& health, const float& attack, const float& defense ) {
     Monster m = Monster(name, health, attack, defense);
-    m.addAttack();
     monsters.pushBack(m);
 }
 
@@ -91,7 +91,7 @@ void Board::combat(const bool& heroNextAttack) {
 
 void Board::defend() {
     // Seleccionar un golpe aleatorio del monstruo
-    LinkedList<Attack>& attacks = monsters[actualMonsterIndex].getAttacks();
+    LinkedList<MonsterAttack>& attacks = monsters[actualMonsterIndex].getAttacks();
     int randomAttackIndex = Utils().randomIntNumber(0, attacks.size() - 1);
 
     cout << "El monstruo va atacar con:" << endl;
@@ -267,6 +267,21 @@ Square Board::getActualSquare() const {
     return graph.vertexAt(actualSquareIndex)->getData();
 }
 
+bool Board::addMonsterAttack(const string& monsterName, const MonsterAttack& attack) {
+    Node<Monster>* current = monsters.getHead();
+
+    while(current) {
+        if(current->getData().getName() == monsterName) {
+            current->getDataRef().addAttack(attack);
+            return true;
+        }
+
+        current = current->getNext();
+    }
+
+    return false;
+}
+
 bool Board::loadMonstersFromCsv(const string& fileName) {
     ifstream file(fileName);
 
@@ -381,6 +396,65 @@ bool Board::loadConnectionsFromCsv(const string& fileName) {
         unsigned int id2 = static_cast<unsigned int>(stoul(row.elementAt(1)));
 
         connectSquares(id1, id2);
+    }
+
+    file.close();
+    return true;
+}
+
+bool Board::loadMonsterAttacksFromCsv(const string& fileName) {
+    ifstream file(fileName);
+
+    if(!file.is_open()) {
+        cerr << "Error al abrir el archivo: " << fileName << endl;
+        return false;
+    }
+
+    string line;
+
+    if(!getline(file, line)) {
+        cerr << "El archivo no tiene header" << endl;
+        file.close();
+        return false;
+    }
+
+    cout << "Cargando archivo: " << fileName << endl;
+
+    while(getline(file, line)) {
+        stringstream ss(line);
+        string cell;
+        LinkedList<string> row;
+        
+        while(getline(ss, cell, ',')) {
+            if(cell.length() == 0) continue;;
+            row.pushBack(cell);
+        }
+
+        // Verificamos que sea del tamaño correcto
+        if(row.size() != 7) continue;
+
+        string monsterName = row.elementAt(0);
+        string name = row.elementAt(1);
+        float damage = stof(row.elementAt(2));
+
+        unsigned int correctAnswer = static_cast<unsigned int>(stoul(row.elementAt(6)));
+
+        if(correctAnswer > 3) continue;
+
+        MonsterAttack attack = MonsterAttack(name, damage);
+
+        for(unsigned int i = 3; i <= 5; i++) {
+            string answer = row.elementAt(i);
+            bool isCorrect = (i - 2 == correctAnswer);
+            attack.addAnswer(answer, isCorrect);
+        }
+        
+        bool isAdded = addMonsterAttack(monsterName, attack);
+
+        if(!isAdded) {
+            cout << "No se pudo agregar el ataque: " << name << endl;
+            continue;
+        }
     }
 
     file.close();

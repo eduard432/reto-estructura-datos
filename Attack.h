@@ -9,11 +9,7 @@ class Attack {
         string name;
         float damage;
     public:
-        Attack(const string& n, const float& d): name(n), damage(d) {}
-        Attack() {
-            name = "Ataque por defecto";
-            damage = 1;
-        }
+        Attack(const string& n = "Ataque por defecto", const float& d = 1.0): name(n), damage(d) {}
         string getName() const;
         float getDamage() const;
         void setName(const string& n);
