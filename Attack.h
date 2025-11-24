@@ -14,6 +14,7 @@ class Attack {
         float getDamage() const;
         void setName(const string& n);
         void setDamage(const float& d);
+        friend ostream& operator<<(ostream& os, const Attack& a);
 };
 
 #endif
