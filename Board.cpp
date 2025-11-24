@@ -51,7 +51,6 @@ bool Board::play() {
         Monster& selectedMonster = monsters[selectedMonsterI];
         cout << "Pelearas contra: " << selectedMonster.getName() << endl;
         actualMonsterIndex = selectedMonsterI;
-        status = "inAttack";
     } else {
         cout << "Se evito la batalla" << endl;
         // Marcamos como visitada la casilla
@@ -61,69 +60,123 @@ bool Board::play() {
     return isBattle;
 }
 
+
+void Board::combatWon() {
+    cout << "El jugador gano la batalla" << endl;
+    // Actualizamos la casilla actual como visitada
+    graph.vertexAt(actualSquareIndex)->getData().setVisited(true);
+    // No hay monstruo actual
+    actualMonsterIndex = -1;
+}
+
+bool Board::monsterAttacking(MonsterAttack& attack) {
+    cout << "Pregunta: " << attack.getName() << endl;
+    Node<string>* current = attack.getAnswers().getHead();
+    int i = 0;
+
+    while(current) {
+        cout << "[" << i << "] " << current->getData() << endl;
+        current = current->getNext();
+        i++;
+    }
+
+    int answer;
+    do {
+        cout << "Tu respuesta: ";
+        cin >> answer;
+
+        if (cin.fail()) {
+            cin.clear();              
+            cin.ignore(10000, '\n');  
+            answer = -1;
+        }
+
+    } while (answer < 0 || answer >= attack.getAnswers().size());
+
+    return answer == attack.getCorrectAnswerI();
+}
+
+
 void Board::combat() {
-    if(status != "inAttack" && status != "combat") {
-        cout << "Actualmente no estás siendo atacado por un monstruo" << endl;
+    if(hero == nullptr) {
+        cout << "Registrate antes del combate" << endl;
         return;
     }
-    if(status == "inAttack") {
-        double prob = Utils().randomDoubleNumber();
-        bool startHero = prob >= .5;
-        isHeroTurn = startHero;
-    }
-    // Aleatorio quien da el primer golpe:
-    return combat(isHeroTurn);
-}
 
-void Board::combat(const bool& heroNextAttack) {
-    status = "combat";
+    if(actualMonsterIndex == -1) {
+        cout << "Actualmente no estás en un combate" << endl;
+        return;
+    }
     
-    if(!heroNextAttack) {
-        cout << "El monstruo ataca" << endl;
-        defend();
-
-    } else {
-        cout << "El jugador da un golpe" << endl;
-        attack();
-    }
-}
-
-
-void Board::defend() {
-    // Seleccionar un golpe aleatorio del monstruo
+    // Seleccionamos un ataque aleatorio del monstruo
     LinkedList<MonsterAttack>& attacks = monsters[actualMonsterIndex].getAttacks();
-    int randomAttackIndex = Utils().randomIntNumber(0, attacks.size() - 1);
-
-    cout << "El monstruo va atacar con:" << endl;
-    cout << "Nombre del ataque: " << attacks[randomAttackIndex].getName() << endl;
-    float monsterDamage = attacks[randomAttackIndex].getDamage();
-    cout << "Daño: " << monsterDamage << endl;
     
-    float givenDamage = Utils().max(1, monsterDamage - hero->getDEF());
-    cout << "Daño recibido: " << givenDamage << endl;
-
-    if(hero->getHP() - givenDamage <= 0) {
-        // Se murio el jugador
-        lost();
-    } else {
-        // Guardamos la nueva salud del heroe
-        hero->setHP(hero->getHP() - givenDamage);
-        isHeroTurn = true;
-    }
-}
-
-void Board::attack() {
-    if(status != "combat") {
-        cout << "No estas en combate" << endl;
+    if (attacks.size() == 0) {
+        cout << "El monstruo actual no tiene ataques" << endl;
+        
+        combatWon();
+        
         return;
     }
-
-    LinkedList<Attack>& attacks = hero->getAttacks();
+    
     int randomAttackIndex = Utils().randomIntNumber(0, attacks.size() - 1);
 
-    cout << "El jugador va atacar con:" << endl;
-    cout << "Nombre del ataque: " << attacks[randomAttackIndex].getName() << endl;
-    float heroDamage = attacks[randomAttackIndex].getDamage();
+    cout << randomAttackIndex << endl;
+    
+    MonsterAttack mnstrAttack = attacks[randomAttackIndex];
+    
+    cout << "El monstruo va atacar con: " << endl;
+    bool isDefended = monsterAttacking(mnstrAttack);
+
+    if(!isDefended) {
+        // TODO: usar el multiplicador de dificultad
+        cout << "Respuesta incorrecta, recibiras daño" << endl;
+        float monsterDamage = mnstrAttack.getDamage();
+        cout << "Daño: " << monsterDamage << endl;
+        
+        float givenDamage = Utils().max(1, monsterDamage - hero->getDEF());
+        cout << "Daño recibido: " << givenDamage << endl;
+
+        if(hero->getHP() - givenDamage <= 0) {
+            // Se murio el jugador
+            lost();
+            return;
+        } else {
+            // Guardamos la nueva salud del heroe
+            hero->setHP(hero->getHP() - givenDamage);
+        }
+    }
+
+    cout << "Turno del jugador, selecciona un ataque:" << endl;
+    Node<Attack>* current = hero->getAttacks().getHead();
+
+    int i = 0;
+    while(current) {
+        cout << "[" << i << "] " << current->getData().getName() << endl;
+        current = current->getNext();
+        i++;
+    }
+
+    int selectedAttack;
+
+    do {
+        cout << "Atacar con: ";
+        cin >> selectedAttack;
+
+        if (cin.fail()) {
+            cin.clear();              // Limpia flag de error
+            cin.ignore(10000, '\n');  // Descarta basura
+            selectedAttack = -1;      // Forzamos entrada inválida
+        }
+
+    } while (selectedAttack < 0 || selectedAttack >= hero->getAttacks().size());
+    
+
+
+    Attack heroAttack = hero->getAttacks()[selectedAttack];
+
+    cout << "Nombre del ataque: " << heroAttack.getName() << endl;
+    float heroDamage = heroAttack.getDamage();
     cout << "Daño: " << heroDamage << endl;
     
     float damageMade = Utils().max(1, heroDamage - monsters[actualMonsterIndex].getDEF());
@@ -132,7 +185,6 @@ void Board::attack() {
     if((monsters[actualMonsterIndex].getHP() - damageMade) <= 0) {
         // Se murio el monstruo
         cout << "El jugador gano la batalla" << endl;
-        status = "peace";
         // Actualizamos la casilla actual como visitada
         graph.vertexAt(actualSquareIndex)->getData().setVisited(true);
         // No hay monstruo actual
@@ -140,7 +192,6 @@ void Board::attack() {
     } else {
         // Guardamos la nueva salud del monstruo
         monsters[actualMonsterIndex].setHP(monsters[actualMonsterIndex].getHP() - damageMade);
-        isHeroTurn = false;
     }
 
 }

@@ -19,6 +19,10 @@ class Board {
         Hero* hero;
         int actualMonsterIndex;
         string status;
+
+        bool monsterAttacking(MonsterAttack& attack);
+        void combatWon();
+
         void combat(const bool& heroNextAttack);
         bool isHeroTurn;
         
@@ -27,7 +31,7 @@ class Board {
             loadMonstersFromCsv("./data/monsters.csv");
             loadSquareFromCsv("./data/squares.csv");
             loadConnectionsFromCsv("./data/connections.csv");
-            // loadAttacksFromCsv("")
+            loadMonsterAttacksFromCsv("./data/monster_attacks.csv");
 
             startSquareIndex = 0;
             treasureSquareIndex = 7;
@@ -49,6 +53,7 @@ class Board {
         bool loadMonsterAttacksFromCsv(const string& fileName);
         bool play();
         bool getIsInBattle() const;
+
 
         void combat();
         void lost();
