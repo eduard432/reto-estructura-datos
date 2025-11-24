@@ -81,7 +81,7 @@ bool CLI::commands() {
         cout << "/cheatcode - ";
         cout << "Muestra la ruta más fácil hacia el tesoro" << endl;
     } else if(command == "register") {
-        // board.selectCharacter();
+        board.selectHero();
     } else if(command == "play") {
         cout << "Iniciando juego en casilla actual" << endl;
         board.play();

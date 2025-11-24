@@ -16,7 +16,7 @@ class Board {
         unsigned int startSquareIndex;
         unsigned int treasureSquareIndex;
         bool isMonsterAttack(const unsigned int& probality);
-        Hero hero;
+        Hero* hero;
         int actualMonsterIndex;
         string status;
         void combat(const bool& heroNextAttack);
@@ -31,9 +31,8 @@ class Board {
             startSquareIndex = 0;
             treasureSquareIndex = 7;
 
+            hero = nullptr;
             actualSquareIndex = 0;
-            hero = Hero("Fulano");
-            hero.addAttack();
             actualMonsterIndex = -1;
             status = "peace";
             isHeroTurn = false;
@@ -62,7 +61,7 @@ class Board {
         void showActualMonster() const;
         void showHero() const;
         bool changeActualSquare(const string& squareName);
-        void selectCharacter();
+        void selectHero();
 
         void showCheatcode();
         Square getActualSquare() const;

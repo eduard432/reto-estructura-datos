@@ -3,6 +3,9 @@
 #include "Monster.h"
 
 #include "Knight.h"
+#include "Mage.h"
+#include "Ranger.h"
+#include "Bard.h"
 
 #include <iostream>
 #include <fstream>
@@ -32,6 +35,13 @@ bool Board::getIsInBattle() const {
 }
 
 bool Board::play() {
+
+    if(hero == nullptr) {
+        cout << "Selecciona un heroe antes de jugar" << endl;
+        cout << "Tip, usa /register" << endl;
+        return false;
+    }
+
     Square square = graph.vertexAt(actualSquareIndex)->getData();
     bool isBattle = isMonsterAttack(square.getProbability());
 
@@ -89,15 +99,15 @@ void Board::defend() {
     float monsterDamage = attacks[randomAttackIndex].getDamage();
     cout << "Daño: " << monsterDamage << endl;
     
-    float givenDamage = Utils().max(1, monsterDamage - hero.getDEF());
+    float givenDamage = Utils().max(1, monsterDamage - hero->getDEF());
     cout << "Daño recibido: " << givenDamage << endl;
 
-    if(hero.getHP() - givenDamage <= 0) {
+    if(hero->getHP() - givenDamage <= 0) {
         // Se murio el jugador
         lost();
     } else {
         // Guardamos la nueva salud del heroe
-        hero.setHP(hero.getHP() - givenDamage);
+        hero->setHP(hero->getHP() - givenDamage);
         isHeroTurn = true;
     }
 }
@@ -108,7 +118,7 @@ void Board::attack() {
         return;
     }
 
-    LinkedList<Attack>& attacks = hero.getAttacks();
+    LinkedList<Attack>& attacks = hero->getAttacks();
     int randomAttackIndex = Utils().randomIntNumber(0, attacks.size() - 1);
 
     cout << "El jugador va atacar con:" << endl;
@@ -233,10 +243,10 @@ void Board::showActualMonster() const {
 }
 
 void Board::showHero() const {
-    cout << "Nombre: " << hero.getName() << endl;
-    cout << "ATK: " << hero.getATK() << endl;
-    cout << "HP: " << hero.getHP() << endl;
-    cout << "DEF: " << hero.getDEF() << endl;
+    cout << "Nombre: " << hero->getName() << endl;
+    cout << "ATK: " << hero->getATK() << endl;
+    cout << "HP: " << hero->getHP() << endl;
+    cout << "DEF: " << hero->getDEF() << endl;
 }
 
 bool Board::changeActualSquare(const string& squareName) {
@@ -392,33 +402,42 @@ void Board::showCheatcode() {
     }
 }
 
-// void Board::selectCharacter() {
-//     string name;
-//     int characterChosen;
+void Board::selectHero() {
+    string name;
+    int characterChosen;
 
-//     cout << "Escribe el nombre de tu heroe: ";
-//     cin >> name;
+    cout << "Escribe el nombre de tu heroe: ";
+    cin >> name;
 
-//     cout << "Elige tu clase: " << endl;
-//     cout << "1. Caballero" << endl;
-//     cout << "2. Mago" << endl;
-//     cout << "3. Explorador" << endl;
-//     cout << "4. Bard" << endl;
-//     cout << "Ingresa tu opción (1-4): ";
-//     cin >> characterChosen;
+    cout << "Elige tu clase: " << endl;
+    cout << "1. Caballero" << endl;
+    cout << "2. Mago" << endl;
+    cout << "3. Explorador" << endl;
+    cout << "4. Bard" << endl;
+    cout << "Ingresa tu opción (1-4): ";
+    cin >> characterChosen;
 
+    // Liberar si ya había héroe previo
+    delete hero;
 
-//     switch(characterChosen){
-//         case 1:
-//             hero = new Knight(name);
-//         case 2:
-//             return new Mage(name);
-//         case 3:
-//             return new Ranger(name);
-//         case 4:
-//             return new Bard(name);
-//         default:
-//             cout << "Opción inválida, defaulting to Knight.\n";
-//             return new Knight(name);
-//     }
-// }
+    switch (characterChosen) {
+        case 1:
+            hero = new Knight(name);
+            break;
+        case 2:
+            hero = new Mage(name);
+            break;
+        case 3:
+            hero = new Ranger(name);
+            break;
+        case 4:
+            hero = new Bard(name);
+            break;
+        default:
+            cout << "Opción inválida, defaulting to Knight.\n";
+            hero = new Knight(name);
+            break;
+    }
+
+    hero->addAttack();
+}

@@ -7,10 +7,7 @@
 class Knight: public Hero {
     private:
     public:
-        Knight(const string& n): Hero(n) {
-            Attack specialAttack = Attack("Long sword attack", 6.5);
-            setSpecialAttack(specialAttack);
-        }
+        Knight(const string& n): Hero(n) {}
 };
 
 #endif

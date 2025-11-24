@@ -9,13 +9,12 @@ using namespace std;
 
 class Hero: public Character {
     private:
-        Attack specialAttack;
+        void specialAttack();
         int stamina;
     public:
+        virtual ~Hero() {}
         Hero() : Character() {}
         Hero(const string& n) : Character(n) {}
-        Attack getSpecialAttack() const;
-        void setSpecialAttack(const Attack& a);
 
         int getStamina() const;
         void setStamina(const int& s);
