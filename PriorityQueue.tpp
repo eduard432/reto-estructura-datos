@@ -8,12 +8,12 @@ using namespace std;
 template <typename T>
 void PriorityQueue<T>::enqueue(const T& value, int priority) {
     Node<T>* newNode = new Node(value, priority);
-    if(isEmpty() || priority > head->getPriority()) {
+    if(isEmpty() || priority < head->getPriority()) {
         newNode->setNext(head);
         head = newNode;
     } else {
         Node<T>* current = head;
-        while (current -> getNext() && current->getNext()->getPriority() >= priority) {
+        while (current -> getNext() && current->getNext()->getPriority() <= priority) {
             current = current->getNext();
             
         }
