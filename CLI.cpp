@@ -77,6 +77,9 @@ bool CLI::commands() {
         // connect
         cout << "/connect - ";
         cout << "Conecta dos casillas" << endl;
+        // cheetcode
+        cout << "/cheatcode - ";
+        cout << "Muestra la ruta más fácil hacia el tesoro" << endl;
     } else if(command == "register") {
         // board.selectCharacter();
     } else if(command == "play") {
@@ -218,6 +221,9 @@ bool CLI::commands() {
                 cout << "Las casillas no se pudieron conectar" << endl;
             }
 
+        } else if(command == "cheatcode") {
+            cout << "Camino más fácil hacia el tesoro: " << endl;
+            board.showCheatcode();
         }
     } else {
         cout << endl;

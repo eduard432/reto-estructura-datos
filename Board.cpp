@@ -361,6 +361,21 @@ bool Board::loadConnectionsFromCsv(const string& fileName) {
     return true;
 }
 
+void Board::showCheatcode() {
+    LinkedList<Square> path = graph.dijkstraPath(graph.getVertices().elementAt(startSquareIndex)->getData(), graph.getVertices().elementAt(treasureSquareIndex)->getData());
+            
+    Node<Square>* current = path.getHead();
+
+    while(current) {
+        std::cout << current->getData().getName();
+
+        current = current->getNext();
+        if(current) {
+            cout << "->";
+        }
+    }
+}
+
 // void Board::selectCharacter() {
 //     string name;
 //     int characterChosen;
