@@ -247,6 +247,7 @@ void Board::showHero() const {
     cout << "ATK: " << hero->getATK() << endl;
     cout << "HP: " << hero->getHP() << endl;
     cout << "DEF: " << hero->getDEF() << endl;
+    cout << "Tipo: " << hero->getType() << endl;
 }
 
 bool Board::changeActualSquare(const string& squareName) {

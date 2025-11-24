@@ -7,6 +7,7 @@ class Mage: public Hero {
     private:
     public:
         Mage(const string& n): Hero(n) {}
+        string getType() const override { return "Mage"; }
 };
 
 #endif

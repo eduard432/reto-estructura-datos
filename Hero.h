@@ -14,6 +14,7 @@ class Hero: public Character {
         LinkedList<Attack> attacks;
     public:
         virtual ~Hero() {}
+        virtual string getType() const = 0;
         Hero() : Character() {}
         Hero(const string& n) : Character(n) {}
 
