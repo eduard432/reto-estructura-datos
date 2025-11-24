@@ -26,6 +26,16 @@ class Board {
             loadSquareFromCsv("./data/squares.csv");
             loadConnectionsFromCsv("./data/connections.csv");
 
+            LinkedList<Square> path = graph.dijkstraPath(graph.getVertices().elementAt(0)->getData(), graph.getVertices().elementAt(7)->getData());
+            
+            Node<Square>* current = path.getHead();
+
+            while(current) {
+                std::cout << current->getData().getName() << ", ";
+
+                current = current->getNext();
+            } 
+
             actualSquareIndex = 0;
             hero = Hero("Fulano");
             hero.addAttack();

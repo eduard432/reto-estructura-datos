@@ -6,6 +6,7 @@
 #include "Queue.h"
 #include "Stack.h"
 #include "Graph.h"
+#include "PriorityQueue.h"
 
 template <typename T>
 void Graph<T>::resetVisited() {
@@ -52,7 +53,7 @@ bool Graph<T>::addVertex(const T& data) {
 }
 
 template <typename T>
-bool Graph<T>::addEdge(const T& v, const T& u) {
+bool Graph<T>::addEdge(const T& v, const T& u, int weight) {
     
     int vIndex = indexOf(v);
     int uIndex = indexOf(u);
@@ -61,8 +62,8 @@ bool Graph<T>::addEdge(const T& v, const T& u) {
         return false;
     }
 
-    vertices[vIndex]->addEdge(vertices[uIndex]);
-    vertices[uIndex]->addEdge(vertices[vIndex]);
+    vertices[vIndex]->addEdge(vertices[uIndex], weight);
+    vertices[uIndex]->addEdge(vertices[vIndex], weight);
 
     return true;
 }
@@ -163,4 +164,156 @@ void Graph<T>::print() {
 template <typename T>
 unsigned int Graph<T>::size() const {
     return vertices.size();
+}
+
+template <typename T>
+LinkedList<int> Graph<T>::dijkstra(const T& start) {
+    int startIndex = indexOf(start);
+    if (startIndex == -1) {
+        std::cout << "Nodo inicial no encontrado" << std::endl;
+        return LinkedList<int>();
+    }
+    
+    
+    // Inicializar distancias
+    LinkedList<int> distances;
+    LinkedList<bool> visited;
+    
+    for (unsigned int i = 0; i < vertices.size(); i++) {
+        distances.pushBack(INT_MAX);
+        visited.pushBack(false);
+    }
+    
+    distances[startIndex] = 0;
+    
+    // Priority Queue: menor distancia primero
+    PriorityQueue<T> pq;
+    pq.enqueue(startIndex, 0);
+    
+    while (!pq.isEmpty()) {
+        int u = pq.dequeue();
+        
+        if (visited.elementAt(u)) continue;
+        visited[u] = true;
+        
+        // Revisar todos los vecinos
+        Node<Edge<T>>* edgeNode = vertices[u]->getEdges().getHead();
+        while (edgeNode) {
+            Edge<T> edge = edgeNode->getData();
+            Vertex<T>* neighbor = edge.getVertex();
+            int v = neighbor->getIndex();
+            int weight = edge.weight;
+            
+            if (!visited.elementAt(v)) {
+                int newDist = distances.elementAt(u) + weight;
+                
+                if (newDist < distances.elementAt(v)) {
+                    distances[v] = newDist;
+                    pq.enqueue(v, newDist);
+                }
+            }
+            
+            edgeNode = edgeNode->getNext();
+        }
+    }
+    
+    return distances;
+}
+
+template <typename T>
+LinkedList<T> Graph<T>::dijkstraPath(const T& start, const T& end) {
+    int startIndex = indexOf(start);
+    int endIndex = indexOf(end);
+    
+    if (startIndex == -1 || endIndex == -1) {
+        std::cout << "Nodo inicial o final no encontrado" << std::endl;
+        return LinkedList<T>();
+    }
+    
+    LinkedList<int> distances;
+    LinkedList<bool> visited;
+    LinkedList<int> previous;
+    
+    for (unsigned int i = 0; i < vertices.size(); i++) {
+        distances.pushBack(INT_MAX);
+        visited.pushBack(false);
+        previous.pushBack(-1);
+    }
+    
+    distances[startIndex] = 0;
+    PriorityQueue<int> pq;
+    pq.enqueue(startIndex, 0);
+    
+    while (!pq.isEmpty()) {
+        int u = pq.dequeue();
+        
+        if (u == endIndex) break;
+        if (visited.elementAt(u)) continue;
+        
+        visited[u] = true;
+        
+        Node<Edge<T>>* edgeNode = vertices[u]->getEdges().getHead();
+        while (edgeNode) {
+            Edge<T> edge = edgeNode->getData();
+            Vertex<T>* neighbor = edge.getVertex();
+            int v = neighbor->getIndex();
+            int weight = edge.getWeight();
+            
+            if (!visited.elementAt(v)) {
+                int newDist = distances.elementAt(u) + weight;
+                
+                if (newDist < distances.elementAt(v)) {
+                    distances[v] = newDist;
+                    previous[v] = u;
+                    pq.enqueue(v, newDist);
+                }
+            }
+            
+            edgeNode = edgeNode->getNext();
+        }
+    }
+    
+    // Reconstruir camino
+    LinkedList<T> path;
+    
+    if (distances.elementAt(endIndex) == INT_MAX) {
+        std::cout << "No hay camino entre los nodos" << std::endl;
+        return path;
+    }
+    
+    Stack<int> reversePath;
+    int curr = endIndex;
+    
+    while (curr != -1) {
+        reversePath.push(curr);
+        curr = previous.elementAt(curr);
+    }
+    
+    while (!reversePath.isEmpty()) {
+        int idx = reversePath.pop();
+        path.pushBack(vertices[idx]->getData());
+    }
+    
+    return path;
+}
+
+template <typename T>
+void Graph<T>::dijkstraPrint(const T& start) {
+    LinkedList<int> distances = dijkstra(start);
+    
+    if (distances.isEmpty()) return;
+    
+    std::cout << "Distancias mínimas desde " << start << ":" << std::endl;
+    std::cout << "================================" << std::endl;
+    
+    for (unsigned int i = 0; i < vertices.size(); i++) {
+        std::cout << "Nodo " << vertices[i]->getData() << ": ";
+        
+        int dist = distances.elementAt(i);
+        if (dist == INT_MAX) {
+            std::cout << "INT_MAX (no alcanzable)" << std::endl;
+        } else {
+            std::cout << dist << std::endl;
+        }
+    }
 }

@@ -45,6 +45,8 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "fstream": "cpp",
+        "sstream": "cpp"
     }
 }

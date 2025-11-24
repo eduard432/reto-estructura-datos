@@ -2,17 +2,18 @@
 #define VERTEX_H
 
 #include "LinkedList.h"
+#include "Edge.h"
 
 template <typename T>
 class Vertex {
     private:
-        LinkedList<Vertex<T>*> edges;
+        LinkedList<Edge<T>> edges;
         T data;
         bool visited;
         unsigned int index;
     public:
         Vertex(const T& v): data(v) {};
-        void addEdge(Vertex<T>* u);
+        void addEdge(Vertex<T>* u, int weight = 1);
         T& getData();
         bool getVisited() const;
         void setVisited(const bool& v);
@@ -21,7 +22,7 @@ class Vertex {
         void setIndex(const unsigned int& i);
         bool operator==(const Vertex& other) const;
 
-        LinkedList<Vertex<T>*>& getEdges();
+        LinkedList<Edge<T>>& getEdges();
 
 };
 

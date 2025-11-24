@@ -3,8 +3,9 @@
 #include "LinkedList.h"
 
 template <typename T>
-void Vertex<T>::addEdge(Vertex<T>* u) {
-    edges.pushBack(u);
+void Vertex<T>::addEdge(Vertex<T>* u, int weight) {
+    Edge<T> newEdge(u, weight);
+    edges.pushBack(newEdge);
 }
 
 template <typename T>
@@ -13,7 +14,7 @@ T& Vertex<T>::getData() {
 }
 
 template <typename T>
-LinkedList<Vertex<T>*>& Vertex<T>::getEdges() {
+LinkedList<Edge<T>>& Vertex<T>::getEdges() {
     return edges;
 }
 

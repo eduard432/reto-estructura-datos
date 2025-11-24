@@ -146,8 +146,10 @@ string Board::getStatus() const {
 
 void Board::showSquares() const {
     cout << "[ ";
-    for (unsigned int i = 0; i < graph.vertexAt(actualSquareIndex)->getEdges().size(); i++) {
-        cout << graph.vertexAt(actualSquareIndex)->getEdges()[i]->getData().getName() << ", ";
+    Node<Edge<Square>>* current = graph.vertexAt(actualSquareIndex)->getEdges().getHead();
+    while(current) {
+        cout << current->getData().getVertex()->getData().getName() << ", ";
+        current = current->getNext();
     }
     cout << "]";
 }

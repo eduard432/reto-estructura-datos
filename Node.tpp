@@ -35,3 +35,13 @@ template <typename T>
 void Node<T>::setNext(Node<T>* node) {
     next = node;
 }
+
+template <typename T>
+int Node<T>::getPriority() const {
+    return priority;
+}
+
+template <typename T>
+void Node<T>::setPriority(const int p) {
+    priority = p;
+}

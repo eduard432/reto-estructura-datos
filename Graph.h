@@ -22,7 +22,7 @@ class Graph {
 
         bool addVertex(const T& data);
 
-        bool addEdge(const T& v, const T& u);
+        bool addEdge(const T& v, const T& u, int weight = 1);
 
         LinkedList<Vertex<T>*>& getVertices();
 
@@ -33,6 +33,10 @@ class Graph {
         void print();
 
         unsigned int size() const;
+
+        LinkedList<int> dijkstra(const T& start);
+        LinkedList<T> dijkstraPath(const T& start, const T& end);
+        void dijkstraPrint(const T& start);
  
         ~Graph() {
             for (unsigned int i = 0; i < vertices.size(); i++) {

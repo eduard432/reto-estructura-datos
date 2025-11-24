@@ -7,14 +7,17 @@ class Node {
         T data;
         Node<T>* prev;
         Node<T>* next;
-
+        int priority;
     public:
-        Node(const T& val): data(val), prev(nullptr), next(nullptr) {};
+        Node(const T& val, int p = 1): data(val), prev(nullptr), next(nullptr), priority(p) {};
 
         T getData() const;
         T& getDataRef();
         Node<T>* getPrev() const;
         Node<T>* getNext() const;
+
+        int getPriority() const;
+        void setPriority(const int p);
 
         void setData(const T& val);
         void setPrev(Node<T>* node);
