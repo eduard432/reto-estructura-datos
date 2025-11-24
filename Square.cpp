@@ -1,5 +1,6 @@
 #include "Square.h"
 
+
 unsigned int Square::getId() const {
     return id;
 }
@@ -25,4 +26,9 @@ bool Square::operator==(const Square& other) const {
 
 void Square::setVisited(bool v) {
     visited = v;
+}
+
+ostream& operator<<(ostream& os, const Square& s) {
+    os << s.getName();
+    return os;
 }

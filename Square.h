@@ -2,6 +2,7 @@
 #define SQUARE_H
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ class Square {
         unsigned int getProbability() const;
         bool getVisited() const;
         bool operator==(const Square& other) const;
+        friend ostream& operator<<(ostream& os, const Square& s);
 
         void setVisited(bool v);
 };

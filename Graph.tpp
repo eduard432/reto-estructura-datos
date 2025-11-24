@@ -187,7 +187,7 @@ LinkedList<int> Graph<T>::dijkstra(const T& start) {
     distances[startIndex] = 0;
     
     // Priority Queue: menor distancia primero
-    PriorityQueue<T> pq;
+    PriorityQueue<int> pq;
     pq.enqueue(startIndex, 0);
     
     while (!pq.isEmpty()) {
@@ -202,7 +202,7 @@ LinkedList<int> Graph<T>::dijkstra(const T& start) {
             Edge<T> edge = edgeNode->getData();
             Vertex<T>* neighbor = edge.getVertex();
             int v = neighbor->getIndex();
-            int weight = edge.weight;
+            int weight = edge.getWeight();
             
             if (!visited.elementAt(v)) {
                 int newDist = distances.elementAt(u) + weight;

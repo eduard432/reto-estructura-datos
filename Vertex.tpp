@@ -43,3 +43,9 @@ template <typename T>
 bool Vertex<T>::operator==(const Vertex& other) const {
     return data == other.getData();
 }
+
+template <typename U>
+ostream& operator<<(ostream& os, const Vertex<U>& v) {
+    os << v.getData();
+    return os;
+}

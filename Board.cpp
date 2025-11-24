@@ -368,7 +368,7 @@ bool Board::loadConnectionsFromCsv(const string& fileName) {
 
 void Board::showCheatcode() {
     LinkedList<Square> path = graph.dijkstraPath(graph.getVertices().elementAt(startSquareIndex)->getData(), graph.getVertices().elementAt(treasureSquareIndex)->getData());
-            
+    graph.dijkstraPrint(graph.getVertices().elementAt(startSquareIndex)->getData());
     Node<Square>* current = path.getHead();
 
     while(current) {

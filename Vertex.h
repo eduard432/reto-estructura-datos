@@ -22,6 +22,9 @@ class Vertex {
         void setIndex(const unsigned int& i);
         bool operator==(const Vertex& other) const;
 
+        template <typename U>
+        friend ostream& operator<<(ostream& os, const Vertex<U>& s);
+
         LinkedList<Edge<T>>& getEdges();
 
 };

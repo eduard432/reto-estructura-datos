@@ -45,3 +45,9 @@ template <typename T>
 void Node<T>::setPriority(const int p) {
     priority = p;
 }
+
+template <typename U>
+ostream& operator<<(ostream& os, const Node<U>& n) {
+    os << n.getData();
+    return os;
+}
