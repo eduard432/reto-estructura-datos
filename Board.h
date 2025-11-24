@@ -54,10 +54,10 @@ class Board {
         void attack();
         void defend();
         void showSquares() const;
-        void showAllSquares() const;
+        void showAllSquares();
         void showAllMonsters() const;
-        int searchSquareByName(const string& name) const;
-        int searchSquareById(const unsigned int& name) const;
+        int searchSquareByName(const string& name);
+        int searchSquareById(const unsigned int& name);
         void showActualSquare() const;
         void showActualMonster() const;
         void showHero() const;

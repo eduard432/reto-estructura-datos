@@ -164,37 +164,50 @@ bool Board::connectSquares(const unsigned int& sq1, const unsigned int& sq2) {
     return true;
 }
 
-void Board::showAllSquares() const {
+void Board::showAllSquares() {
     cout << "[ ";
-    for (unsigned int i = 0; i < graph.size(); i++) {
-        cout << graph.vertexAt(i)->getData().getName() << ", ";
+
+    Node<Vertex<Square>*>* current = graph.getVertices().getHead();
+    while(current) {
+        cout << current->getData()->getData().getName() << ", ";
+        current = current->getNext();
     }
     cout << "]";
 }
 
 void Board::showAllMonsters() const {
     cout << "[ ";
-    for (unsigned int i = 0; i < monsters.size(); i++) {
-        cout << monsters.elementAt(i).getName() << ", ";
+    Node<Monster>* current = monsters.getHead();
+    while(current) {
+        cout << current->getData().getName() << ", ";
+        current = current->getNext();
     }
     cout << "]";
 }
 
-int Board::searchSquareByName(const string& name) const {
-    for (unsigned int i = 0; i < graph.size(); i++){
-        if(graph.vertexAt(i)->getData().getName() == name) {
-            return i;
+int Board::searchSquareByName(const string& name) {
+    Node<Vertex<Square>*>* current = graph.getVertices().getHead();
+    int count = 0;
+    while(current) {
+        if(current->getData()->getData().getName() == name) {
+            return count;
         }
+        current = current->getNext();
+        count++;
     }
 
     return -1;
 }
 
-int Board::searchSquareById(const unsigned int& id) const {
-    for (unsigned int i = 0; i < graph.size(); i++){
-        if(graph.vertexAt(i)->getData().getId() == id) {
-            return i;
+int Board::searchSquareById(const unsigned int& id) {
+    Node<Vertex<Square>*>* current = graph.getVertices().getHead();
+    int count = 0;
+    while(current) {
+        if(current->getData()->getData().getId() == id) {
+            return count;
         }
+        current = current->getNext();
+        count++;
     }
 
     return -1;
@@ -227,8 +240,6 @@ void Board::showHero() const {
 }
 
 bool Board::changeActualSquare(const string& squareName) {
-
-
     // TODO change to searchSquareById;
     int sIndex = searchSquareByName(squareName);
 
