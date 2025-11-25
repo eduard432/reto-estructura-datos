@@ -102,7 +102,7 @@ bool Board::monsterAttacking(MonsterAttack& attack) {
             answer = -1;
         }
 
-    } while (answer < 0 || answer >= attack.getAnswers().size());
+    } while (answer >= attack.getAnswers().size());
 
     return answer == attack.getCorrectAnswerI();
 }
@@ -533,7 +533,6 @@ bool Board::loadMonsterAttacksFromCsv(const string& fileName) {
 
 void Board::showCheatcode() {
     LinkedList<Square> path = graph.dijkstraPath(graph.getVertices().elementAt(startSquareIndex)->getData(), graph.getVertices().elementAt(treasureSquareIndex)->getData());
-    graph.dijkstraPrint(graph.getVertices().elementAt(startSquareIndex)->getData());
     Node<Square>* current = path.getHead();
 
     while(current) {
@@ -556,7 +555,8 @@ void Board::selectHero() {
     int characterChosen;
 
     cout << "Escribe el nombre de tu heroe: ";
-    cin >> name;
+    getline(cin, name);
+    cout << endl;
 
     cout << "Elige tu clase: " << endl;
     cout << "1. Caballero" << endl;
