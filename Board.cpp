@@ -42,7 +42,7 @@ bool Board::play() {
         return false;
     }
 
-    if(actualSquareIndex == treasureSquareIndex) {
+    if(status == "won" || status == "lost") {
         cout << "Ya ganaste, ¿Para que quieres seguir jugando?" << endl;
 
         return false;
@@ -209,6 +209,7 @@ void Board::combat() {
 
 void Board::lost() {
     cout << "El jugador perdió la pertida" << endl;
+    status = "lost";
 }
 
 void Board::showSquares() const {
@@ -324,6 +325,7 @@ bool Board::changeActualSquare(const string& squareName) {
 
     if(treasureSquareIndex == sIndex) {
         cout << "Ganaste el juego" << endl;
+        status = "won";
     }
 
     actualSquareIndex = sIndex;
