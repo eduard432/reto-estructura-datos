@@ -50,6 +50,7 @@
         "sstream": "cpp",
         "bitset": "cpp",
         "iomanip": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "locale": "cpp"
     }
 }

@@ -58,10 +58,7 @@ class Board {
 
         void combat();
         void lost();
-        string getStatus() const;
 
-        void attack();
-        void defend();
         void showSquares() const;
         void showAllSquares();
         void showAllMonsters() const;

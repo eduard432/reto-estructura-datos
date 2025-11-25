@@ -114,23 +114,28 @@ bool CLI::commands() {
         } else {
             cout << "Sigues en la misma casilla" << endl;
         }
-    }  else if (command == "status") {
+    } else if (command == "status") {
         cout << "=================" << endl;
         cout << "Casilla Actual:" << endl;
         cout << "-----------------" << endl;
         board.showActualSquare();
         cout << "==================" << endl;
 
-        string status = board.getStatus();
+        bool isInBattle = board.getIsInBattle();
 
-        if(status == "peace") {
-            cout << "Todo tranquilo por aquí" << endl;
-        } else if(status == "inAttack") {
-            cout << "Te espera una batalla" << endl;
-            cout << "Tip: usa \"/combat\" para iniciar el combate " << endl; 
-        } else if(status == "combat") {
-            cout << "Estas en combate con un monstruo" << endl;
+        if (isInBattle) {
+            cout << "Estás en combate con un monstruo" << endl;
             board.showActualMonster();
+        } 
+        else {
+            // No estás en batalla
+            bool visited = board.getActualSquare().getVisited();
+
+            if (!visited) {
+                cout << "Todo tranquilo por aquí, usa el comando /play para empezar" << endl;
+            } else {
+                cout << "Todo tranquilo por aquí" << endl;
+            }
         }
     } else if (command == "clear" || command == "cls") {
         clear();

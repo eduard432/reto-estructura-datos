@@ -31,7 +31,7 @@ bool Board::isMonsterAttack(const unsigned int& probability) {
 }
 
 bool Board::getIsInBattle() const {
-    return actualMonsterIndex >= 0;
+    return actualMonsterIndex != -1;
 }
 
 bool Board::play() {
@@ -91,7 +91,7 @@ bool Board::monsterAttacking(MonsterAttack& attack) {
         i++;
     }
 
-    int answer;
+    unsigned int answer;
     do {
         cout << "Tu respuesta: ";
         cin >> answer;
@@ -168,7 +168,7 @@ void Board::combat() {
         i++;
     }
 
-    int selectedAttack;
+    unsigned int selectedAttack;
 
     do {
         cout << "Atacar con: ";
@@ -317,13 +317,13 @@ bool Board::changeActualSquare(const string& squareName) {
         return false;
     }
 
-    if(actualSquareIndex == sIndex) {
+    if(actualSquareIndex == static_cast<unsigned int>(sIndex)) {
         cout << "Ya estás en la casilla" << endl;
 
         return false;
     }
 
-    if(treasureSquareIndex == sIndex) {
+    if(treasureSquareIndex == static_cast<unsigned int>(sIndex)) {
         cout << "Ganaste el juego" << endl;
         status = "won";
     }
