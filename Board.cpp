@@ -42,6 +42,12 @@ bool Board::play() {
         return false;
     }
 
+    if(actualSquareIndex == treasureSquareIndex) {
+        cout << "Ya ganaste, ¿Para que quieres seguir jugando?" << endl;
+
+        return false;
+    }
+
     Square square = graph.vertexAt(actualSquareIndex)->getData();
     bool isBattle = isMonsterAttack(square.getProbability());
 
@@ -310,6 +316,16 @@ bool Board::changeActualSquare(const string& squareName) {
         return false;
     }
 
+    if(actualSquareIndex == sIndex) {
+        cout << "Ya estás en la casilla" << endl;
+
+        return false;
+    }
+
+    if(treasureSquareIndex == sIndex) {
+        cout << "Ganaste el juego" << endl;
+    }
+
     actualSquareIndex = sIndex;
 
     return true;
@@ -529,6 +545,11 @@ void Board::showCheatcode() {
 }
 
 void Board::selectHero() {
+    if(hero != nullptr) {
+        cout << "Ya te registraste" << endl;
+        return;
+    }
+
     string name;
     int characterChosen;
 
