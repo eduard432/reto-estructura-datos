@@ -18,10 +18,11 @@ class Board {
         bool isMonsterAttack(const unsigned int& probality);
         Hero* hero;
         int actualMonsterIndex;
-        string status;
 
         bool monsterAttacking(MonsterAttack& attack);
         void combatWon();
+
+        string status;
 
         void combat(const bool& heroNextAttack);
         bool isHeroTurn;
@@ -39,8 +40,8 @@ class Board {
             hero = nullptr;
             actualSquareIndex = 0;
             actualMonsterIndex = -1;
-            status = "peace";
-            isHeroTurn = false;
+
+            status = "inGame";
         }
         void addSquare(const string& n, const float& p, const bool& v);
         bool connectSquares(const unsigned int& sq1, const unsigned int& sq2);

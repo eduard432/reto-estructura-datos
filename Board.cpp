@@ -48,6 +48,11 @@ bool Board::play() {
         return false;
     }
 
+    if(actualMonsterIndex != -1) {
+        cout << "Ya estás en combate, usa el comando /combat" << endl;
+        return false;
+    }
+
     Square square = graph.vertexAt(actualSquareIndex)->getData();
     bool isBattle = isMonsterAttack(square.getProbability());
 
@@ -203,12 +208,7 @@ void Board::combat() {
 }
 
 void Board::lost() {
-    status = "lost";
     cout << "El jugador perdió la pertida" << endl;
-}
-
-string Board::getStatus() const {
-    return status;
 }
 
 void Board::showSquares() const {
