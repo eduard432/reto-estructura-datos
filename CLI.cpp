@@ -68,6 +68,14 @@ int CLI::readIntLoop(string prompt) {
     }
 }
 
+bool CLI::requireTokens(const LinkedList<string>& tokens, int count) {
+    if (tokens.size() < count) {
+        cout << "Faltan argumentos para este comando." << endl;
+        return false;
+    }
+    return true;
+}
+
 
 bool CLI::commands() {
     string input;
@@ -189,9 +197,12 @@ bool CLI::commands() {
         cout << "Adios :)" << endl;
         return true;
     } else if(command == "sudo") {
-        command = tokens.elementAt(1);
-        if(command == "add") {
+        if (!requireTokens(tokens, 2)) return false;
+        string subCmd = tokens.elementAt(1);
+        if(subCmd == "add") {
+            if (!requireTokens(tokens, 3)) return false; // /sudo add <type>
             string type = tokens.elementAt(2);
+
             if(type == "square") {
                 string name;
                 cout << "Nombre de la casilla:";
@@ -204,10 +215,19 @@ bool CLI::commands() {
                 board.addSquare(name, probability, false);
                 cout << name << " - " << probability << " Agregada!" << endl;
             } else if(type == "monster"){
-                // TODO: implement sudo add monster
+                string name;
+                cout << "Nombre del monstruo:";
+                readInput(name);
+
+                float health = readFloatLoop("Vida del monstruo:");
+                float defense = readFloatLoop("Defensa del monstruo:");
+                float attack = readFloatLoop("Ataque del monstruo:");
+
+                board.addMonster(name, health, attack, defense);
             }
 
-        } else if (command == "load") {
+        } else if (subCmd == "load") {
+            if (!requireTokens(tokens, 3)) return false; // /sudo load <type>
             string type = tokens.elementAt(2);
             string fileName;
             if (type == "monsters") {
@@ -259,15 +279,32 @@ bool CLI::commands() {
                 }
             }
 
-        } else if(command == "list" || command == "ls") {
-            string type = tokens.elementAt(2);
-            int flagIndex = tokens.indexOf("-a");
-            if(type == "squares" && flagIndex != -1) {
-                board.showAllSquares();
-            } else if(type == "monsters" && flagIndex != -1) {
-                board.showAllMonsters();
+        } else if(subCmd == "list" || subCmd == "ls") {
+            if (!requireTokens(tokens, 4)) { 
+                    cout << "Uso: sudo list <squares|monsters> -a" << endl;
+                    return false;
+                }
+
+                string type = tokens.elementAt(2);
+                int flagIndex = tokens.indexOf("-a");
+
+                if (flagIndex == -1) {
+                    cout << "Falta el flag -a" << endl;
+                    cout << "Uso: sudo list <squares|monsters> -a" << endl;
+                    return false;
+                }
+
+                if (type == "squares") {
+                    board.showAllSquares();
+                } 
+                else if (type == "monsters") {
+                    board.showAllMonsters();
+                } 
+                else {
+                    cout << "Tipo inválido: " << type << endl;
+                    cout << "Opciones válidas: squares, monsters" << endl;
             }
-        } else if (command == "connect") {
+        } else if (subCmd == "connect") {
             unsigned int firstSquareIndex;
 
             firstSquareIndex = CLI::readPositiveIntLoop("Inserta el id de la primera casilla a conectar:");
@@ -286,9 +323,22 @@ bool CLI::commands() {
                 cout << "Las casillas no se pudieron conectar" << endl;
             }
 
-        } else if(command == "cheatcode") {
+        } else if(subCmd == "cheatcode") {
             cout << "Camino mas facil hacia el tesoro: " << endl;
             board.showCheatcode();
+        } else if(subCmd == "move" || subCmd == "cs") {
+            board.showAllSquares();
+            cout << endl;
+            cout << "¿A que casilla quieres moverte?: ";
+            string squareName;
+            readInput(squareName);
+            bool isChange = board.changeActualSquare(squareName);
+            if(isChange) {
+                cout << "Te moviste con exito a la casilla: " << endl;
+                board.showActualSquare();
+            } else {
+                cout << "Sigues en la misma casilla" << endl;
+            }
         } else {
             cout << endl;
             cout << "No se reconoce el comando" << endl;

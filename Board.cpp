@@ -282,6 +282,10 @@ void Board::showActualSquare() const {
     cout << "Id: " << sq.getId() << endl;
     cout << "Nombre: " << sq.getName() << endl;
     cout << "¿Casilla superada? " << (sq.getVisited() ? "Si" : "No") << endl;
+
+    if(treasureSquareIndex == actualSquareIndex) {
+        cout << "Estás en la casilla del tesoro" << endl;
+    }
 }
 
 void Board::showActualMonster() const {

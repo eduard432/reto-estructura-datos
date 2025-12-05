@@ -15,6 +15,7 @@ class CLI {
     static float readFloatLoop(string prompt);
     static int readIntLoop(string prompt);
     static unsigned int readPositiveIntLoop(string prompt);
+    bool requireTokens(const LinkedList<string>& tokens, int count);
 };
 
 #endif
