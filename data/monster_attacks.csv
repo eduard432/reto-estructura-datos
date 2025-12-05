@@ -1,4 +1,830 @@
 MONSTER, NAME, DAMAGE, ANSWER1, ANSWER2, ANSWER3, CORRECT_ANSWER
-Sebastian, Fireball1, 15, Fireblast, Flame Strike, Fireball, 3
-Dragon de Compilacion, Fireball2, 15, Fireblast, Flame Strike, Fireball, 3
-Goomba de Codigo, Fireball3, 15, Fireblast, Flame Strike, Fireball, 3
+Bruja de la Insercion,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Bruja de la Insercion,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Bruja de la Insercion,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Bruja de la Insercion,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Bruja de la Insercion,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Bruja de la Insercion,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Bruja de la Insercion,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Bruja de la Insercion,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Bruja de la Insercion,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Bruja de la Insercion,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Bruja de la Insercion,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Bruja de la Insercion,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Bruja de la Insercion,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Bruja de la Insercion,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Bruja de la Insercion,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Bruja de la Insercion,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Bruja de la Insercion,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Bruja de la Insercion,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Bruja de la Insercion,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Bruja de la Insercion,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Bruja de la Insercion,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Bruja de la Insercion,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Bruja de la Insercion,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Bruja de la Insercion,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Bruja de la Insercion,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Bruja de la Insercion,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Bruja de la Insercion,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Bruja de la Insercion,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Bruja de la Insercion,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Bruja de la Insercion,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Bruja de la Insercion,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Bruja de la Insercion,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Bruja de la Insercion,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Bruja de la Insercion,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Bruja de la Insercion,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Bruja de la Insercion,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Bruja de la Insercion,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Bruja de la Insercion,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Bruja de la Insercion,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Bruja de la Insercion,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Bruja de la Insercion,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Bruja de la Insercion,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Bruja de la Insercion,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Bruja de la Insercion,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Bruja de la Insercion,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Ciclope del Grafo,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Ciclope del Grafo,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Ciclope del Grafo,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Ciclope del Grafo,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Ciclope del Grafo,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Ciclope del Grafo,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Ciclope del Grafo,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Ciclope del Grafo,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Ciclope del Grafo,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Ciclope del Grafo,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Ciclope del Grafo,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Ciclope del Grafo,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Ciclope del Grafo,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Ciclope del Grafo,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Ciclope del Grafo,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Ciclope del Grafo,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Ciclope del Grafo,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Ciclope del Grafo,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Ciclope del Grafo,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Ciclope del Grafo,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Ciclope del Grafo,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Ciclope del Grafo,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Ciclope del Grafo,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Ciclope del Grafo,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Ciclope del Grafo,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Ciclope del Grafo,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Ciclope del Grafo,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Ciclope del Grafo,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Ciclope del Grafo,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Ciclope del Grafo,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Ciclope del Grafo,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Ciclope del Grafo,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Ciclope del Grafo,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Ciclope del Grafo,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Ciclope del Grafo,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Ciclope del Grafo,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Ciclope del Grafo,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Ciclope del Grafo,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Ciclope del Grafo,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Ciclope del Grafo,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Ciclope del Grafo,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Ciclope del Grafo,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Ciclope del Grafo,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Ciclope del Grafo,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Ciclope del Grafo,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Ciempies Hashing,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Ciempies Hashing,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Ciempies Hashing,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Ciempies Hashing,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Ciempies Hashing,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Ciempies Hashing,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Ciempies Hashing,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Ciempies Hashing,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Ciempies Hashing,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Ciempies Hashing,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Ciempies Hashing,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Ciempies Hashing,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Ciempies Hashing,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Ciempies Hashing,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Ciempies Hashing,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Ciempies Hashing,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Ciempies Hashing,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Ciempies Hashing,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Ciempies Hashing,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Ciempies Hashing,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Ciempies Hashing,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Ciempies Hashing,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Ciempies Hashing,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Ciempies Hashing,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Ciempies Hashing,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Ciempies Hashing,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Ciempies Hashing,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Ciempies Hashing,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Ciempies Hashing,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Ciempies Hashing,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Ciempies Hashing,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Ciempies Hashing,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Ciempies Hashing,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Ciempies Hashing,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Ciempies Hashing,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Ciempies Hashing,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Ciempies Hashing,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Ciempies Hashing,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Ciempies Hashing,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Ciempies Hashing,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Ciempies Hashing,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Ciempies Hashing,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Ciempies Hashing,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Ciempies Hashing,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Ciempies Hashing,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Dragon de Compilacion,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Dragon de Compilacion,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Dragon de Compilacion,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Dragon de Compilacion,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Dragon de Compilacion,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Dragon de Compilacion,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Dragon de Compilacion,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Dragon de Compilacion,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Dragon de Compilacion,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Dragon de Compilacion,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Dragon de Compilacion,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Dragon de Compilacion,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Dragon de Compilacion,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Dragon de Compilacion,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Dragon de Compilacion,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Dragon de Compilacion,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Dragon de Compilacion,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Dragon de Compilacion,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Dragon de Compilacion,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Dragon de Compilacion,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Dragon de Compilacion,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Dragon de Compilacion,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Dragon de Compilacion,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Dragon de Compilacion,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Dragon de Compilacion,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Dragon de Compilacion,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Dragon de Compilacion,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Dragon de Compilacion,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Dragon de Compilacion,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Dragon de Compilacion,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Dragon de Compilacion,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Dragon de Compilacion,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Dragon de Compilacion,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Dragon de Compilacion,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Dragon de Compilacion,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Dragon de Compilacion,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Dragon de Compilacion,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Dragon de Compilacion,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Dragon de Compilacion,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Dragon de Compilacion,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Dragon de Compilacion,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Dragon de Compilacion,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Dragon de Compilacion,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Dragon de Compilacion,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Dragon de Compilacion,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Espectro de la Pila,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Espectro de la Pila,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Espectro de la Pila,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Espectro de la Pila,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Espectro de la Pila,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Espectro de la Pila,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Espectro de la Pila,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Espectro de la Pila,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Espectro de la Pila,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Espectro de la Pila,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Espectro de la Pila,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Espectro de la Pila,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Espectro de la Pila,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Espectro de la Pila,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Espectro de la Pila,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Espectro de la Pila,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Espectro de la Pila,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Espectro de la Pila,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Espectro de la Pila,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Espectro de la Pila,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Espectro de la Pila,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Espectro de la Pila,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Espectro de la Pila,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Espectro de la Pila,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Espectro de la Pila,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Espectro de la Pila,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Espectro de la Pila,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Espectro de la Pila,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Espectro de la Pila,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Espectro de la Pila,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Espectro de la Pila,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Espectro de la Pila,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Espectro de la Pila,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Espectro de la Pila,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Espectro de la Pila,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Espectro de la Pila,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Espectro de la Pila,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Espectro de la Pila,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Espectro de la Pila,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Espectro de la Pila,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Espectro de la Pila,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Espectro de la Pila,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Espectro de la Pila,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Espectro de la Pila,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Espectro de la Pila,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Fantasma de Datos,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Fantasma de Datos,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Fantasma de Datos,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Fantasma de Datos,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Fantasma de Datos,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Fantasma de Datos,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Fantasma de Datos,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Fantasma de Datos,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Fantasma de Datos,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Fantasma de Datos,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Fantasma de Datos,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Fantasma de Datos,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Fantasma de Datos,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Fantasma de Datos,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Fantasma de Datos,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Fantasma de Datos,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Fantasma de Datos,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Fantasma de Datos,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Fantasma de Datos,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Fantasma de Datos,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Fantasma de Datos,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Fantasma de Datos,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Fantasma de Datos,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Fantasma de Datos,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Fantasma de Datos,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Fantasma de Datos,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Fantasma de Datos,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Fantasma de Datos,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Fantasma de Datos,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Fantasma de Datos,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Fantasma de Datos,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Fantasma de Datos,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Fantasma de Datos,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Fantasma de Datos,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Fantasma de Datos,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Fantasma de Datos,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Fantasma de Datos,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Fantasma de Datos,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Fantasma de Datos,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Fantasma de Datos,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Fantasma de Datos,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Fantasma de Datos,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Fantasma de Datos,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Fantasma de Datos,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Fantasma de Datos,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Golem de ER,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Golem de ER,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Golem de ER,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Golem de ER,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Golem de ER,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Golem de ER,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Golem de ER,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Golem de ER,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Golem de ER,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Golem de ER,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Golem de ER,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Golem de ER,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Golem de ER,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Golem de ER,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Golem de ER,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Golem de ER,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Golem de ER,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Golem de ER,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Golem de ER,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Golem de ER,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Golem de ER,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Golem de ER,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Golem de ER,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Golem de ER,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Golem de ER,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Golem de ER,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Golem de ER,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Golem de ER,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Golem de ER,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Golem de ER,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Golem de ER,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Golem de ER,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Golem de ER,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Golem de ER,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Golem de ER,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Golem de ER,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Golem de ER,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Golem de ER,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Golem de ER,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Golem de ER,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Golem de ER,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Golem de ER,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Golem de ER,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Golem de ER,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Golem de ER,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Goomba de Codigo,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Goomba de Codigo,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Goomba de Codigo,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Goomba de Codigo,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Goomba de Codigo,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Goomba de Codigo,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Goomba de Codigo,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Goomba de Codigo,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Goomba de Codigo,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Goomba de Codigo,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Goomba de Codigo,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Goomba de Codigo,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Goomba de Codigo,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Goomba de Codigo,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Goomba de Codigo,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Goomba de Codigo,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Goomba de Codigo,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Goomba de Codigo,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Goomba de Codigo,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Goomba de Codigo,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Goomba de Codigo,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Goomba de Codigo,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Goomba de Codigo,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Goomba de Codigo,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Goomba de Codigo,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Goomba de Codigo,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Goomba de Codigo,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Goomba de Codigo,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Goomba de Codigo,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Goomba de Codigo,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Goomba de Codigo,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Goomba de Codigo,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Goomba de Codigo,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Goomba de Codigo,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Goomba de Codigo,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Goomba de Codigo,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Goomba de Codigo,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Goomba de Codigo,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Goomba de Codigo,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Goomba de Codigo,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Goomba de Codigo,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Goomba de Codigo,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Goomba de Codigo,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Goomba de Codigo,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Goomba de Codigo,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Grifo de la Busqueda,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Grifo de la Busqueda,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Grifo de la Busqueda,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Grifo de la Busqueda,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Grifo de la Busqueda,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Grifo de la Busqueda,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Grifo de la Busqueda,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Grifo de la Busqueda,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Grifo de la Busqueda,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Grifo de la Busqueda,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Grifo de la Busqueda,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Grifo de la Busqueda,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Grifo de la Busqueda,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Grifo de la Busqueda,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Grifo de la Busqueda,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Grifo de la Busqueda,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Grifo de la Busqueda,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Grifo de la Busqueda,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Grifo de la Busqueda,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Grifo de la Busqueda,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Grifo de la Busqueda,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Grifo de la Busqueda,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Grifo de la Busqueda,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Grifo de la Busqueda,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Grifo de la Busqueda,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Grifo de la Busqueda,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Grifo de la Busqueda,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Grifo de la Busqueda,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Grifo de la Busqueda,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Grifo de la Busqueda,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Grifo de la Busqueda,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Grifo de la Busqueda,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Grifo de la Busqueda,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Grifo de la Busqueda,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Grifo de la Busqueda,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Grifo de la Busqueda,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Grifo de la Busqueda,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Grifo de la Busqueda,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Grifo de la Busqueda,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Grifo de la Busqueda,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Grifo de la Busqueda,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Grifo de la Busqueda,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Grifo de la Busqueda,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Grifo de la Busqueda,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Grifo de la Busqueda,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Guerrero de la Burbuja,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Guerrero de la Burbuja,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Guerrero de la Burbuja,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Guerrero de la Burbuja,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Guerrero de la Burbuja,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Guerrero de la Burbuja,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Guerrero de la Burbuja,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Guerrero de la Burbuja,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Guerrero de la Burbuja,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Guerrero de la Burbuja,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Guerrero de la Burbuja,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Guerrero de la Burbuja,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Guerrero de la Burbuja,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Guerrero de la Burbuja,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Guerrero de la Burbuja,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Guerrero de la Burbuja,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Guerrero de la Burbuja,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Guerrero de la Burbuja,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Guerrero de la Burbuja,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Guerrero de la Burbuja,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Guerrero de la Burbuja,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Guerrero de la Burbuja,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Guerrero de la Burbuja,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Guerrero de la Burbuja,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Guerrero de la Burbuja,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Guerrero de la Burbuja,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Guerrero de la Burbuja,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Guerrero de la Burbuja,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Guerrero de la Burbuja,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Guerrero de la Burbuja,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Guerrero de la Burbuja,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Guerrero de la Burbuja,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Guerrero de la Burbuja,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Guerrero de la Burbuja,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Guerrero de la Burbuja,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Guerrero de la Burbuja,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Guerrero de la Burbuja,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Guerrero de la Burbuja,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Guerrero de la Burbuja,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Guerrero de la Burbuja,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Guerrero de la Burbuja,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Guerrero de la Burbuja,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Guerrero de la Burbuja,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Guerrero de la Burbuja,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Guerrero de la Burbuja,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Hada de la Integridad,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Hada de la Integridad,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Hada de la Integridad,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Hada de la Integridad,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Hada de la Integridad,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Hada de la Integridad,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Hada de la Integridad,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Hada de la Integridad,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Hada de la Integridad,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Hada de la Integridad,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Hada de la Integridad,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Hada de la Integridad,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Hada de la Integridad,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Hada de la Integridad,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Hada de la Integridad,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Hada de la Integridad,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Hada de la Integridad,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Hada de la Integridad,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Hada de la Integridad,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Hada de la Integridad,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Hada de la Integridad,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Hada de la Integridad,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Hada de la Integridad,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Hada de la Integridad,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Hada de la Integridad,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Hada de la Integridad,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Hada de la Integridad,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Hada de la Integridad,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Hada de la Integridad,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Hada de la Integridad,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Hada de la Integridad,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Hada de la Integridad,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Hada de la Integridad,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Hada de la Integridad,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Hada de la Integridad,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Hada de la Integridad,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Hada de la Integridad,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Hada de la Integridad,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Hada de la Integridad,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Hada de la Integridad,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Hada de la Integridad,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Hada de la Integridad,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Hada de la Integridad,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Hada de la Integridad,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Hada de la Integridad,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Kraken de SQL,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Kraken de SQL,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Kraken de SQL,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Kraken de SQL,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Kraken de SQL,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Kraken de SQL,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Kraken de SQL,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Kraken de SQL,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Kraken de SQL,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Kraken de SQL,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Kraken de SQL,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Kraken de SQL,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Kraken de SQL,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Kraken de SQL,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Kraken de SQL,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Kraken de SQL,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Kraken de SQL,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Kraken de SQL,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Kraken de SQL,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Kraken de SQL,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Kraken de SQL,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Kraken de SQL,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Kraken de SQL,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Kraken de SQL,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Kraken de SQL,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Kraken de SQL,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Kraken de SQL,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Kraken de SQL,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Kraken de SQL,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Kraken de SQL,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Kraken de SQL,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Kraken de SQL,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Kraken de SQL,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Kraken de SQL,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Kraken de SQL,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Kraken de SQL,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Kraken de SQL,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Kraken de SQL,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Kraken de SQL,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Kraken de SQL,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Kraken de SQL,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Kraken de SQL,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Kraken de SQL,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Kraken de SQL,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Kraken de SQL,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Limo de Memoria,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Limo de Memoria,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Limo de Memoria,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Limo de Memoria,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Limo de Memoria,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Limo de Memoria,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Limo de Memoria,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Limo de Memoria,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Limo de Memoria,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Limo de Memoria,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Limo de Memoria,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Limo de Memoria,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Limo de Memoria,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Limo de Memoria,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Limo de Memoria,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Limo de Memoria,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Limo de Memoria,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Limo de Memoria,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Limo de Memoria,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Limo de Memoria,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Limo de Memoria,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Limo de Memoria,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Limo de Memoria,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Limo de Memoria,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Limo de Memoria,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Limo de Memoria,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Limo de Memoria,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Limo de Memoria,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Limo de Memoria,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Limo de Memoria,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Limo de Memoria,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Limo de Memoria,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Limo de Memoria,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Limo de Memoria,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Limo de Memoria,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Limo de Memoria,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Limo de Memoria,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Limo de Memoria,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Limo de Memoria,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Limo de Memoria,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Limo de Memoria,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Limo de Memoria,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Limo de Memoria,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Limo de Memoria,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Limo de Memoria,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Minotauro del AVL,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Minotauro del AVL,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Minotauro del AVL,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Minotauro del AVL,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Minotauro del AVL,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Minotauro del AVL,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Minotauro del AVL,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Minotauro del AVL,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Minotauro del AVL,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Minotauro del AVL,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Minotauro del AVL,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Minotauro del AVL,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Minotauro del AVL,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Minotauro del AVL,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Minotauro del AVL,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Minotauro del AVL,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Minotauro del AVL,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Minotauro del AVL,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Minotauro del AVL,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Minotauro del AVL,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Minotauro del AVL,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Minotauro del AVL,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Minotauro del AVL,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Minotauro del AVL,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Minotauro del AVL,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Minotauro del AVL,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Minotauro del AVL,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Minotauro del AVL,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Minotauro del AVL,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Minotauro del AVL,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Minotauro del AVL,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Minotauro del AVL,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Minotauro del AVL,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Minotauro del AVL,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Minotauro del AVL,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Minotauro del AVL,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Minotauro del AVL,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Minotauro del AVL,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Minotauro del AVL,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Minotauro del AVL,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Minotauro del AVL,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Minotauro del AVL,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Minotauro del AVL,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Minotauro del AVL,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Minotauro del AVL,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Murcielago del BST,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Murcielago del BST,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Murcielago del BST,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Murcielago del BST,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Murcielago del BST,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Murcielago del BST,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Murcielago del BST,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Murcielago del BST,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Murcielago del BST,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Murcielago del BST,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Murcielago del BST,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Murcielago del BST,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Murcielago del BST,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Murcielago del BST,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Murcielago del BST,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Murcielago del BST,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Murcielago del BST,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Murcielago del BST,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Murcielago del BST,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Murcielago del BST,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Murcielago del BST,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Murcielago del BST,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Murcielago del BST,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Murcielago del BST,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Murcielago del BST,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Murcielago del BST,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Murcielago del BST,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Murcielago del BST,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Murcielago del BST,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Murcielago del BST,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Murcielago del BST,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Murcielago del BST,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Murcielago del BST,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Murcielago del BST,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Murcielago del BST,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Murcielago del BST,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Murcielago del BST,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Murcielago del BST,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Murcielago del BST,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Murcielago del BST,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Murcielago del BST,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Murcielago del BST,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Murcielago del BST,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Murcielago del BST,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Murcielago del BST,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Sirena de Filas,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Sirena de Filas,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Sirena de Filas,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Sirena de Filas,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Sirena de Filas,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Sirena de Filas,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Sirena de Filas,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Sirena de Filas,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Sirena de Filas,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Sirena de Filas,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Sirena de Filas,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Sirena de Filas,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Sirena de Filas,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Sirena de Filas,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Sirena de Filas,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Sirena de Filas,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Sirena de Filas,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Sirena de Filas,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Sirena de Filas,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Sirena de Filas,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Sirena de Filas,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Sirena de Filas,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Sirena de Filas,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Sirena de Filas,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Sirena de Filas,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Sirena de Filas,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Sirena de Filas,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Sirena de Filas,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Sirena de Filas,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Sirena de Filas,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Sirena de Filas,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Sirena de Filas,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Sirena de Filas,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Sirena de Filas,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Sirena de Filas,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Sirena de Filas,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Sirena de Filas,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Sirena de Filas,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Sirena de Filas,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Sirena de Filas,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Sirena de Filas,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Sirena de Filas,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Sirena de Filas,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Sirena de Filas,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Sirena de Filas,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Troll del Heap,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Troll del Heap,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Troll del Heap,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Troll del Heap,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Troll del Heap,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Troll del Heap,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Troll del Heap,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Troll del Heap,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Troll del Heap,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Troll del Heap,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Troll del Heap,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Troll del Heap,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Troll del Heap,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Troll del Heap,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Troll del Heap,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Troll del Heap,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Troll del Heap,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Troll del Heap,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Troll del Heap,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Troll del Heap,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Troll del Heap,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Troll del Heap,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Troll del Heap,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Troll del Heap,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Troll del Heap,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Troll del Heap,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Troll del Heap,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Troll del Heap,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Troll del Heap,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Troll del Heap,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Troll del Heap,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Troll del Heap,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Troll del Heap,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Troll del Heap,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Troll del Heap,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Troll del Heap,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Troll del Heap,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Troll del Heap,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Troll del Heap,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Troll del Heap,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Troll del Heap,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Troll del Heap,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Troll del Heap,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Troll del Heap,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Troll del Heap,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
+Zombi Encadenado,En el algoritmo Quick Sort como se llama el elemento que divide el arreglo en dos particiones?,4,Subarreglo,Pivote,Mediana,2
+Zombi Encadenado,Cual es el mejor caso de complejidad para el Ordenamiento por Insercion?,4,O(n^2),O(n),O(n log n),2
+Zombi Encadenado,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Breadth First?,14,Pila (Stack),Fila (Queue),arbol,2
+Zombi Encadenado,Que estructura de datos auxiliar utiliza el algoritmo de recorrido Depth First?,14,Pila (Stack),Fila (Queue),arbol,1
+Zombi Encadenado,En un grafo dirigido (Digrafo) como se llama el primer elemento de un arco?,14,Destino,Origen,Arco adyacente,2
+Zombi Encadenado,Que representacion de grafos desperdicia espacio si el grafo es NO-Dirigido?,14,Matriz de Adyacencias,Lista de Arcos,Listas Encadenadas Circulares,1
+Zombi Encadenado,Que mtodo de funcion de Hashing consiste en dividir la llave entre el tamao de la tabla y usar el residuo?,10,Cuadrtica,Residuales,Seleccion de Dgitos,2
+Zombi Encadenado,Que estrategia para colisiones reacomoda el elemento colisionado DENTRO del espacio de la Tabla?,10,Encadenamiento Externo,Mtodos de Direccion Abierta,Hashing Abierto,2
+Zombi Encadenado,En el mtodo de Prueba Lineal para colisiones la formula de la nueva posicion es dir_base + J Que representa J?,10,Tamao de la tabla,Cantidad de colisiones que ha provocado esa llave,Valor de la llave,2
+Zombi Encadenado,Como se representan tpicamente los 'buckets' en el mtodo de Encadenamiento Externo?,10,Arreglos,Listas encadenadas,Heaps,2
+Zombi Encadenado,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n log n),O(n^3),3
+Zombi Encadenado,Cual es el orden de complejidad del algoritmo para la multiplicacion de matrices de tamano nxn?,12,O(n^2),O(n^3),O(n log n),2
+Zombi Encadenado,Cual es la filosofa de orden de entrada de una Pila (Stack)?,8,LIFO,FIFO,FILO,1
+Zombi Encadenado,Cual es el nombre de la operacion para insertar un elemento en una Pila?,8,peek,push,top,2
+Zombi Encadenado,Cules son las siglas en ingls para Tipo de Datos Abstracto?,10,DTA,ADT,DTF,2
+Zombi Encadenado,Como se mapea una relacion Muchos a Muchos (M:N) en el Modelo Relacional?,6,Creando una tabla intermedia,Con una FK en la tabla del lado M,Creando un atributo multivalor,1
+Zombi Encadenado,Los atributos derivados se almacenan en el Modelo Relacional?,6,Si - como FKs,No - se calculan cuando se necesitan,Si - se almacenan y se actualizan,2
+Zombi Encadenado,Que tipo de entidad depende de una entidad fuerte para su identificacion y usa la PK de la entidad fuerte?,6,Entidad Normal,Entidad Dbil,Entidad Recursiva,2
+Zombi Encadenado,Cual es la complejidad en el peor caso para el algoritmo de Ordenamiento por Intercambio?,3,O(n^2),O(n log n),O(n),1
+Zombi Encadenado,Cual es el peor caso de complejidad para el algoritmo Quick Sort?,3,O(n^2),O(n log n),O(log n),1
+Zombi Encadenado,Cual es la complejidad en el peor caso para el algoritmo Merge Sort?,10,O(n log n),O(n^2),O(n!),1
+Zombi Encadenado,Cual es la eficiencia de orden para el algoritmo de Bsqueda Binaria?,7,O(n),O(log2 n),O(n^2),2
+Zombi Encadenado,Cual es la aplicacion principal del recorrido Inorden en un ABB?,7,Liberar los nodos del arbol,Desplegar en orden creciente los elementos,Generar una rplica del arbol,2
+Zombi Encadenado,El orden de visita del recorrido Preorden es:,7,Izquierdo-Raiz-Derecho,Raiz-Izquierdo-Derecho,Izquierdo-Derecho-Raiz,2
+Zombi Encadenado,Cual es el orden de eficiencia (en el peor caso) de la Bsqueda Secuencial?,2,O(n),O(log2 n),O(n log n),1
+Zombi Encadenado,Que algoritmo busca el valor ms grande (o menor) y lo intercambia por el valor en el extremo opuesto?,2,Merge Sort,Seleccion Directa,Quick Sort,2
+Zombi Encadenado,Como se llama a una trayectoria en un grafo donde el Nodo de Inicio y el de Terminacion son iguales?,2,Ciclo,Trayectoria Simple,Arco,1
+Zombi Encadenado,Que regla del Modelo Relacional garantiza que la llave primaria es nica y no nula?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,2
+Zombi Encadenado,Que regla asegura que una Llave Fornea coincida con un valor existente en la PK de otra tabla?,9,Integridad Referencial,Integridad de Entidad,Restriccion de Dominio,1
+Zombi Encadenado,Que tipo de JOIN devuelve todas las filas de la tabla izquierda y solo las filas coincidentes de la tabla derecha?,15,RIGHT JOIN,LEFT JOIN,FULL JOIN,2
+Zombi Encadenado,Que clusula de SQL se usa para aplicar una condicion a los resultados de una funcion de grupo (agregacion)?,15,GROUP BY,HAVING,WHERE,2
+Zombi Encadenado,Que operador se utiliza en C++ para crear espacio de almacenamiento dinmico?,5,*,new,&,2
+Zombi Encadenado,Cual es el smbolo del Operador de Direccion que genera la direccion de una variable?,5,*,->,&,3
+Zombi Encadenado,En que rea de memoria se localizan las variables y objetos creados dinmicamente?,5,RAM,Stack,Heap,3
+Zombi Encadenado,Si un apuntador ya est apuntando a un espacio dinmico y se le asigna un nuevo valor con new que problema se genera?,5,Se deja memoria volando (memory leak),Fallas de ejecucion,Se libera la memoria automticamente,1
+Zombi Encadenado,Como se define el Factor de Balanceo de un nodo en un arbol AVL?,11,Altura Derecha - Altura Izquierda,Suma de alturas de subrboles,Altura Izquierda - Altura Derecha,3
+Zombi Encadenado,Si al agregar un nodo a un AVL su Factor de Balanceo cambia a +2 o -2 que proceso se debe realizar?,11,Eliminar la raz,Rotacion,Reacomodar hacia arriba,2
+Zombi Encadenado,Si el Factor de Balanceo de un nodo AVL es -1 que indica?,11,El subrbol izquierdo es ms alto,Las alturas son iguales,El subrbol derecho es ms alto,1
+Zombi Encadenado,En un BST que regla deben cumplir los descendientes izquierdos de un nodo?,9,Tener un valor menor al padre,Tener el mismo valor,Tener un valor mayor,1
+Zombi Encadenado,Que es un Nodo Hoja en un arbol Binario?,9,El primer elemento agregado,Aquel nodo que no tiene hijos,El nodo con ms descendientes,2
+Sebastian,Cual es la mejor carrera de todas?,999,ITC,IRS,IDM,2
+Zombi Encadenado,Cual es la filosofa de orden de entrada de una Fila (Queue)?,7,FILO,FIFO,LIFO,2
+Zombi Encadenado,Cual es la operacion de una Fila (Queue) que devuelve el valor del elemento al frente SIN eliminarlo?,7,pop,peek,push,2
+Zombi Encadenado,Cual es la complejidad del algoritmo Heap Sort?,13,O(n log n),O(n^2),O(n),1
+Zombi Encadenado,En un Heap (Max Heap) que propiedad debe cumplir un nodo padre respecto a sus hijos?,13,Tener un valor menor,Tener un valor de mayor prioridad,Estar a la izquierda,2
+Zombi Encadenado,Que campo de un nodo en una Lista Encadenada indica dnde se encuentra el siguiente elemento?,6,next,data,root,1
