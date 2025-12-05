@@ -5,31 +5,64 @@
 using namespace std;
 
 bool AbilityTree::upgrade(Hero& hero, Attribute type, bool isLeftOption) {
-    int abilityIndex = -1;
-    if(type == Attribute::DEFENSE) {
-        abilityIndex = defenseIndex;
+    unsigned int* currentIndexPtr = nullptr;
 
-    } else if(type == Attribute::HEALTH) {
-        abilityIndex = healthIndex;
-    } else if(type == Attribute::ATTACK) {
-        abilityIndex = attackIndex;
-    } else if(type == Attribute::POWER) {
-        abilityIndex = powerIndex;
+    switch (type) {
+        case Attribute::DEFENSE: currentIndexPtr = &defenseIndex; break;
+        case Attribute::HEALTH:  currentIndexPtr = &healthIndex; break;
+        case Attribute::ATTACK:  currentIndexPtr = &attackIndex; break;
+        case Attribute::POWER:   currentIndexPtr = &powerIndex; break;
+        default: return false;
     }
 
-    NodeTree<int>* node = tree.search(abilityIndex);
-    bool percentage = false;
+    int currentIndex = *currentIndexPtr;
 
-    if(!node) {
-        return false;
+    NodeTree<int>* node = tree.search(currentIndex);
+    if (!node) return false;
+
+    NodeTree<int>* nextNode = isLeftOption ? node->getLeft() : node->getRight();
+    if (!nextNode) return false;
+
+    unsigned int index = nextNode->getData();
+    unsigned int height = nextNode->getHeight();
+
+    bool percentage = isPercentage(index, height);
+
+    float amount = calculateUpgrade(index, height);
+
+    switch (type) {
+        case Attribute::DEFENSE:
+            if (percentage) {
+                hero.setDEF(hero.getDEF() * (amount/100));
+            }
+            else {
+                hero.addDEF(amount);
+            }
+            break;
+
+        case Attribute::HEALTH:
+            if (percentage) {
+                hero.setHP(hero.getHP() * (amount/100));
+            }
+            else hero.addHP(amount);
+            break;
+
+        case Attribute::ATTACK:
+            if (percentage) {
+                hero.setATK(hero.getATK() * (amount/100));
+            }
+            else hero.addATK(amount);
+            break;
+
+        case Attribute::POWER:
+            if (percentage) {
+                hero.setPower(hero.getPower() * (amount/100));
+            }
+            else hero.addPower(amount);
+            break;
     }
 
-    if(isLeftOption) {
-        percentage = isPercentage(node->getLeft()->getData(), node->getLeft()->getData());
-    } else {
-        percentage = isPercentage(node->getRight()->getData(), node->getRight()->getData());
-    }
-
+    *currentIndexPtr = index;
 
     return true;
 }

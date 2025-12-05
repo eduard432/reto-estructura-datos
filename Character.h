@@ -25,6 +25,10 @@ class Character  {
         void setATK(const float& attack);
         void setDEF(const float& defense);
         void setName(const string& n);
+
+        float addHP(const float& newHealth);
+        float addATK(const float& newAttack);
+        float addDEF(const float& newDefense);
 };
 
 #endif

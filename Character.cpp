@@ -33,3 +33,19 @@ void Character::setDEF(const float& defense) {
 void Character::setName(const string& n) {
     name = n;
 }
+
+float Character::addHP(const float& newHealth) {
+    HP+=newHealth;
+    return HP;
+}
+
+float Character::addATK(const float& newAtk) {
+    ATK+=newAtk;
+    return ATK;
+}
+
+
+float Character::addDEF(const float& newDefense) {
+    DEF+=newDefense;
+    return DEF;
+}
