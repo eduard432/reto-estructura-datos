@@ -5,6 +5,8 @@
 #include "CLI.h"
 #include "LinkedList.h"
 #include "Utils.h"
+
+
 using namespace std;
 
 void CLI::clear() {
@@ -118,10 +120,16 @@ bool CLI::commands() {
         // clear
         cout << "clear - ";
         cout << "Limpia la terminal" << endl; 
+        // upgrade
+        cout << "upgrade - ";
+        cout << "Mejora tus estadisticas" << endl;
         // exit
         cout << "exit - ";
         cout << "Salir del juego" << endl;
         // Comandos que necesitan de administrador:
+        cout << "================" << endl;
+        cout << "SUDO commands:" << endl;
+        cout << "================" << endl;
         // add
         cout << "add - ";
         cout << "Agrega una casilla o un monstruo" << endl;
@@ -193,6 +201,51 @@ bool CLI::commands() {
         }
     } else if (command == "clear" || command == "cls") {
         clear();
+    } else if(command == "upgrade") {
+        if (!requireTokens(tokens, 2)) return false;
+        string subCmd = tokens.elementAt(1);
+        if(subCmd == "show") {
+            board.getAbilityTree().show();
+        } else if(subCmd == "select") {
+            cout << "[0] Aumenta la defensa" << endl;
+            cout << "[1] Aumenta la vida" << endl;
+            cout << "[2] Aumenta el ataque" << endl;
+            cout << "[3] Aumenta el poder" << endl;
+
+            unsigned int attributeChoosen;
+
+            do {
+                attributeChoosen = CLI::readPositiveIntLoop("Ingresa tu opción (1-4): ");
+
+                if (attributeChoosen < 0 || attributeChoosen > 3) {
+                    cout << "Opción inválida. Intenta nuevamente." << endl;
+                }
+
+            } while (attributeChoosen < 0 || attributeChoosen > 3);
+
+            board.getAbilityTree().show(static_cast<Attribute>(attributeChoosen));
+
+            int option = -1;
+            do {
+                option = readIntLoop("Selecciona la opción:");
+            } while (option != 1 && option != 2);
+
+            if(board.getAbilityPoints() == 0) {
+                cout << "No tienes puntos de habilidad disponibles" << endl;
+                return false;
+            } else {
+                if(option == 2 && board.getAbilityPoints() < 3) {
+                    cout << "No tienes puntos de habilidad suficientes (3)" << endl;
+                    return false;
+                }
+            }
+
+            board.getAbilityTree().upgrade(board.getHero(), static_cast<Attribute>(attributeChoosen), option == 1);
+        } else {
+            cout << endl;
+            cout << "No se reconoce el comando" << endl;
+            cout << "Usa /help para ver los comandos disponibles" << endl;
+        }
     } else if(command == "exit") {
         cout << "Adios :)" << endl;
         return true;

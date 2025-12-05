@@ -38,7 +38,7 @@ class AbilityTree {
             }
         };
 
-        bool upgrade(Hero& hero, Attribute type, bool isLeftOption);
+        bool upgrade(Hero* hero, Attribute type, bool isLeftOption);
         void show();
         void show(Attribute type);
 

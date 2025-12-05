@@ -75,6 +75,12 @@ class Board {
 
         void showCheatcode();
         Square getActualSquare() const;
+        AbilityTree& getAbilityTree();
+
+        unsigned int getAbilityPoints() const;
+        void setAbilityPoints(unsigned int newPoints);
+
+        Hero* getHero();
 
 };
 

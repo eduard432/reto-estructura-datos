@@ -44,7 +44,7 @@ bool Board::play() {
     }
 
     if(status == "won" || status == "lost") {
-        cout << "Ya ganaste, ¿Para que quieres seguir jugando?" << endl;
+        cout << "Ya se acabó la partida, Para que quieres seguir jugando?" << endl;
 
         return false;
     }
@@ -302,6 +302,12 @@ void Board::showActualMonster() const {
 }
 
 void Board::showHero() const {
+    if(hero == nullptr) {
+        cout << "Usa /register antes";
+        return;
+    }
+
+
     cout << "Nombre: " << hero->getName() << endl;
     cout << "ATK: " << hero->getATK() << endl;
     cout << "HP: " << hero->getHP() << endl;
@@ -591,10 +597,10 @@ void Board::selectHero() {
     cout << endl;
 
     cout << "Elige tu clase: " << endl;
-    cout << "1. Caballero" << endl;
-    cout << "2. Mago" << endl;
-    cout << "3. Explorador" << endl;
-    cout << "4. Bard" << endl;
+    cout << "[1] Caballero" << endl;
+    cout << "[2] Mago" << endl;
+    cout << "[3] Explorador" << endl;
+    cout << "[4] Bard" << endl;
 
     unsigned int characterChosen;
 
@@ -616,4 +622,21 @@ void Board::selectHero() {
     }
 
     hero->addAttack();
+}
+
+
+AbilityTree& Board::getAbilityTree() {
+    return abilityTree;
+}
+
+unsigned int Board::getAbilityPoints() const {
+    return abilityPoints;
+}
+
+void Board::setAbilityPoints(unsigned int newPoints) {
+    abilityPoints = newPoints;
+}
+
+Hero* Board::getHero() {
+    return hero;
 }

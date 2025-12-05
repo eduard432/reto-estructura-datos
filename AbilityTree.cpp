@@ -4,7 +4,12 @@
 
 using namespace std;
 
-bool AbilityTree::upgrade(Hero& hero, Attribute type, bool isLeftOption) {
+bool AbilityTree::upgrade(Hero* hero, Attribute type, bool isLeftOption) {
+
+    if(hero == nullptr) {
+        return false;
+    }
+
     unsigned int* currentIndexPtr = nullptr;
 
     switch (type) {
@@ -33,32 +38,32 @@ bool AbilityTree::upgrade(Hero& hero, Attribute type, bool isLeftOption) {
     switch (type) {
         case Attribute::DEFENSE:
             if (percentage) {
-                hero.setDEF(hero.getDEF() * (amount/100));
+                hero->setDEF(hero->getDEF() * (amount/100));
             }
             else {
-                hero.addDEF(amount);
+                hero->addDEF(amount);
             }
             break;
 
         case Attribute::HEALTH:
             if (percentage) {
-                hero.setHP(hero.getHP() * (amount/100));
+                hero->setHP(hero->getHP() * (amount/100));
             }
-            else hero.addHP(amount);
+            else hero->addHP(amount);
             break;
 
         case Attribute::ATTACK:
             if (percentage) {
-                hero.setATK(hero.getATK() * (amount/100));
+                hero->setATK(hero->getATK() * (amount/100));
             }
-            else hero.addATK(amount);
+            else hero->addATK(amount);
             break;
 
         case Attribute::POWER:
             if (percentage) {
-                hero.setPower(hero.getPower() * (amount/100));
+                hero->setPower(hero->getPower() * (amount/100));
             }
-            else hero.addPower(amount);
+            else hero->addPower(amount);
             break;
     }
 
@@ -83,6 +88,7 @@ void AbilityTree::showUpgrade(NodeTree<int>* node) {
     float upgrade = calculateUpgrade(node->getData(), node->getHeight());
 
     cout << "+" << (percentage ? "%" : "") << upgrade;
+    cout << endl;
 }
 
 float AbilityTree::calculateUpgrade(unsigned int index, unsigned int height) const {
@@ -124,11 +130,11 @@ void AbilityTree::showUpgrades(unsigned int index) {
     NodeTree<int>* node = tree.search(index);
     cout << "Habilidad disponibles" << endl;
     if(node->getLeft()) {
-        cout << "Opcion 1";
+        cout << "Opcion 1: ";
         showUpgrade(node->getLeft());
     }
     if(node->getRight()) {
-        cout << "Opcion 2";
+        cout << "Opcion 2: ";
         showUpgrade(node->getRight());
     }
 }
