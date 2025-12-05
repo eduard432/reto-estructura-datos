@@ -34,7 +34,7 @@ float CLI::readFloatLoop(string prompt) {
         try {
             return std::stof(input);
         } catch (...) {
-            cout << "Entrada inválida. Intenta de nuevo." << endl;
+            cout << "Entrada invalida. Intenta de nuevo." << endl;
         }
     }
 }
@@ -50,7 +50,7 @@ unsigned int CLI::readPositiveIntLoop(string prompt) {
             if (value >= 0) return value;
         } catch (...) {}
         
-        cout << "Entrada inválida. Ingresa un número entero positivo." << endl;
+        cout << "Entrada invalida. Ingresa un numero entero positivo." << endl;
     }
 }
 
@@ -63,7 +63,7 @@ int CLI::readIntLoop(string prompt) {
         try {
             return std::stoi(input);
         } catch (...) {
-            cout << "Entrada inválida. Intenta de nuevo." << endl;
+            cout << "Entrada invalida. Intenta de nuevo." << endl;
         }
     }
 }

@@ -151,6 +151,8 @@ void Board::combat() {
             // Guardamos la nueva salud del heroe
             hero->setHP(hero->getHP() - givenDamage);
         }
+    } else {
+        cout << "Respuesta correcta, NO recibes dano" << endl;
     }
 
     cout << "Turno del jugador, selecciona un ataque:" << endl;
@@ -334,16 +336,18 @@ Square Board::getActualSquare() const {
 bool Board::addMonsterAttack(const string& monsterName, const MonsterAttack& attack) {
     Node<Monster>* current = monsters.getHead();
 
+    bool isAdded = false;
+
     while(current) {
         if(current->getData().getName() == monsterName) {
             current->getDataRef().addAttack(attack);
-            return true;
+            isAdded = true;
         }
 
         current = current->getNext();
     }
 
-    return false;
+    return isAdded;
 }
 
 bool Board::loadMonstersFromCsv(const string& fileName) {

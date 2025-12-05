@@ -21,7 +21,7 @@ for /r %%f in (*.cpp) do (
 
 rem Verificar si se encontraron archivos
 if "!CPP_FILES!"=="" (
-    echo ❌ No se encontraron archivos .cpp
+    echo No se encontraron archivos .cpp
     pause
     exit /b 1
 )
@@ -34,11 +34,11 @@ g++ -std=c++17 -Wall -Wextra !CPP_FILES! -o %EXEC%
 
 rem Verificar compilación
 if %errorlevel% equ 0 (
-    echo ✅ Compilación exitosa. Ejecutando...
+    echo Compilacion exitosa. Ejecutando...
     echo ----------------------------------------
     %EXEC%
 ) else (
-    echo ❌ Error en la compilación.
+    echo Error en la compilación.
     pause
     exit /b 1
 )
