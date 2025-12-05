@@ -40,47 +40,47 @@ bool CLI::commands() {
         cout << "====================" << endl;
 
         // /help
-        cout << "/help - ";
+        cout << "help - ";
         cout << "Muestra este menu" << endl;
         // /register
-        cout << "/register - ";
+        cout << "register - ";
         cout << "Registra tu tipo de heroe" << endl;
         // /play
-        cout << "/play - ";
+        cout << "play - ";
         cout << "Inicia el juego en la casilla actual" << endl;
         // /combat
-        cout << "/combat - ";
+        cout << "combat - ";
         cout << "Pelea contra el monstruo de la casilla" << endl;
         // /me
-        cout << "/me - ";
+        cout << "me - ";
         cout << "Muestra informacion del heroe" << endl;
         // /ls o /list
-        cout << "/list - ";
+        cout << "list - ";
         cout << "Muestra las casillas adyacentes" << endl;
         // move o cs
-        cout << "/move - ";
+        cout << "move - ";
         cout << "Cambia la casilla actual" << endl;
         // status
-        cout << "/status - ";
+        cout << "status - ";
         cout << "Dice el status actual del tablero" << endl;
         // clear
-        cout << "/clear - ";
+        cout << "clear - ";
         cout << "Limpia la terminal" << endl; 
         // exit
-        cout << "/exit - ";
+        cout << "exit - ";
         cout << "Salir del juego" << endl;
         // Comandos que necesitan de administrador:
         // add
-        cout << "/add - ";
+        cout << "add - ";
         cout << "Agrega una casilla o un monstruo" << endl;
         // load
-        cout << "/load - ";
+        cout << "load - ";
         cout << "Carga monstruos o casillas desde un archivo" << endl;
         // connect
-        cout << "/connect - ";
+        cout << "connect - ";
         cout << "Conecta dos casillas" << endl;
         // cheetcode
-        cout << "/cheatcode - ";
+        cout << "cheatcode - ";
         cout << "Muestra la ruta mas facil hacia el tesoro" << endl;
     } else if(command == "register") {
         board.selectHero();

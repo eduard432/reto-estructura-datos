@@ -495,34 +495,63 @@ bool Board::loadMonsterAttacksFromCsv(const string& fileName) {
         string cell;
         LinkedList<string> row;
         
+        // Parseo CSV
         while(getline(ss, cell, ',')) {
-            if(cell.length() == 0) continue;;
+            if(cell.length() == 0) continue;
             row.pushBack(cell);
         }
 
-        // Verificamos que sea del tamano correcto
-        if(row.size() != 7) continue;
-
-        string monsterName = row.elementAt(0);
-        string name = row.elementAt(1);
-        float damage = stof(row.elementAt(2));
-
-        unsigned int correctAnswer = static_cast<unsigned int>(stoul(row.elementAt(6)));
-
-        if(correctAnswer > 3) continue;
-
-        MonsterAttack attack = MonsterAttack(name, damage);
-
-        for(unsigned int i = 3; i <= 5; i++) {
-            string answer = row.elementAt(i);
-            bool isCorrect = (i - 2 == correctAnswer);
-            attack.addAnswer(answer, isCorrect);
+        // Cada fila debe tener exactamente 7 valores
+        if(row.size() != 7) {
+            cerr << "Fila ignorada por tamaño incorrecto: " << line << endl;
+            continue;
         }
-        
-        bool isAdded = addMonsterAttack(monsterName, attack);
 
-        if(!isAdded) {
-            cout << "No se pudo agregar el ataque: " << name << endl;
+        try {
+            string monsterName = row.elementAt(0);
+            string name = row.elementAt(1);
+
+            float damage = std::stof(row.elementAt(2));
+
+            unsigned int correctAnswer =
+                static_cast<unsigned int>(std::stoul(row.elementAt(6)));
+
+            // Validación rango
+            if(correctAnswer > 3) {
+                cerr << "Fila ignorada: correctAnswer fuera de rango -> "
+                     << row.elementAt(6) << endl;
+                continue;
+            }
+
+            // Crear ataque
+            MonsterAttack attack(name, damage);
+
+            for(unsigned int i = 3; i <= 5; i++) {
+                string answer = row.elementAt(i);
+                bool isCorrect = (i - 2 == correctAnswer);
+                attack.addAnswer(answer, isCorrect);
+            }
+
+            bool isAdded = addMonsterAttack(monsterName, attack);
+
+            if(!isAdded) {
+                cout << "No se pudo agregar el ataque: " << name << endl;
+                continue;
+            }
+
+        }
+        catch(const std::invalid_argument& e) {
+            cerr << "Error: valor no numérico en CSV. Línea: " << line << endl;
+            cerr << "Detalle: " << e.what() << endl;
+            continue;
+        }
+        catch(const std::out_of_range& e) {
+            cerr << "Error: número fuera de rango en CSV. Línea: " << line << endl;
+            cerr << "Detalle: " << e.what() << endl;
+            continue;
+        }
+        catch(...) {
+            cerr << "Error desconocido procesando la línea: " << line << endl;
             continue;
         }
     }
@@ -530,6 +559,7 @@ bool Board::loadMonsterAttacksFromCsv(const string& fileName) {
     file.close();
     return true;
 }
+
 
 void Board::showCheatcode() {
     LinkedList<Square> path = graph.dijkstraPath(graph.getVertices().elementAt(startSquareIndex)->getData(), graph.getVertices().elementAt(treasureSquareIndex)->getData());
