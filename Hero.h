@@ -10,7 +10,7 @@ using namespace std;
 class Hero: public Character {
     private:
         void specialAttack();
-        int stamina;
+        int power;
         LinkedList<Attack> attacks;
     public:
         virtual ~Hero() {}
@@ -18,8 +18,8 @@ class Hero: public Character {
         Hero() : Character() {}
         Hero(const string& n) : Character(n) {}
 
-        int getStamina() const;
-        void setStamina(const int& s);
+        int getPower() const;
+        void setPower(const int& p);
 
         LinkedList<Attack>& getAttacks();
         void addAttack();

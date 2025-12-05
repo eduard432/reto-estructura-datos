@@ -49,7 +49,7 @@ bool Board::play() {
     }
 
     if(actualMonsterIndex != -1) {
-        cout << "Ya estás en combate, usa el comando /combat" << endl;
+        cout << "Ya estas en combate, usa el comando /combat" << endl;
         return false;
     }
 
@@ -57,7 +57,7 @@ bool Board::play() {
     bool isBattle = isMonsterAttack(square.getProbability());
 
     if(isBattle) {
-        cout << "Estás en batalla" << endl;
+        cout << "Estas en batalla" << endl;
         int selectedMonsterI = Utils().randomIntNumber(0, monsters.size());
         Monster& selectedMonster = monsters[selectedMonsterI];
         cout << "Pelearas contra: " << selectedMonster.getName() << endl;
@@ -115,7 +115,7 @@ void Board::combat() {
     }
 
     if(actualMonsterIndex == -1) {
-        cout << "Actualmente no estás en un combate" << endl;
+        cout << "Actualmente no estas en un combate" << endl;
         return;
     }
     
@@ -141,12 +141,12 @@ void Board::combat() {
 
     if(!isDefended) {
         // TODO: usar el multiplicador de dificultad
-        cout << "Respuesta incorrecta, recibiras daño" << endl;
+        cout << "Respuesta incorrecta, recibiras dano" << endl;
         float monsterDamage = mnstrAttack.getDamage();
-        cout << "Daño: " << monsterDamage << endl;
+        cout << "Dano: " << monsterDamage << endl;
         
         float givenDamage = Utils().max(1, monsterDamage - hero->getDEF());
-        cout << "Daño recibido: " << givenDamage << endl;
+        cout << "Dano recibido: " << givenDamage << endl;
 
         if(hero->getHP() - givenDamage <= 0) {
             // Se murio el jugador
@@ -177,7 +177,7 @@ void Board::combat() {
         if (cin.fail()) {
             cin.clear();              // Limpia flag de error
             cin.ignore(10000, '\n');  // Descarta basura
-            selectedAttack = -1;      // Forzamos entrada inválida
+            selectedAttack = -1;      // Forzamos entrada invalida
         }
 
     } while (selectedAttack < 0 || selectedAttack >= hero->getAttacks().size());
@@ -188,10 +188,10 @@ void Board::combat() {
 
     cout << "Nombre del ataque: " << heroAttack.getName() << endl;
     float heroDamage = heroAttack.getDamage();
-    cout << "Daño: " << heroDamage << endl;
+    cout << "Dano: " << heroDamage << endl;
     
     float damageMade = Utils().max(1, heroDamage - monsters[actualMonsterIndex].getDEF());
-    cout << "Daño inflingido: " << damageMade << endl;
+    cout << "Dano inflingido: " << damageMade << endl;
 
     if((monsters[actualMonsterIndex].getHP() - damageMade) <= 0) {
         // Se murio el monstruo
@@ -208,7 +208,7 @@ void Board::combat() {
 }
 
 void Board::lost() {
-    cout << "El jugador perdió la pertida" << endl;
+    cout << "El jugador perdio la pertida" << endl;
     status = "lost";
 }
 
@@ -285,12 +285,12 @@ void Board::showActualSquare() const {
     Square sq = graph.vertexAt(actualSquareIndex)->getData();
     cout << "Id: " << sq.getId() << endl;
     cout << "Nombre: " << sq.getName() << endl;
-    cout << "¿Casilla superada? " << (sq.getVisited() ? "Sí" : "No") << endl;
+    cout << "¿Casilla superada? " << (sq.getVisited() ? "Si" : "No") << endl;
 }
 
 void Board::showActualMonster() const {
     if (actualMonsterIndex < 0) {
-        cout << "No hay pelea con algún monstruo" << endl;
+        cout << "No hay pelea con algun monstruo" << endl;
     } else {
         Monster monster = monsters.elementAt(actualMonsterIndex);
         cout << "Nombre: " << monster.getName() << endl;
@@ -318,7 +318,7 @@ bool Board::changeActualSquare(const string& squareName) {
     }
 
     if(actualSquareIndex == static_cast<unsigned int>(sIndex)) {
-        cout << "Ya estás en la casilla" << endl;
+        cout << "Ya estas en la casilla" << endl;
 
         return false;
     }
@@ -380,7 +380,7 @@ bool Board::loadMonstersFromCsv(const string& fileName) {
             row.pushBack(cell);
         }
 
-        // Verificamos que sea del tamaño correcto
+        // Verificamos que sea del tamano correcto
         if(row.size() != 4) return false;
 
         string name = row.elementAt(0);
@@ -423,7 +423,7 @@ bool Board::loadSquareFromCsv(const string& fileName) {
             row.pushBack(cell);
         }
 
-        // Verificamos que sea del tamaño correcto
+        // Verificamos que sea del tamano correcto
         if(row.size() != 3) return false;
 
         string name = row.elementAt(0);
@@ -458,7 +458,7 @@ bool Board::loadConnectionsFromCsv(const string& fileName) {
     while(getline(file, line)) {
         LinkedList<string> row = Utils().split(line, ',');
 
-        // Verificamos que sea del tamaño correcto
+        // Verificamos que sea del tamano correcto
         if(row.size() != 2) return false;
 
 
@@ -500,7 +500,7 @@ bool Board::loadMonsterAttacksFromCsv(const string& fileName) {
             row.pushBack(cell);
         }
 
-        // Verificamos que sea del tamaño correcto
+        // Verificamos que sea del tamano correcto
         if(row.size() != 7) continue;
 
         string monsterName = row.elementAt(0);
@@ -555,18 +555,17 @@ void Board::selectHero() {
     int characterChosen;
 
     cout << "Escribe el nombre de tu heroe: ";
-    getline(cin, name);
-    cout << endl;
-
+    getline(cin,name);
+	cout<<endl;
     cout << "Elige tu clase: " << endl;
     cout << "1. Caballero" << endl;
     cout << "2. Mago" << endl;
     cout << "3. Explorador" << endl;
     cout << "4. Bard" << endl;
-    cout << "Ingresa tu opción (1-4): ";
+    cout << "Ingresa tu opcion (1-4): ";
     cin >> characterChosen;
 
-    // Liberar si ya había héroe previo
+    // Liberar si ya había heroe previo
     delete hero;
 
     switch (characterChosen) {
@@ -583,7 +582,7 @@ void Board::selectHero() {
             hero = new Bard(name);
             break;
         default:
-            cout << "Opción inválida, defaulting to Knight.\n";
+            cout << "Opcion invalida, defaulting to Knight.\n";
             hero = new Knight(name);
             break;
     }

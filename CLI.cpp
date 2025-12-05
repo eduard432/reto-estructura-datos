@@ -19,8 +19,10 @@ void CLI::start() {
     }
 }
 
-void CLI::readInput(string& value) {
-    getline(cin, value);
+void CLI::readInput(std::string& value) {
+    if (!std::getline(std::cin, value)) {
+        value = "";
+    }
 }
 
 bool CLI::commands() {
@@ -39,7 +41,7 @@ bool CLI::commands() {
 
         // /help
         cout << "/help - ";
-        cout << "Muestra este menú" << endl;
+        cout << "Muestra este menu" << endl;
         // /register
         cout << "/register - ";
         cout << "Registra tu tipo de heroe" << endl;
@@ -55,7 +57,7 @@ bool CLI::commands() {
         // /ls o /list
         cout << "/list - ";
         cout << "Muestra las casillas adyacentes" << endl;
-        // move ó cs
+        // move o cs
         cout << "/move - ";
         cout << "Cambia la casilla actual" << endl;
         // status
@@ -79,7 +81,7 @@ bool CLI::commands() {
         cout << "Conecta dos casillas" << endl;
         // cheetcode
         cout << "/cheatcode - ";
-        cout << "Muestra la ruta más fácil hacia el tesoro" << endl;
+        cout << "Muestra la ruta mas facil hacia el tesoro" << endl;
     } else if(command == "register") {
         board.selectHero();
     } else if(command == "play") {
@@ -107,6 +109,7 @@ bool CLI::commands() {
         cout << "¿A que casilla quieres moverte?: ";
         string squareName;
         cin >> squareName;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         bool isChange = board.changeActualSquare(squareName);
         if(isChange) {
             cout << "Te moviste con exito a la casilla: " << endl;
@@ -124,17 +127,17 @@ bool CLI::commands() {
         bool isInBattle = board.getIsInBattle();
 
         if (isInBattle) {
-            cout << "Estás en combate con un monstruo" << endl;
+            cout << "Estas en combate con un monstruo" << endl;
             board.showActualMonster();
         } 
         else {
-            // No estás en batalla
+            // No estas en batalla
             bool visited = board.getActualSquare().getVisited();
 
             if (!visited) {
-                cout << "Todo tranquilo por aquí, usa el comando /play para empezar" << endl;
+                cout << "Todo tranquilo por aqui, usa el comando /play para empezar" << endl;
             } else {
-                cout << "Todo tranquilo por aquí" << endl;
+                cout << "Todo tranquilo por aqui" << endl;
             }
         }
     } else if (command == "clear" || command == "cls") {
@@ -155,6 +158,7 @@ bool CLI::commands() {
                 float probability;
                 cout << "Probabilidad de spawn:";
                 cin >> probability;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << endl;
 
                 board.addSquare(name, probability, false);
@@ -169,44 +173,48 @@ bool CLI::commands() {
             if (type == "monsters") {
                 cout << "Escribe el nombre del archivo a leer: ";
                 cin >> fileName;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 bool areLoaded = board.loadMonstersFromCsv(fileName);
                 if(!areLoaded) {
                     cout << "No se pudieron cargar los monstruos" << endl;
                     return false;
                 } else {
-                    cout << "Los monstruos se cargaron con éxito" << endl;
+                    cout << "Los monstruos se cargaron con exito" << endl;
                 }
             } else if (type == "squares") {
                 cout << "Escribe el nombre del archivo a leer: ";
                 cin >> fileName;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 bool areLoaded = board.loadSquareFromCsv(fileName);
                 if(!areLoaded) {
                     cout << "No se pudieron cargar las casillas" << endl;
                     return false;
                 } else {
-                    cout << "Las casillas se cargaron con éxito" << endl;
+                    cout << "Las casillas se cargaron con exito" << endl;
                 }
             } else if(type == "connections") {
                 cout << "Escribe el nombre del archivo a leer: ";
                 cin >> fileName;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 bool areLoaded = board.loadConnectionsFromCsv(fileName);
                 if(!areLoaded) {
                     cout << "No se pudieron cargar las conexiones" << endl;
                     return false;
                 } else {
-                    cout << "Las conexiones se cargaron con éxito" << endl;
+                    cout << "Las conexiones se cargaron con exito" << endl;
                 }
             } else if(type == "attacks") {
                 string subType = tokens.elementAt(3);
                 if(subType == "monsters") {
                     cout << "Escribe el nombre del archivo a leer: ";
                     cin >> fileName;
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
                     bool areLoaded = board.loadMonsterAttacksFromCsv(fileName);
                     if(!areLoaded) {
                         cout << "No se pudieron cargar los ataques de los monstruos" << endl;
                         return false;
                     } else {
-                        cout << "Los ataques se cargaron con éxito" << endl;
+                        cout << "Los ataques se cargaron con exito" << endl;
                     }
                 }
             }
@@ -223,12 +231,14 @@ bool CLI::commands() {
             unsigned int firstSquareIndex;
             cout << "Inserta el id de la primera casilla a conectar:";
             cin >> firstSquareIndex;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << endl;
 
             unsigned int secondSquareIndex;
 
             cout << "Inserta el id de la segunda casilla a conectar:";
             cin >> secondSquareIndex;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << endl;
 
             
@@ -240,8 +250,12 @@ bool CLI::commands() {
             }
 
         } else if(command == "cheatcode") {
-            cout << "Camino más fácil hacia el tesoro: " << endl;
+            cout << "Camino mas facil hacia el tesoro: " << endl;
             board.showCheatcode();
+        } else {
+            cout << endl;
+            cout << "No se reconoce el comando" << endl;
+            cout << "Usa /help para ver los comandos disponibles" << endl;
         }
     } else {
         cout << endl;

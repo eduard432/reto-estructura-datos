@@ -1,11 +1,11 @@
 #include "Hero.h"
 
-int Hero::getStamina() const {
-    return stamina;
+int Hero::getPower() const {
+    return power;
 }
 
-void Hero::setStamina(const int& s){
-    stamina = s;
+void Hero::setPower(const int& p){
+    power = p;
 }
 
 LinkedList<Attack>& Hero::getAttacks() {

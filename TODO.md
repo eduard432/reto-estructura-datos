@@ -16,3 +16,12 @@ Tener una propiedad "difficulty" que va aumentado y va mejorando los atributos d
 
 - Un ataque puede fallar si el dice es menor a 10.
 - El heroe y el monstruo pueden usar ataques especiales o normales, (si usa el especial consume estamina, si se acaba la estamina no se puede usar el ataque especial), el ataque especial inflinge más daño.
+
+
+
+
+#### Importante
+
+- Cambiar cin => readInput();
+
+
