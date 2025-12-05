@@ -210,8 +210,15 @@ void Board::showSquares() const {
 }
 
 bool Board::connectSquares(const unsigned int& sq1, const unsigned int& sq2) {
-    Square& square1 = graph.vertexAt(searchSquareById(sq1))->getData();
-    Square& square2 = graph.vertexAt(searchSquareById(sq2))->getData();
+    int sq1Index = searchSquareById(sq1);
+    int sq2Index = searchSquareById(sq2);
+
+    if(sq1Index == -1 || sq2Index == -1) {
+        return false;
+    }
+
+    Square& square1 = graph.vertexAt(sq1Index)->getData();
+    Square& square2 = graph.vertexAt(sq2Index)->getData();
 
     unsigned int weight = (square1.getProbability() + square2.getProbability()) / 2;
 
