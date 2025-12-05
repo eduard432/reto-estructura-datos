@@ -79,6 +79,7 @@ void Board::combatWon() {
     graph.vertexAt(actualSquareIndex)->getData().setVisited(true);
     // No hay monstruo actual
     actualMonsterIndex = -1;
+    abilityPoints += 1;
 }
 
 bool Board::monsterAttacking(MonsterAttack& attack) {

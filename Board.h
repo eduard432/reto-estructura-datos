@@ -7,6 +7,7 @@
 #include "Hero.h"
 #include "Monster.h"
 #include <string>
+#include "AbilityTree.h"
 
 class Board {
     private:
@@ -15,6 +16,7 @@ class Board {
         unsigned int actualSquareIndex;
         unsigned int startSquareIndex;
         unsigned int treasureSquareIndex;
+        unsigned int abilityPoints;
         bool isMonsterAttack(const unsigned int& probality);
         Hero* hero;
         int actualMonsterIndex;
@@ -24,8 +26,8 @@ class Board {
 
         string status;
 
-        void combat(const bool& heroNextAttack);
         bool isHeroTurn;
+        AbilityTree abilityTree;
         
     public:
         Board() {
@@ -42,6 +44,7 @@ class Board {
             actualMonsterIndex = -1;
 
             status = "inGame";
+            abilityPoints = 0;
         }
         void addSquare(const string& n, const float& p, const bool& v);
         bool connectSquares(const unsigned int& sq1, const unsigned int& sq2);

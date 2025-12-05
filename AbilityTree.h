@@ -4,6 +4,7 @@
 #include "AVL.h"
 #include <cmath>
 #include "Hero.h"
+#define TREE_HEIGHT 5
 
 enum class Attribute {
   DEFENSE,
@@ -26,8 +27,12 @@ class AbilityTree {
         void showUpgrade(NodeTree<int>* node);
         void showUpgrades(unsigned int index);
     public:
-        AbilityTree(unsigned int height) {
-            abilities =  pow(2, height);
+        AbilityTree() {
+            defenseIndex = 16;
+            healthIndex = 16;
+            attackIndex = 16;
+            powerIndex = 16;
+            abilities =  pow(2, TREE_HEIGHT);
             for(unsigned int i = 1; i < abilities; i++)  {
                 tree.insert(i);
             }
