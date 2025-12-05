@@ -184,12 +184,7 @@ void Board::combat() {
     cout << "Dano inflingido: " << damageMade << endl;
 
     if((monsters[actualMonsterIndex].getHP() - damageMade) <= 0) {
-        // Se murio el monstruo
-        cout << "El jugador gano la batalla" << endl;
-        // Actualizamos la casilla actual como visitada
-        graph.vertexAt(actualSquareIndex)->getData().setVisited(true);
-        // No hay monstruo actual
-        actualMonsterIndex = -1;
+        combatWon();
     } else {
         // Guardamos la nueva salud del monstruo
         monsters[actualMonsterIndex].setHP(monsters[actualMonsterIndex].getHP() - damageMade);

@@ -26,7 +26,6 @@ class Board {
 
         string status;
 
-        bool isHeroTurn;
         AbilityTree abilityTree;
         
     public:

@@ -15,7 +15,9 @@ class Hero: public Character {
     public:
         virtual ~Hero() {}
         virtual string getType() const = 0;
-        Hero() : Character() {}
+        Hero() : Character() {
+            power = 0;
+        }
         Hero(const string& n) : Character(n) {}
 
         float getPower() const;

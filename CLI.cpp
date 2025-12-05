@@ -70,7 +70,7 @@ int CLI::readIntLoop(string prompt) {
     }
 }
 
-bool CLI::requireTokens(const LinkedList<string>& tokens, int count) {
+bool CLI::requireTokens(const LinkedList<string>& tokens, unsigned int count) {
     if (tokens.size() < count) {
         cout << "Faltan argumentos para este comando." << endl;
         return false;
