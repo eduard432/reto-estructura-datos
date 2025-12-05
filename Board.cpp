@@ -1,5 +1,6 @@
 #include "Board.h"
 #include "Utils.h"
+#include "CLI.h"
 #include "Monster.h"
 #include "MonsterAttack.h"
 
@@ -82,10 +83,11 @@ void Board::combatWon() {
 
 bool Board::monsterAttacking(MonsterAttack& attack) {
     cout << "Pregunta: " << attack.getName() << endl;
+
     Node<string>* current = attack.getAnswers().getHead();
     int i = 0;
 
-    while(current) {
+    while (current) {
         cout << "[" << i << "] " << current->getData() << endl;
         current = current->getNext();
         i++;
@@ -93,19 +95,12 @@ bool Board::monsterAttacking(MonsterAttack& attack) {
 
     unsigned int answer;
     do {
-        cout << "Tu respuesta: ";
-        cin >> answer;
-
-        if (cin.fail()) {
-            cin.clear();              
-            cin.ignore(10000, '\n');  
-            answer = -1;
-        }
-
+        answer = CLI::readPositiveIntLoop("Tu respuesta: ");
     } while (answer >= attack.getAnswers().size());
 
     return answer == attack.getCorrectAnswerI();
 }
+
 
 
 void Board::combat() {
@@ -171,18 +166,10 @@ void Board::combat() {
     unsigned int selectedAttack;
 
     do {
-        cout << "Atacar con: ";
-        cin >> selectedAttack;
+        selectedAttack = CLI::readPositiveIntLoop("Tu respuesta: ");
 
-        if (cin.fail()) {
-            cin.clear();              // Limpia flag de error
-            cin.ignore(10000, '\n');  // Descarta basura
-            selectedAttack = -1;      // Forzamos entrada invalida
-        }
-
-    } while (selectedAttack < 0 || selectedAttack >= hero->getAttacks().size());
+    } while (selectedAttack >= hero->getAttacks().size());
     
-
 
     Attack heroAttack = hero->getAttacks()[selectedAttack];
 
@@ -576,45 +563,40 @@ void Board::showCheatcode() {
 }
 
 void Board::selectHero() {
-    if(hero != nullptr) {
+    if (hero != nullptr) {
         cout << "Ya te registraste" << endl;
         return;
     }
 
     string name;
-    int characterChosen;
 
     cout << "Escribe el nombre de tu heroe: ";
-    getline(cin,name);
-	cout<<endl;
+    CLI::readInput(name);
+    cout << endl;
+
     cout << "Elige tu clase: " << endl;
     cout << "1. Caballero" << endl;
     cout << "2. Mago" << endl;
     cout << "3. Explorador" << endl;
     cout << "4. Bard" << endl;
-    cout << "Ingresa tu opcion (1-4): ";
-    cin >> characterChosen;
 
-    // Liberar si ya había heroe previo
-    delete hero;
+    unsigned int characterChosen;
 
+    do {
+        characterChosen = CLI::readPositiveIntLoop("Ingresa tu opción (1-4): ");
+
+        if (characterChosen == 0 || characterChosen > 4) {
+            cout << "Opción inválida. Intenta nuevamente." << endl;
+        }
+
+    } while (characterChosen == 0 || characterChosen > 4);
+
+    // Crear héroe
     switch (characterChosen) {
-        case 1:
-            hero = new Knight(name);
-            break;
-        case 2:
-            hero = new Mage(name);
-            break;
-        case 3:
-            hero = new Ranger(name);
-            break;
-        case 4:
-            hero = new Bard(name);
-            break;
-        default:
-            cout << "Opcion invalida, defaulting to Knight.\n";
-            hero = new Knight(name);
-            break;
+        case 1: hero = new Knight(name); break;
+        case 2: hero = new Mage(name); break;
+        case 3: hero = new Ranger(name); break;
+        case 4: hero = new Bard(name); break;
     }
 
     hero->addAttack();

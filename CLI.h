@@ -11,7 +11,10 @@ class CLI {
     void start();
     bool commands();
     void clear();
-    void readInput(string& value);
+    static void readInput(string& value);
+    static float readFloatLoop(string prompt);
+    static int readIntLoop(string prompt);
+    static unsigned int readPositiveIntLoop(string prompt);
 };
 
 #endif

@@ -25,6 +25,50 @@ void CLI::readInput(std::string& value) {
     }
 }
 
+float CLI::readFloatLoop(string prompt) {
+    while (true) {
+        cout << prompt;
+        string input;
+        readInput(input);
+
+        try {
+            return std::stof(input);
+        } catch (...) {
+            cout << "Entrada inválida. Intenta de nuevo." << endl;
+        }
+    }
+}
+
+unsigned int CLI::readPositiveIntLoop(string prompt) {
+    while (true) {
+        cout << prompt;
+        string input;
+        readInput(input);
+
+        try {
+            int value = std::stoi(input);
+            if (value >= 0) return value;
+        } catch (...) {}
+        
+        cout << "Entrada inválida. Ingresa un número entero positivo." << endl;
+    }
+}
+
+int CLI::readIntLoop(string prompt) {
+    while (true) {
+        cout << prompt;
+        string input;
+        readInput(input);
+
+        try {
+            return std::stoi(input);
+        } catch (...) {
+            cout << "Entrada inválida. Intenta de nuevo." << endl;
+        }
+    }
+}
+
+
 bool CLI::commands() {
     string input;
     cout << ">>";
@@ -108,8 +152,7 @@ bool CLI::commands() {
         cout << endl;
         cout << "¿A que casilla quieres moverte?: ";
         string squareName;
-        cin >> squareName;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        readInput(squareName);
         bool isChange = board.changeActualSquare(squareName);
         if(isChange) {
             cout << "Te moviste con exito a la casilla: " << endl;
@@ -155,10 +198,7 @@ bool CLI::commands() {
                 readInput(name);
                 cout << endl;
 
-                float probability;
-                cout << "Probabilidad de spawn:";
-                cin >> probability;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                float probability = readFloatLoop("Probabilidad de spawn:");
                 cout << endl;
 
                 board.addSquare(name, probability, false);
@@ -172,8 +212,8 @@ bool CLI::commands() {
             string fileName;
             if (type == "monsters") {
                 cout << "Escribe el nombre del archivo a leer: ";
-                cin >> fileName;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                readInput(fileName);
+                cout << endl;
                 bool areLoaded = board.loadMonstersFromCsv(fileName);
                 if(!areLoaded) {
                     cout << "No se pudieron cargar los monstruos" << endl;
@@ -183,8 +223,8 @@ bool CLI::commands() {
                 }
             } else if (type == "squares") {
                 cout << "Escribe el nombre del archivo a leer: ";
-                cin >> fileName;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                readInput(fileName);
+                cout << endl;
                 bool areLoaded = board.loadSquareFromCsv(fileName);
                 if(!areLoaded) {
                     cout << "No se pudieron cargar las casillas" << endl;
@@ -194,8 +234,8 @@ bool CLI::commands() {
                 }
             } else if(type == "connections") {
                 cout << "Escribe el nombre del archivo a leer: ";
-                cin >> fileName;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                readInput(fileName);
+                cout << endl;
                 bool areLoaded = board.loadConnectionsFromCsv(fileName);
                 if(!areLoaded) {
                     cout << "No se pudieron cargar las conexiones" << endl;
@@ -207,8 +247,8 @@ bool CLI::commands() {
                 string subType = tokens.elementAt(3);
                 if(subType == "monsters") {
                     cout << "Escribe el nombre del archivo a leer: ";
-                    cin >> fileName;
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    readInput(fileName);
+                    cout << endl;
                     bool areLoaded = board.loadMonsterAttacksFromCsv(fileName);
                     if(!areLoaded) {
                         cout << "No se pudieron cargar los ataques de los monstruos" << endl;
@@ -229,16 +269,13 @@ bool CLI::commands() {
             }
         } else if (command == "connect") {
             unsigned int firstSquareIndex;
-            cout << "Inserta el id de la primera casilla a conectar:";
-            cin >> firstSquareIndex;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+            firstSquareIndex = CLI::readPositiveIntLoop("Inserta el id de la primera casilla a conectar:");
+
             cout << endl;
 
-            unsigned int secondSquareIndex;
-
-            cout << "Inserta el id de la segunda casilla a conectar:";
-            cin >> secondSquareIndex;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            int secondSquareIndex;
+            secondSquareIndex = CLI::readPositiveIntLoop("Inserta el id de la segunda casilla a conectar:");
             cout << endl;
 
             
